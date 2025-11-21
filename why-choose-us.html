@@ -37,6 +37,34 @@
     <link href="style.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
+
+
+<!-- Navigation Links Styling -->
+    <style>
+        .navbar-nav > li > a {
+            color: #333 !important;
+            font-weight: 400;
+        }
+        .navbar-nav > li > a:hover,
+        .navbar-nav > li > a:focus {
+            color: #000 !important;
+        }
+        .navbar-nav > li.dropdown > a.dropdown-toggle {
+            color: #333 !important;
+        }
+        .navbar-nav > li.dropdown > a.dropdown-toggle:hover,
+        .navbar-nav > li.dropdown > a.dropdown-toggle:focus {
+            color: #000 !important;
+        }
+        .dropdown-menu > li > a {
+            color: #333 !important;
+        }
+        .dropdown-menu > li > a:hover {
+            color: #000 !important;
+            background-color: #f5f5f5;
+        }
+    </style>
+
 <!-- GDPR Cookie Consent Styles -->
     <style>
         #gdpr-cookie-consent {
@@ -49,7 +77,7 @@
             padding: 25px 30px;
             z-index: 10000;
             display: none;
-            border-top: 3px solid #FFDD41;
+            border-top: 3px solid #ffc100;
         }
         #gdpr-cookie-consent.show {
             display: block;
@@ -74,7 +102,7 @@
             color: #333;
         }
         .gdpr-text a {
-            color: #FFDD41;
+            color: #ffc100;
             text-decoration: underline;
         }
         .gdpr-buttons {
@@ -92,7 +120,7 @@
             transition: all 0.3s ease;
         }
         .gdpr-btn-accept {
-            background: #FFDD41;
+            background: #ffc100;
             color: #000;
         }
         .gdpr-btn-accept:hover {
@@ -125,6 +153,185 @@
             .gdpr-btn {
                 flex: 1;
                 min-width: 120px;
+            }
+        }
+        
+        /* Cookie Settings Modal */
+        #gdpr-settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10001;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        #gdpr-settings-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gdpr-modal-content {
+            background: #fff;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .gdpr-modal-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .gdpr-modal-header h3 {
+            margin: 0;
+            color: #000;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+        .gdpr-modal-header p {
+            margin: 10px 0 0 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .gdpr-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .gdpr-modal-close:hover {
+            background: #f0f0f0;
+            color: #000;
+        }
+        .cookie-category {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .cookie-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cookie-category-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #000;
+            margin: 0;
+        }
+        .cookie-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .cookie-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+        .cookie-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        .cookie-toggle input:checked + .cookie-slider {
+            background-color: #ffc100;
+        }
+        .cookie-toggle input:checked + .cookie-slider:before {
+            transform: translateX(24px);
+        }
+        .cookie-category-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+        .cookie-category.essential .cookie-toggle {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .gdpr-modal-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .gdpr-modal-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .gdpr-modal-btn-save {
+            background: #ffc100;
+            color: #000;
+        }
+        .gdpr-modal-btn-save:hover {
+            background: #B8941F;
+        }
+        .gdpr-modal-btn-cancel {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .gdpr-modal-btn-cancel:hover {
+            background: #e0e0e0;
+        }
+        @media (max-width: 768px) {
+            .gdpr-modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+            .gdpr-modal-footer {
+                flex-direction: column;
+            }
+            .gdpr-modal-btn {
+                width: 100%;
             }
         }
     </style>
@@ -215,14 +422,23 @@
 
     <!-- Start Page Header 
     ============================================= -->
-    <div class="breadcrumb-area text-center" style="background: linear-gradient(135deg, #FFDD41 0%, #FFE570 100%); padding: 120px 0 80px; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -50%; right: -10%; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
-        <div style="position: absolute; bottom: -30%; left: -5%; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
+    <div class="breadcrumb-area text-center" style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 120px 0 80px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 30px rgba(0,0,0,0.05);">
+        <!-- Decorative geometric shapes with shadows -->
+        <div style="position: absolute; top: -80px; right: -50px; width: 250px; height: 250px; background: rgba(255,255,255,0.15); border-radius: 50%; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 10px 30px rgba(255,255,255,0.2); transform: rotate(15deg);"></div>
+        <div style="position: absolute; bottom: -60px; left: -40px; width: 200px; height: 200px; background: rgba(255,255,255,0.12); border-radius: 50%; z-index: 1; box-shadow: 0 15px 50px rgba(0,0,0,0.12), inset 0 8px 25px rgba(255,255,255,0.15); transform: rotate(-20deg);"></div>
+        <div style="position: absolute; top: 50%; left: 10%; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 20px; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 5px 15px rgba(255,255,255,0.2); transform: rotate(45deg);"></div>
+        <div style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 15px; z-index: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 4px 12px rgba(255,255,255,0.15); transform: rotate(-30deg);"></div>
+        <div style="position: absolute; bottom: 15%; right: 25%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50% 20% 50% 20%; z-index: 1; box-shadow: 0 12px 45px rgba(0,0,0,0.1), inset 0 6px 20px rgba(255,255,255,0.18); transform: rotate(25deg);"></div>
+        
+        <!-- Additional depth layers -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 70%); z-index: 1;"></div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: radial-gradient(ellipse at bottom left, rgba(255,255,255,0.08) 0%, transparent 60%); z-index: 1;"></div>
+        
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <h1 style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px;">About Sunshine Child-Care Nursery</h1>
-                    <p style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px;">Over 30 years of nurturing young minds and building tomorrow's leaders.</p>
+                    <h1 style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">About Sunshine Child-Care Nursery</h1>
+                    <p style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px; text-shadow: 0 1px 5px rgba(0,0,0,0.08);">Over 30 years of nurturing young minds and building tomorrow's leaders.</p>
                 </div>
             </div>
         </div>
@@ -250,7 +466,7 @@
                 <div class="col-lg-6 pr-60 pr-md-15 pr-xs-15">
                     <div class="wow fadeInUp">
                         <div class="mb-4">
-                            <i class="fas fa-school" style="font-size: 4rem; color: #FFDD41; margin-bottom: 20px;"></i>
+                            <i class="fas fa-school" style="font-size: 4rem; color: #ffc100; margin-bottom: 20px;"></i>
                             </div>
                         <h2 style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 25px;">Our Story</h2>
                         <p style="font-size: 1.1rem; color: #666; margin-bottom: 25px; line-height: 1.8;">
@@ -291,7 +507,7 @@
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="wow fadeInUp" style="background: #fff; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
-                            <i class="fas fa-shield-alt" style="font-size: 4rem; color: #FFDD41;"></i>
+                            <i class="fas fa-shield-alt" style="font-size: 4rem; color: #ffc100;"></i>
                             </div>
                         <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">Care & Safety</h3>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
@@ -303,7 +519,7 @@
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="wow fadeInUp" data-wow-delay="200ms" style="background: #fff; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
-                            <i class="fas fa-lightbulb" style="font-size: 4rem; color: #FFDD41;"></i>
+                            <i class="fas fa-lightbulb" style="font-size: 4rem; color: #ffc100;"></i>
                         </div>
                         <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">Curiosity & Creativity</h3>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
@@ -315,7 +531,7 @@
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="wow fadeInUp" data-wow-delay="400ms" style="background: #fff; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
-                            <i class="fas fa-handshake" style="font-size: 4rem; color: #FFDD41;"></i>
+                            <i class="fas fa-handshake" style="font-size: 4rem; color: #ffc100;"></i>
                             </div>
                         <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">Community & Partnership</h3>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
@@ -336,7 +552,7 @@
                 <div class="col-lg-6 pr-60 pr-md-15 pr-xs-15">
                     <div class="wow fadeInUp">
                         <div class="icon mb-4">
-                            <i class="fas fa-users" style="font-size: 4rem; color: #FFDD41;"></i>
+                            <i class="fas fa-users" style="font-size: 4rem; color: #ffc100;"></i>
                     </div>
                         <h2 style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 25px;">Trust grows through transparent, joyful communication</h2>
                         <p style="font-size: 1.1rem; color: #666; margin-bottom: 25px; line-height: 1.8;">
@@ -344,15 +560,15 @@
                         </p>
                         <ul style="list-style: none; padding-left: 0; color: #666;">
                             <li style="margin-bottom: 15px; font-size: 1.05rem;">
-                                <i class="fas fa-check-circle" style="color: #FFDD41; margin-right: 10px; font-size: 1.2rem;"></i>
+                                <i class="fas fa-check-circle" style="color: #ffc100; margin-right: 10px; font-size: 1.2rem;"></i>
                                 <strong style="color: #000;">Key Person Relationships</strong> – Dedicated staff member for each child
                                 </li>
                             <li style="margin-bottom: 15px; font-size: 1.05rem;">
-                                <i class="fas fa-check-circle" style="color: #FFDD41; margin-right: 10px; font-size: 1.2rem;"></i>
+                                <i class="fas fa-check-circle" style="color: #ffc100; margin-right: 10px; font-size: 1.2rem;"></i>
                                 <strong style="color: #000;">Live Learning Journals</strong> – Real-time updates on your child's day
                                 </li>
                             <li style="margin-bottom: 15px; font-size: 1.05rem;">
-                                <i class="fas fa-check-circle" style="color: #FFDD41; margin-right: 10px; font-size: 1.2rem;"></i>
+                                <i class="fas fa-check-circle" style="color: #ffc100; margin-right: 10px; font-size: 1.2rem;"></i>
                                 <strong style="color: #000;">Open Classrooms</strong> – Transparent, welcoming environment
                                                     </li>
                                                 </ul>
@@ -370,7 +586,7 @@
 
     <!-- Start Section 4: Performance Metrics 
     ============================================= -->
-    <div class="default-padding" style="background: #FFDD41; padding-top: 100px; padding-bottom: 100px;">
+    <div class="default-padding" style="background: #ffc100; padding-top: 100px; padding-bottom: 100px;">
         <div class="container">
             <div class="row mb-50">
                 <div class="col-lg-12 text-center">
@@ -493,19 +709,19 @@
                             <h4 class="widget-title">Contact Us</h4>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 10px; color: #fff;">
-                                    <i class="fas fa-map-marker-alt mr-2" style="color: #FFDD41;"></i>
+                                    <i class="fas fa-map-marker-alt mr-2" style="color: #ffc100;"></i>
                                     17 Oak Grove Road, Bromley BR1, UK
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
-                                    <i class="fas fa-phone-alt mr-2" style="color: #FFDD41;"></i>
+                                    <i class="fas fa-phone-alt mr-2" style="color: #ffc100;"></i>
                                     020 000 000
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
-                                    <i class="fas fa-envelope mr-2" style="color: #FFDD41;"></i>
+                                    <i class="fas fa-envelope mr-2" style="color: #ffc100;"></i>
                                     admissions@sunshinechildcareservices.co.uk
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
-                                    <i class="fas fa-clock mr-2" style="color: #FFDD41;"></i>
+                                    <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
                                     Monday – Friday: 8am – 6pm
                                 </li>
                             </ul>
@@ -561,6 +777,11 @@
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+
+    </div>
+
+    
+
 <!-- GDPR Cookie Consent Banner -->
     <div id="gdpr-cookie-consent">
         <div class="gdpr-content">
@@ -577,7 +798,12 @@
                 <button class="gdpr-btn gdpr-btn-accept" id="gdpr-accept">Accept All</button>
             </div>
         </div>
-    </div>
+
+    
+
+    
+
+
 
     <!-- GDPR Cookie Consent Script -->
     <script>
@@ -611,13 +837,223 @@
                 console.log('Cookies rejected');
             });
             
-            // Settings button (for future implementation)
+            // Settings button - open modal
             document.getElementById('gdpr-settings').addEventListener('click', function() {
-                // Could open a modal with detailed cookie settings
-                alert('Cookie settings feature coming soon. For now, please use Accept All or Reject All.');
+                document.getElementById('gdpr-settings-modal').classList.add('show');
+            });
+            
+            // Load saved preferences
+            function loadCookiePreferences() {
+                // Only load if cookie modal exists on this page
+                const modal = document.getElementById('gdpr-settings-modal');
+                if (!modal) {
+                    return; // Exit early if modal doesn't exist
+                }
+
+            }
+            
+            // Save preferences
+            function saveCookiePreferences() {
+                const preferences = {
+                    essential: document.getElementById('cookie-essential').checked,
+                    analytics: document.getElementById('cookie-analytics').checked,
+                    marketing: document.getElementById('cookie-marketing').checked
+                };
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
+                localStorage.setItem('gdpr-cookie-consent', 'custom');
+                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                
+                // Apply preferences
+                applyCookiePreferences(preferences);
+                
+                // Close modal and banner
+                document.getElementById('gdpr-settings-modal').classList.remove('show');
+                consentBanner.classList.remove('show');
+            }
+            
+            // Apply cookie preferences
+            function applyCookiePreferences(prefs) {
+                if (prefs.analytics) {
+                    // Enable analytics cookies (e.g., Google Analytics)
+                    console.log('Analytics cookies enabled');
+                } else {
+                    // Disable analytics cookies
+                    console.log('Analytics cookies disabled');
+                }
+                
+                if (prefs.marketing) {
+                    // Enable marketing cookies
+                    console.log('Marketing cookies enabled');
+                } else {
+                    // Disable marketing cookies
+                    console.log('Marketing cookies disabled');
+                }
+            }
+            
+            // Initialize preferences on page load
+            loadCookiePreferences();
+            
+            // Function to close modal
+            function closeCookieModal() {
+                const modal = document.getElementById('gdpr-settings-modal');
+                if (modal) {
+                    modal.classList.remove('show');
+                    loadCookiePreferences(); // Reset to saved preferences
+                }
+            }
+            
+            // Wait for DOM to be ready before attaching event listeners
+            function initCookieModal() {
+                const modal = document.getElementById('gdpr-settings-modal');
+                const modalContent = modal ? modal.querySelector('.gdpr-modal-content') : null;
+                const saveBtn = document.getElementById('gdpr-save-settings');
+                const cancelBtn = document.getElementById('gdpr-cancel-settings');
+                const closeBtn = document.getElementById('gdpr-modal-close');
+                
+                // Close button (X)
+                if (closeBtn) {
+                    closeBtn.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeCookieModal();
+                        return false;
+                    };
+                }
+                
+                // Cancel button
+                if (cancelBtn) {
+                    cancelBtn.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeCookieModal();
+                        return false;
+                    };
+                }
+                
+                // Save button
+                if (saveBtn) {
+                    saveBtn.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        saveCookiePreferences();
+                        return false;
+                    };
+                }
+                
+                // Close modal on background click
+                if (modal) {
+                    modal.onclick = function(e) {
+                        // Only close if clicking directly on the modal backdrop (not on modal-content)
+                        if (e.target === modal) {
+                            e.preventDefault();
+                            closeCookieModal();
+                            return false;
+                        }
+                    };
+                    
+                    // Prevent modal content clicks from closing the modal
+                    if (modalContent) {
+                        modalContent.onclick = function(e) {
+                            e.stopPropagation();
+                        };
+                    }
+                }
+                
+                // Close modal on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' || e.keyCode === 27) {
+                        if (modal && modal.classList.contains('show')) {
+                            e.preventDefault();
+                            closeCookieModal();
+                        }
+                    }
+                });
+            }
+            
+            // Initialize modal when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCookieModal);
+            } else {
+                // Use setTimeout to ensure DOM is fully ready
+                setTimeout(initCookieModal, 100);
+            }
+            
+            // Update Accept/Reject to also save preferences
+            document.getElementById('gdpr-accept').addEventListener('click', function() {
+                const allAccepted = {
+                    essential: true,
+                    analytics: true,
+                    marketing: true
+                };
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
+                applyCookiePreferences(allAccepted);
+            });
+            
+            document.getElementById('gdpr-reject').addEventListener('click', function() {
+                const allRejected = {
+                    essential: true,
+                    analytics: false,
+                    marketing: false
+                };
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
+                applyCookiePreferences(allRejected);
             });
         })();
     </script>
+
+    <!-- Cookie Settings Modal -->
+    <div id="gdpr-settings-modal">
+        <div class="gdpr-modal-content" onclick="event.stopPropagation();">
+            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
+            <div class="gdpr-modal-header">
+                <h3>Cookie Settings</h3>
+                <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
+            </div>
+            
+            <div class="cookie-category essential">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Essential Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-essential" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies are necessary for the website to function properly. They cannot be disabled as they are essential for basic site functionality, security, and compliance.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Analytics Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Marketing Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may be set by advertising partners to build a profile of your interests.
+                </p>
+            </div>
+            
+            <div class="gdpr-modal-footer">
+                <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
+                <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
+            </div>
+        </div>
 
 </body>
 
