@@ -45,15 +45,17 @@
             left: 0;
             right: 0;
             background: #fff;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             padding: 25px 30px;
             z-index: 10000;
             display: none;
             border-top: 3px solid #ffc100;
         }
+
         #gdpr-cookie-consent.show {
             display: block;
         }
+
         .gdpr-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -63,25 +65,30 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .gdpr-text {
             flex: 1;
             min-width: 300px;
         }
+
         .gdpr-text p {
             margin: 0;
             font-size: 0.95rem;
             line-height: 1.6;
             color: #333;
         }
+
         .gdpr-text a {
             color: #ffc100;
             text-decoration: underline;
         }
+
         .gdpr-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
+
         .gdpr-btn {
             padding: 12px 30px;
             border: none;
@@ -91,43 +98,52 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-btn-accept {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-btn-accept:hover {
             background: #FFD700;
         }
+
         .gdpr-btn-reject {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-btn-reject:hover {
             background: #e0e0e0;
         }
+
         .gdpr-btn-settings {
             background: transparent;
             color: #666;
             border: 1px solid #ddd;
         }
+
         .gdpr-btn-settings:hover {
             background: #f5f5f5;
         }
+
         @media (max-width: 768px) {
             .gdpr-content {
                 flex-direction: column;
                 text-align: center;
             }
+
             .gdpr-buttons {
                 width: 100%;
                 justify-content: center;
             }
+
             .gdpr-btn {
                 flex: 1;
                 min-width: 120px;
             }
         }
-        
+
         /* Cookie Settings Modal */
         #gdpr-settings-modal {
             display: none;
@@ -141,11 +157,13 @@
             overflow-y: auto;
             padding: 20px;
         }
+
         #gdpr-settings-modal.show {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .gdpr-modal-content {
             background: #fff;
             border-radius: 10px;
@@ -155,25 +173,29 @@
             overflow-y: auto;
             padding: 30px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             pointer-events: auto;
         }
+
         .gdpr-modal-header {
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
         }
+
         .gdpr-modal-header h3 {
             margin: 0;
             color: #000;
             font-size: 1.8rem;
             font-weight: 400;
         }
+
         .gdpr-modal-header p {
             margin: 10px 0 0 0;
             color: #666;
             font-size: 0.95rem;
         }
+
         .gdpr-modal-close {
             position: absolute;
             top: 20px;
@@ -191,10 +213,12 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-close:hover {
             background: #f0f0f0;
             color: #000;
         }
+
         .cookie-category {
             margin-bottom: 25px;
             padding: 20px;
@@ -202,29 +226,34 @@
             border-radius: 8px;
             border: 1px solid #eee;
         }
+
         .cookie-category-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         .cookie-category-title {
             font-size: 1.2rem;
             font-weight: 400;
             color: #000;
             margin: 0;
         }
+
         .cookie-toggle {
             position: relative;
             display: inline-block;
             width: 50px;
             height: 26px;
         }
+
         .cookie-toggle input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .cookie-slider {
             position: absolute;
             cursor: pointer;
@@ -236,6 +265,7 @@
             transition: 0.3s;
             border-radius: 26px;
         }
+
         .cookie-slider:before {
             position: absolute;
             content: "";
@@ -247,22 +277,27 @@
             transition: 0.3s;
             border-radius: 50%;
         }
-        .cookie-toggle input:checked + .cookie-slider {
+
+        .cookie-toggle input:checked+.cookie-slider {
             background-color: #ffc100;
         }
-        .cookie-toggle input:checked + .cookie-slider:before {
+
+        .cookie-toggle input:checked+.cookie-slider:before {
             transform: translateX(24px);
         }
+
         .cookie-category-description {
             font-size: 0.9rem;
             color: #666;
             line-height: 1.6;
             margin-top: 10px;
         }
+
         .cookie-category.essential .cookie-toggle {
             opacity: 0.5;
             cursor: not-allowed;
         }
+
         .gdpr-modal-footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -272,6 +307,7 @@
             justify-content: flex-end;
             flex-wrap: wrap;
         }
+
         .gdpr-modal-btn {
             padding: 12px 30px;
             border: none;
@@ -281,33 +317,40 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-btn-save {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-modal-btn-save:hover {
             background: #B8941F;
         }
+
         .gdpr-modal-btn-cancel {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-modal-btn-cancel:hover {
             background: #e0e0e0;
         }
+
         @media (max-width: 768px) {
             .gdpr-modal-content {
                 padding: 20px;
                 margin: 10px;
             }
+
             .gdpr-modal-footer {
                 flex-direction: column;
             }
+
             .gdpr-modal-btn {
                 width: 100%;
             }
         }
-        
+
         /* Button Hover Effects - Lighter Shade */
         /* Target buttons with primary color in inline styles */
         a.btn[style*="#ffc100"]:hover,
@@ -322,7 +365,7 @@
             background-color: #ffd433 !important;
             transition: background 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         /* Specific button hover styles with elevation */
         .btn.btn-gradient:hover,
         .btn.btn-lg:hover,
@@ -332,41 +375,50 @@
             background: #ffd433 !important;
             background-color: #ffd433 !important;
         }
-        
+
         /* Enhanced hover for buttons with primary color */
         a[style*="#ffc100"]:hover,
         button[style*="#ffc100"]:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 209, 51, 0.4) !important;
         }
-        
+
         /* Add transition to all buttons for smooth hover */
-        .btn, a.btn, button.btn, a[style*="#ffc100"], button[style*="#ffc100"] {
+        .btn,
+        a.btn,
+        button.btn,
+        a[style*="#ffc100"],
+        button[style*="#ffc100"] {
             transition: background 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
     </style>
-    
+
     <!-- Navigation Links Styling -->
     <style>
-        .navbar-nav > li > a {
+        .navbar-nav>li>a {
             color: #333 !important;
             font-weight: 400;
         }
-        .navbar-nav > li > a:hover,
-        .navbar-nav > li > a:focus {
+
+        .navbar-nav>li>a:hover,
+        .navbar-nav>li>a:focus {
             color: #000 !important;
         }
-        .navbar-nav > li.dropdown > a.dropdown-toggle {
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle {
             color: #333 !important;
         }
-        .navbar-nav > li.dropdown > a.dropdown-toggle:hover,
-        .navbar-nav > li.dropdown > a.dropdown-toggle:focus {
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle:hover,
+        .navbar-nav>li.dropdown>a.dropdown-toggle:focus {
             color: #000 !important;
         }
-        .dropdown-menu > li > a {
+
+        .dropdown-menu>li>a {
             color: #333 !important;
         }
-        .dropdown-menu > li > a:hover {
+
+        .dropdown-menu>li>a:hover {
             color: #000 !important;
             background-color: #f5f5f5;
         }
@@ -384,17 +436,19 @@
         <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs white navbar-fixed no-background">
 
 
-            <div class="container d-flex justify-content-between align-items-center">            
+            <div class="container d-flex justify-content-between align-items-center">
 
                 <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                        </a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
+                    </a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -402,11 +456,12 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
 
-                        <img src="assets/img/logo-4.png" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-times"></i>
                         </button>
-                        
+
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -417,8 +472,8 @@
                                     <li><a href="academic-excellence.html">Academic Excellence</a></li>
                                     <li><a href="gallery.html">Facilities</a></li>
                                     <li><a href="blog-standard.html">News & Events</a></li>
-                                                    </ul>
-                                    </li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
@@ -433,17 +488,17 @@
                                     aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="schedule-tour.html">Schedule a Tour</a></li>
-                                                    </ul>
-                                    </li>
+                                </ul>
+                            </li>
                             <li><a href="testimonials.html">Testimonials</a></li>
-                                                        <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
 
                 </div>
 
-            </div>   
+            </div>
             <!-- Overlay screen for menu -->
             <div class="overlay-screen"></div>
             <!-- End Overlay screen for menu -->
@@ -451,7 +506,7 @@
         <!-- End Navigation -->
     </header>
     <!-- End Header -->
-    
+
     <!-- Start Banner Area 
     ============================================= -->
     <div class="banner-area banner-style-seven-area navigation-circle zoom-effect overflow-hidden text-light">
@@ -465,7 +520,7 @@
                 <div class="swiper-slide banner-style-seven">
                     <div class="banner-thumb bg-cover shadow dark"
                         style="background: url(assets/images/2b3e764975326bdde0a1bad402a122ac40fb964a.jpg);"></div>
-        <div class="container">
+                    <div class="container">
                         <div class="banner-style-seven-info">
                             <div class="row align-center">
                                 <div class="col-lg-8 offset-lg-2 text-center">
@@ -486,12 +541,12 @@
                                                     style="padding: 15px 40px; font-size: 1.1rem; border: 2px solid #fff;">
                                                     <i class="fas fa-calendar-check mr-2"></i> Book a Visit
                                                 </a>
-                        </div>
+                                            </div>
                                             <p style="font-size: 16px; font-weight: 500;">
                                                 <i class="fa fa-exclamation-circle mr-2"></i> Spaces are limited –
                                                 secure your child's place now!
                                             </p>
-                    </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -504,7 +559,7 @@
                 <div class="swiper-slide banner-style-seven">
                     <div class="banner-thumb bg-cover shadow dark"
                         style="background: url(assets/images/pexels-yankrukov-8613366.jpg);"></div>
-        <div class="container">
+                    <div class="container">
                         <div class="banner-style-seven-info">
                             <div class="row align-center">
                                 <div class="col-lg-8 offset-lg-2 text-center">
@@ -526,28 +581,28 @@
                                                 <a class="btn btn-lg btn-light animation" href="contact-us.html"
                                                     style="padding: 15px 40px; font-size: 1.1rem; border: 2px solid #fff;">
                                                     <i class="fas fa-calendar-check mr-2"></i> Book a Visit
-                                    </a>
-                                </div>
+                                                </a>
+                                            </div>
                                             <p style="font-size: 16px; font-weight: 500;">
                                                 <i class="fa fa-check-circle mr-2"></i> 30+ Years of Excellence |
                                                 Rainham, Kent
                                             </p>
-                            </div>
                                         </div>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                                        </div>
-                                        </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- End Slide 2 -->
 
                 <!-- Slide 3 -->
                 <div class="swiper-slide banner-style-seven">
                     <div class="banner-thumb bg-cover shadow dark"
                         style="background: url(assets/images/pexels-rdne-8364026.jpg);"></div>
-        <div class="container">
+                    <div class="container">
                         <div class="banner-style-seven-info">
-                <div class="row align-center">
+                            <div class="row align-center">
                                 <div class="col-lg-8 offset-lg-2 text-center">
                                     <div class="content">
                                         <h1 style="font-size: 3.5rem; font-weight: 400; margin-bottom: 20px;">Learning
@@ -567,33 +622,28 @@
                                                     style="padding: 15px 40px; font-size: 1.1rem; border: 2px solid #fff;">
                                                     <i class="fas fa-images mr-2"></i> View Facilities
                                                 </a>
-                        </div>
+                                            </div>
                                             <p style="font-size: 16px; font-weight: 500;">
                                                 <i class="fa fa-heart mr-2"></i> Where every child's potential shines
                                                 bright
                                             </p>
-                                    </div>
-                                </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 <!-- End Slide 3 -->
 
-                </div>
             </div>
+        </div>
 
-            </div>
+    </div>
 
-    <!-- Navigation -->
-    <div class="swiper-nav-left">
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-                                            </div>
 
-                                            </div>
-                                                        </div>
+    </div>
+    </div>
     <!-- End Main -->
 
     <!-- Start Welcome Section 
@@ -617,39 +667,39 @@
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Safe & Welcoming</strong>
-                                                    </li>
+                                    </li>
                                     <li style="margin-bottom: 12px; font-size: 0.95rem;">
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Learning Through Play</strong>
-                                                        </li>
+                                    </li>
                                     <li style="margin-bottom: 12px; font-size: 0.95rem;">
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Experienced Team</strong>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="col-md-6">
                                 <ul style="list-style: none; padding-left: 0; color: #666; margin-bottom: 0;">
                                     <li style="margin-bottom: 12px; font-size: 0.95rem;">
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Bright Spaces</strong>
-                                                    </li>
+                                    </li>
                                     <li style="margin-bottom: 12px; font-size: 0.95rem;">
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Parent Partnerships</strong>
-                                                        </li>
+                                    </li>
                                     <li style="margin-bottom: 12px; font-size: 0.95rem;">
                                         <i class="fas fa-check-circle"
                                             style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
                                         <strong style="color: #000;">Outstanding Ofsted</strong>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="mt-3">
                             <a href="why-choose-us.html" class="btn btn-lg animation mr-2"
                                 style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
@@ -659,18 +709,18 @@
                                 style="background: transparent; color: #000; border: 2px solid #000; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
                                 Book a Visit
                             </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-4">
                     <div class="wow fadeInUp" data-wow-delay="200ms">
                         <img src="assets/images/pexels-yankrukov-8613141.jpg" alt="Sunshine Nursery"
                             style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                            </div>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Welcome Section -->
 
     <!-- Start Why Choose Section 
@@ -682,8 +732,8 @@
                     <div class="wow fadeInUp">
                         <img src="assets/images/pexels-rdne-8364026.jpg" alt="Children Learning"
                             style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                            </div>
-                                                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-8">
                     <div class="wow fadeInUp" data-wow-delay="200ms">
                         <h2 style="color: #000; font-size: 2rem; font-weight: 400; margin-bottom: 20px;">Why Choose
@@ -703,9 +753,9 @@
                                             Caring Environment</h4>
                                         <p style="color: #666; font-size: 0.9rem; margin: 0;">A home-from-home setting
                                             where children feel secure and happy.</p>
-                                            </div>
-                                                        </div>
-                                                </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-6 mb-3">
                                 <div style="display: flex; align-items: start;">
                                     <i class="fas fa-lightbulb"
@@ -716,19 +766,19 @@
                                             Creative Learning</h4>
                                         <p style="color: #666; font-size: 0.9rem; margin: 0;">Activities designed to
                                             spark curiosity and build confidence.</p>
-                                            </div>
-                                                </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <a href="academic-excellence.html" class="btn btn-lg animation mt-2"
                             style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
                             Explore Our Approach
                         </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                            </div>
-                                                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Why Choose Section -->
 
     <!-- Start Key Metrics 
@@ -743,12 +793,12 @@
                         <div
                             style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1;">
                             91<span style="font-size: 2.5rem;">%</span>
-                                            </div>
+                        </div>
                         <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Current
                             Enrollments</h5>
                         <p style="color: #000; font-size: 0.9rem; margin: 0;">8 spaces available</p>
-                                            </div>
-                                        </div>
+                    </div>
+                </div>
                 <!-- End Single Metric -->
                 <!-- Single Metric -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
@@ -756,12 +806,12 @@
                         <div
                             style="font-size: 2.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1.2;">
                             Outstanding
-                                    </div>
+                        </div>
                         <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Ofsted Rating
                         </h5>
                         <p style="color: #000; font-size: 0.9rem; margin: 0;">Excellence you can trust</p>
-                                            </div>
-                                            </div>
+                    </div>
+                </div>
                 <!-- End Single Metric -->
                 <!-- Single Metric -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
@@ -769,28 +819,28 @@
                         <div
                             style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1;">
                             30<span style="font-size: 2.5rem;">+</span>
-                                        </div>
+                        </div>
                         <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Years Serving
                             Families</h5>
                         <p style="color: #000; font-size: 0.9rem; margin: 0;">Rainham, Kent</p>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
                 <!-- End Single Metric -->
                 <!-- Single Metric -->
                 <div class="col-lg-3 col-md-6">
                     <div class="wow fadeInUp" data-wow-delay="300ms">
                         <div style="margin-bottom: 10px;">
                             <i class="fas fa-users" style="font-size: 3rem; color: #000;"></i>
-                            </div>
+                        </div>
                         <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Optimal Ratios
                         </h5>
                         <p style="color: #000; font-size: 0.9rem; margin: 0;">1:4 for under 2s | 1:8 for over 3s</p>
-                        </div>
                     </div>
+                </div>
                 <!-- End Single Metric -->
-                </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Key Metrics -->
 
     <!-- Start Secure Place CTA 
@@ -803,10 +853,10 @@
                 <a href="admissions-fees.html" class="btn btn-lg animation"
                     style="background: #ffc100; color: #000; border: none; padding: 18px 50px; font-size: 1.1rem; font-weight: 400; border-radius: 50px;">
                     Enroll Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- End Secure Place CTA -->
 
     <!-- Start Three Feature Blocks
@@ -814,7 +864,7 @@
     <div class="faculty-area default-padding" style="background: #fff; padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
             <div class="faculty-style-one-items">
-            <div class="row">
+                <div class="row">
                     <!-- Single Item - Outstanding Ofsted Rating -->
                     <div class="col-lg-4 col-md-6 mb-30">
                         <div class="faculty-style-one-item wow fadeInUp"
@@ -822,51 +872,51 @@
                             <div class="info">
                                 <div class="icon mb-4">
                                     <i class="fas fa-star" style="font-size: 4rem; color: #ffc100;"></i>
-                    </div>
+                                </div>
                                 <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
                                     Outstanding Ofsted Rating</h3>
                                 <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
                                     Excellence you can trust. We're proud to hold an Outstanding Ofsted rating,
                                     reflecting our commitment to high-quality care and education for every child.
-                                        </p>
+                                </p>
                                 <a href="downloads.html" class="btn btn-lg"
                                     style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
                                     Download Ofsted Report
                                 </a>
-                                                </div>
-                                                </div>
-                                            </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End Single Item -->
                     <!-- Single Item - Holistic Curriculum -->
                     <div class="col-lg-4 col-md-6 mb-30">
                         <div class="faculty-style-one-item wow fadeInUp" data-wow-delay="200ms"
                             style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
-                                                <div class="info">
+                            <div class="info">
                                 <div class="icon mb-4">
                                     <i class="fas fa-book-reader" style="font-size: 4rem; color: #ffc100;"></i>
-                                                </div>
+                                </div>
                                 <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
                                     Holistic Curriculum</h3>
                                 <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
                                     Learning beyond the classroom. Our play-based approach nurtures emotional, social,
                                     physical, and cognitive growth—helping children develop confidence and curiosity.
-                                        </p>
+                                </p>
                                 <a href="academic-excellence.html" class="btn btn-lg"
                                     style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
                                     Learn More
                                 </a>
-                                                </div>
-                                                </div>
-                                            </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End Single Item -->
                     <!-- Single Item - Family Partnership -->
                     <div class="col-lg-4 col-md-6 mb-30">
                         <div class="faculty-style-one-item wow fadeInUp" data-wow-delay="400ms"
                             style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
-                                                <div class="info">
+                            <div class="info">
                                 <div class="icon mb-4">
                                     <i class="fas fa-users" style="font-size: 4rem; color: #ffc100;"></i>
-                                                </div>
+                                </div>
                                 <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
                                     Family Partnership</h3>
                                 <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
@@ -877,14 +927,14 @@
                                     style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
                                     Discover More
                                 </a>
-                                                </div>
-                                                </div>
-                                            </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End Single Item -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Three Feature Blocks -->
 
     <!-- Start Academic Excellence Section
@@ -901,7 +951,7 @@
                             At Sunshine Child-Care Nursery, we combine strong foundations in early learning with a
                             playful, engaging approach. Every child experiences the joy of discovery while building
                             skills that prepare them for lifelong success.
-                            </p>
+                        </p>
                         <div class="mt-4">
                             <a href="academic-excellence.html" class="btn btn-lg animation"
                                 style="background: #ffc100; color: #000; border: none; padding: 15px 35px; font-weight: 400; border-radius: 50px;">
@@ -914,11 +964,11 @@
                     <div class="wow fadeInUp" data-wow-delay="200ms">
                         <img src="assets/images/pexels-kseniachernaya-8535235.jpg" alt="Academic Excellence"
                             style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                        </div>
-                        </div>
                     </div>
                 </div>
-                        </div>
+            </div>
+        </div>
+    </div>
     <!-- End Academic Excellence Section -->
 
     <!-- Start Simple CTA Section 
@@ -944,7 +994,7 @@
                                 style="background: #fff; color: #000; border: 3px solid #000; padding: 18px 50px; font-size: 1.1rem; font-weight: 400; border-radius: 50px;">
                                 <i class="fas fa-calendar-check mr-2"></i> Book a Visit
                             </a>
-                </div>
+                        </div>
                         <p style="color: #000; margin-top: 30px; font-size: 1rem; opacity: 0.8;">
                             <i class="fas fa-clock mr-2"></i> Quick & Easy Process | <i
                                 class="fas fa-shield-alt mr-2"></i> Secure & Confidential | <i
@@ -967,10 +1017,12 @@
                     <div class="col-lg-4 col-md-6 footer-item pr-30 pr-md-15 pr-xs-15">
                         <div class="f-item about">
                             <div class="footer-logo">
-                                <img src="assets/img/logo-4.png" alt="Sunshine Child-Care Nursery" style="max-height: 80px; height: auto; width: auto; margin-bottom: 15px;">
+                                <img src="assets/img/logo-4.png" alt="Sunshine Child-Care Nursery"
+                                    style="max-height: 80px; height: auto; width: auto; margin-bottom: 15px;">
                             </div>
                             <p>
-                                Nurturing young minds with care, creativity, and excellence. We provide a safe, inspiring environment where every child can thrive and discover their potential.
+                                Nurturing young minds with care, creativity, and excellence. We provide a safe,
+                                inspiring environment where every child can thrive and discover their potential.
                             </p>
                         </div>
                     </div>
@@ -1039,11 +1091,11 @@
                                     Monday – Friday: 8am – 6pm
                                 </li>
                             </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Start Footer Bottom -->
+            <!-- Start Footer Bottom -->
             <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
@@ -1061,15 +1113,15 @@
                                 <a href="#">Support</a>
                             </li>
                         </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Footer Bottom -->
+            <!-- End Footer Bottom -->
         </div>
     </footer>
     <!-- End Footer -->
 
-    
+
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -1151,8 +1203,9 @@
         <div class="gdpr-content">
             <div class="gdpr-text">
                 <p>
-                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
-                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our 
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.
+                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or
+                    learn more in our
                     <a href="privacy-policy.html">Privacy Policy</a>.
                 </p>
             </div>
@@ -1167,7 +1220,7 @@
     <!-- GDPR Cookie Consent Script -->
     <script>
         // Global functions for modal control (must be outside IIFE)
-        window.closeCookieModal = function() {
+        window.closeCookieModal = function () {
             try {
                 const modal = document.getElementById('gdpr-settings-modal');
                 if (modal) {
@@ -1177,7 +1230,7 @@
                     if (saved) {
                         try {
                             const prefs = JSON.parse(saved);
-                            Object.keys(prefs).forEach(function(key) {
+                            Object.keys(prefs).forEach(function (key) {
                                 const checkbox = document.getElementById('cookie-' + key);
                                 if (checkbox) {
                                     checkbox.checked = prefs[key];
@@ -1199,41 +1252,41 @@
                 console.error('Error closing modal:', e);
             }
         };
-        
-        window.saveCookiePreferences = function() {
+
+        window.saveCookiePreferences = function () {
             try {
                 const essentialCheckbox = document.getElementById('cookie-essential');
                 const analyticsCheckbox = document.getElementById('cookie-analytics');
                 const marketingCheckbox = document.getElementById('cookie-marketing');
-                
+
                 if (!essentialCheckbox || !analyticsCheckbox || !marketingCheckbox) {
                     console.error('Cookie checkboxes not found');
                     return;
                 }
-                
+
                 const preferences = {
                     essential: essentialCheckbox.checked,
                     analytics: analyticsCheckbox.checked,
                     marketing: marketingCheckbox.checked
                 };
-                
+
                 localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
                 localStorage.setItem('gdpr-cookie-consent', 'custom');
                 localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                
+
                 // Apply preferences
                 if (preferences.analytics) {
                     console.log('Analytics cookies enabled');
                 } else {
                     console.log('Analytics cookies disabled');
                 }
-                
+
                 if (preferences.marketing) {
                     console.log('Marketing cookies enabled');
                 } else {
                     console.log('Marketing cookies disabled');
                 }
-                
+
                 // Close modal and banner
                 const modal = document.getElementById('gdpr-settings-modal');
                 const consentBanner = document.getElementById('gdpr-cookie-consent');
@@ -1247,25 +1300,25 @@
                 console.error('Error saving preferences:', e);
             }
         };
-        
-        (function() {
+
+        (function () {
             // Check if user has already made a choice
             const consent = localStorage.getItem('gdpr-cookie-consent');
             const consentBanner = document.getElementById('gdpr-cookie-consent');
-            
+
             if (!consent) {
                 // Show banner after a short delay
-                setTimeout(function() {
+                setTimeout(function () {
                     if (consentBanner) {
                         consentBanner.classList.add('show');
                     }
                 }, 1000);
             }
-            
+
             // Accept button
             const acceptBtn = document.getElementById('gdpr-accept');
             if (acceptBtn) {
-                acceptBtn.addEventListener('click', function() {
+                acceptBtn.addEventListener('click', function () {
                     localStorage.setItem('gdpr-cookie-consent', 'accepted');
                     localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
                     if (consentBanner) {
@@ -1274,11 +1327,11 @@
                     console.log('Cookies accepted');
                 });
             }
-            
+
             // Reject button
             const rejectBtn = document.getElementById('gdpr-reject');
             if (rejectBtn) {
-                rejectBtn.addEventListener('click', function() {
+                rejectBtn.addEventListener('click', function () {
                     localStorage.setItem('gdpr-cookie-consent', 'rejected');
                     localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
                     if (consentBanner) {
@@ -1287,18 +1340,18 @@
                     console.log('Cookies rejected');
                 });
             }
-            
+
             // Settings button - open modal
             const settingsBtn = document.getElementById('gdpr-settings');
             if (settingsBtn) {
-                settingsBtn.addEventListener('click', function() {
+                settingsBtn.addEventListener('click', function () {
                     const modal = document.getElementById('gdpr-settings-modal');
                     if (modal) {
                         modal.classList.add('show');
                     }
                 });
             }
-            
+
             // Load saved preferences
             function loadCookiePreferences() {
                 // Only load if cookie modal exists on this page
@@ -1306,12 +1359,12 @@
                 if (!modal) {
                     return; // Exit early if modal doesn't exist
                 }
-                
+
                 const saved = localStorage.getItem('gdpr-cookie-preferences');
                 if (saved) {
                     try {
                         const prefs = JSON.parse(saved);
-                        Object.keys(prefs).forEach(function(key) {
+                        Object.keys(prefs).forEach(function (key) {
                             const checkbox = document.getElementById('cookie-' + key);
                             if (checkbox) {
                                 checkbox.checked = prefs[key];
@@ -1330,12 +1383,12 @@
                     if (marketingCheckbox) marketingCheckbox.checked = false;
                 }
             }
-            
+
             // Initialize preferences on page load
             loadCookiePreferences();
-            
+
             // Close modal on background click
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 const modal = document.getElementById('gdpr-settings-modal');
                 if (modal && modal.classList.contains('show')) {
                     // Close if clicking directly on the modal backdrop
@@ -1345,9 +1398,9 @@
                     }
                 }
             });
-            
+
             // Close modal on Escape key
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' || e.keyCode === 27) {
                     const modal = document.getElementById('gdpr-settings-modal');
                     if (modal && modal.classList.contains('show')) {
@@ -1356,17 +1409,17 @@
                     }
                 }
             });
-            
+
             // Prevent modal content clicks from closing the modal
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 const modalContent = document.querySelector('.gdpr-modal-content');
                 if (modalContent && modalContent.contains(e.target)) {
                     e.stopPropagation();
                 }
             });
-            
+
             // Update Accept/Reject to also save preferences
-            document.getElementById('gdpr-accept').addEventListener('click', function() {
+            document.getElementById('gdpr-accept').addEventListener('click', function () {
                 const allAccepted = {
                     essential: true,
                     analytics: true,
@@ -1375,8 +1428,8 @@
                 localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
                 applyCookiePreferences(allAccepted);
             });
-            
-            document.getElementById('gdpr-reject').addEventListener('click', function() {
+
+            document.getElementById('gdpr-reject').addEventListener('click', function () {
                 const allRejected = {
                     essential: true,
                     analytics: false,
@@ -1387,16 +1440,17 @@
             });
         })();
     </script>
-    
+
     <!-- Cookie Settings Modal -->
     <div id="gdpr-settings-modal">
         <div class="gdpr-modal-content">
-            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close" onclick="window.closeCookieModal(); return false;">&times;</button>
+            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close"
+                onclick="window.closeCookieModal(); return false;">&times;</button>
             <div class="gdpr-modal-header">
                 <h3>Cookie Settings</h3>
                 <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
             </div>
-            
+
             <div class="cookie-category essential">
                 <div class="cookie-category-header">
                     <h4 class="cookie-category-title">Essential Cookies</h4>
@@ -1406,10 +1460,11 @@
                     </label>
                 </div>
                 <p class="cookie-category-description">
-                    These cookies are necessary for the website to function properly. They cannot be disabled as they are essential for basic site functionality, security, and compliance.
+                    These cookies are necessary for the website to function properly. They cannot be disabled as they
+                    are essential for basic site functionality, security, and compliance.
                 </p>
             </div>
-            
+
             <div class="cookie-category">
                 <div class="cookie-category-header">
                     <h4 class="cookie-category-title">Analytics Cookies</h4>
@@ -1419,10 +1474,11 @@
                     </label>
                 </div>
                 <p class="cookie-category-description">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.
+                    These cookies help us understand how visitors interact with our website by collecting and reporting
+                    information anonymously. This helps us improve our website's performance and user experience.
                 </p>
             </div>
-            
+
             <div class="cookie-category">
                 <div class="cookie-category-header">
                     <h4 class="cookie-category-title">Marketing Cookies</h4>
@@ -1432,13 +1488,16 @@
                     </label>
                 </div>
                 <p class="cookie-category-description">
-                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may be set by advertising partners to build a profile of your interests.
+                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may
+                    be set by advertising partners to build a profile of your interests.
                 </p>
             </div>
-            
+
             <div class="gdpr-modal-footer">
-                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings" onclick="window.closeCookieModal(); return false;">Cancel</button>
-                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings" onclick="window.saveCookiePreferences(); return false;">Save Preferences</button>
+                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings"
+                    onclick="window.closeCookieModal(); return false;">Cancel</button>
+                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings"
+                    onclick="window.saveCookiePreferences(); return false;">Save Preferences</button>
             </div>
         </div>
     </div>
