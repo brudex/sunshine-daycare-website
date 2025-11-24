@@ -41,32 +41,92 @@
 
     <!-- Navigation Links Styling -->
     <style>
+        /* Menu Hover Effects */
         .navbar-nav>li>a {
             color: #333 !important;
             font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 15px 10px !important;
+        }
+
+        .navbar-nav>li>a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FFE87C;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .navbar-nav>li>a:hover,
         .navbar-nav>li>a:focus {
-            color: #000 !important;
+            color: #FFE87C !important;
+        }
+
+        .navbar-nav>li>a:hover::after,
+        .navbar-nav>li>a:focus::after {
+            width: 80%;
         }
 
         .navbar-nav>li.dropdown>a.dropdown-toggle {
             color: #333 !important;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FFE87C;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .navbar-nav>li.dropdown>a.dropdown-toggle:hover,
         .navbar-nav>li.dropdown>a.dropdown-toggle:focus {
-            color: #000 !important;
+            color: #FFE87C !important;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle:hover::after,
+        .navbar-nav>li.dropdown>a.dropdown-toggle:focus::after {
+            width: 80%;
         }
 
         .dropdown-menu>li>a {
             color: #333 !important;
+            transition: all 0.3s ease;
+            padding: 10px 20px !important;
         }
 
         .dropdown-menu>li>a:hover {
-            color: #000 !important;
-            background-color: #f5f5f5;
+            color: #FFE87C !important;
+            background-color: #FFFBF0;
+            padding-left: 25px !important;
+        }
+
+        /* Gold line below header with drop shadow */
+        header {
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #FFE87C;
+            box-shadow: 0 2px 8px rgba(255, 232, 124, 0.4);
+            z-index: 1000;
         }
     </style>
 
@@ -311,7 +371,7 @@
         }
 
         .cookie-toggle input:checked+.cookie-slider {
-            background-color: #ffc100;
+            background-color: #FFE87C;
         }
 
         .cookie-toggle input:checked+.cookie-slider:before {
