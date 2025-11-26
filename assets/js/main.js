@@ -159,7 +159,10 @@
 			// Optional parameters
 			direction: "horizontal",
 			loop: true,
-			autoplay: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
 			effect: "fade",
 			fadeEffect: {
 				crossFade: true

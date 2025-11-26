@@ -37,6 +37,95 @@
     <link href="style.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
+    <!-- Navigation Links Styling -->
+    <style>
+        .navbar-nav>li>a {
+            color: #333 !important;
+            font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 15px 10px !important;
+        }
+
+        .navbar-nav>li>a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FFE87C;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav>li>a:hover,
+        .navbar-nav>li>a:focus {
+            color: #FFE87C !important;
+        }
+
+        .navbar-nav>li>a:hover::after,
+        .navbar-nav>li>a:focus::after {
+            width: 80%;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle {
+            color: #333 !important;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FFE87C;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle:hover,
+        .navbar-nav>li.dropdown>a.dropdown-toggle:focus {
+            color: #FFE87C !important;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle:hover::after,
+        .navbar-nav>li.dropdown>a.dropdown-toggle:focus::after {
+            width: 80%;
+        }
+
+        .dropdown-menu>li>a {
+            color: #333 !important;
+            transition: all 0.3s ease;
+            padding: 10px 20px !important;
+        }
+
+        .dropdown-menu>li>a:hover {
+            color: #FFE87C !important;
+            background-color: #FFFBF0;
+            padding-left: 25px !important;
+        }
+
+        header {
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #FFE87C;
+            box-shadow: 0 2px 8px rgba(255, 232, 124, 0.4);
+            z-index: 1000;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -47,23 +136,24 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-   <!-- Header 
+    <!-- Header 
     ============================================= -->
     <header class="flex justify-content-center align-items-center">
         <!-- Start Navigation -->
         <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs white navbar-fixed no-background">
 
-
-            <div class="container d-flex justify-content-between align-items-center">            
+            <div class="container d-flex justify-content-between align-items-center">
 
                 <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo">
-                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/sunshine_white_logo.svg" class="logo logo-display" alt="Logo"
+                            style="max-height: 120px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
@@ -72,11 +162,12 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
 
-                        <img src="assets/img/logo-4.png" alt="Logo">
+                        <img src="assets/img/logo-4.png" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-times"></i>
                         </button>
-                        
+
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -87,8 +178,9 @@
                                     <li><a href="academic-excellence.html">Academic Excellence</a></li>
                                     <li><a href="gallery.html">Facilities</a></li>
                                     <li><a href="blog-standard.html">News & Events</a></li>
-                                                    </ul>
-                                    </li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
@@ -103,17 +195,16 @@
                                     aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="schedule-tour.html">Schedule a Tour</a></li>
-                                                    </ul>
-                                    </li>
+                                </ul>
+                            </li>
                             <li><a href="testimonials.html">Testimonials</a></li>
-                                                        <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
-                  
                 </div>
 
-            </div>   
+            </div>
             <!-- Overlay screen for menu -->
             <div class="overlay-screen"></div>
             <!-- End Overlay screen for menu -->
@@ -128,11 +219,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1>Partiality indulgence dispatched to of celebrated.</h1>
+                    <h1>Garden Discovery Week Brings Nature Indoors</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                            <li class="active">Blog Single</li>
+                            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="active">News & Events</li>
                         </ol>
                     </nav>
                 </div>
@@ -153,43 +244,43 @@
 
                             <div class="blog-item-box">
                                 
-                                <div class="thumb">
-                                    <a href="#"><img src="assets/img/blog/v1.html" alt="Thumb"></a>
-                                </div>
+                               
                                 <div class="info">
                                     <div class="meta">
                                         <ul>
                                             <li>
-                                                <a href="#"><i class="fas fa-calendar-alt"></i> March 16, 2022</a>
+                                                <a href="#"><i class="fas fa-calendar-alt"></i> May 8, 2025</a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="fas fa-user-circle"></i> Md Sohag</a>
+                                                <a href="#"><i class="fas fa-user-circle"></i> Sunshine Teaching Team</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <p>
-                                        Give lady of they such they sure it. Me contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her. 
+                                        Garden Discovery Week has become a much-loved tradition at Sunshine Child-Care Nursery, and this year our children transformed the indoor classrooms into a mini woodland wonderland. From the second the doors opened, baskets of herbs, seed pods, and freshly picked flowers invited curious minds to explore the colours, textures, and scents of spring. The aim was simple: give our little learners the freedom to experiment while quietly practising early science skills such as observation, sorting, and predicting what might grow next.
                                     </p>
                                     <p>
-                                        New had happen unable uneasy. Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves. 
+                                        Each room set up its own “wonder station.” Toddlers mixed mud pies and sprinkled bird-friendly seeds, preschoolers used magnifying glasses to study wriggly worms, and our oldest children designed rain catchers to record the week’s weather. Educators added gentle provocations—story stones, recipe cards for petal perfume, and loose parts for building fairy homes—so that every play moment also nurtured language, collaboration, and confidence.
                                     </p>
                                     <blockquote>
-                                        Celebrated share of first to worse. Weddings and any opinions suitable smallest nay. Houses or months settle remove ladies appear. Engrossed suffering supposing he recommend do eagerness.
+                                        “My son hasn’t stopped talking about caring for the seedlings. He now reminds us to water the tomatoes at home every morning!” — Priya, Sunshine parent
                                     </blockquote>
                                     <p>
-                                        Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves. 
+                                        Friday ended with a family picnic on the lawn where children proudly shared the journal entries and sketches they had been compiling all week. Our kitchen team joined the fun with garden veggie muffins and berry smoothies, showing families how we keep mealtimes fresh and nourishing. The laughter (and a few muddy knees) told us everything we needed to know—the children felt brave, busy, and very loved.
                                     </p>
-                                    <h3>Conduct replied off led whether?</h3>
+                                    <h3>Highlights from the week</h3>
                                     <ul>
-                                        <li>Pretty merits waited six</li>
-                                        <li>General few civilly amiable pleased account carried.</li>
-                                        <li>Continue indulged speaking</li>
-                                        <li>Narrow formal length my highly</li>
-                                        <li>Occasional pianoforte alteration unaffected impossible</li>
+                                        <li>Mini Gardeners Club planted sensory herb pots for every classroom.</li>
+                                        <li>Outdoor Storytellers turned the climbing frame into a pirate ship bound for “Leafy Lagoon.”</li>
+                                        <li>Chef-for-a-Day helpers chopped soft veggies for soup, practising safe knife grip.</li>
                                     </ul>
                                     <p>
-                                        Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw half than cold. Pretty merits waited six talked pulled you. Conduct replied off led whether any shortly why arrived adapted. Numerous ladyship so raillery humoured goodness received an. So narrow formal length my highly longer afford oh. Tall neat he make or at dull ye. Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Iure, laudantium, tempore. Autem dolore repellat, omnis quam? Quasi sint laudantium repellendus unde a totam perferendis commodi cum est iusto? Minima, laborum. 
+                                        Next month we will build on this excitement with a “Homes Around the World” theme, inviting families to send photos of favourite traditions and comfort foods. If you would like to volunteer, lend props, or simply chat about how your child is settling, please speak to your key person or email the office—we love partnering with you.
                                     </p>
+                                    <div class="extra-photo mt-4">
+                                        <img src="assets/images/pexels-rdne-8364026.jpg" alt="Children exploring nature at Sunshine Nursery"
+                                            style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -197,132 +288,18 @@
                         <!-- Post Author -->
                         <div class="post-author">
                             <div class="thumb">
-                                <img src="assets/img/team/v1.html" alt="Thumb">
+                                <img src="assets/images/pexels-yankrukov-8613366.jpg" alt="Sunshine Outdoor Lead">
                             </div>
                             <div class="info">
-                                <h4><a href="#">Md Sohag</a></h4>
+                                <h4><a href="#">Ms. Aisha · Outdoor Learning Lead</a></h4>
                                 <p>
-                                    Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit. Vesti at bulum nec at odio aea the dumm ipsumm ipsum that dolocons rsus mal suada and fadolorit to the consectetur elit. All the Lorem Ipsum generators on the Internet tend.
+                                    Aisha coordinates our forest-school inspired projects and helps every room discover new ways to connect with nature—even on rainy days. She loves messy play, child-led questions, and working with families on simple ideas they can recreate at home.
                                 </p>
                             </div>
                         </div>
                         <!-- Post Author -->
 
                         <!-- Post Tags Share -->
-                        <div class="post-tags share">
-                            <div class="tags">
-                                <h4>Tags: </h4>
-                                <a href="#">Algorithm</a>
-                                <a href="%24.js">Data science</a> 
-                            </div>
-
-                            <div class="social">
-                                <h4>Share:</h4>
-                                <ul>
-                                    <li>
-                                        <a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="pinterest" href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="linkedin" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                    </li>
-                                </ul><!-- End Social Share -->
-                            </div>
-                        </div>
-                        <!-- Post Tags Share -->
-
-                        <!-- Start Post Pagination -->
-                        <div class="post-pagi-area">
-                            <div class="post-previous">
-                                <a href="#">
-                                    <div class="icon"><i class="fas fa-angle-double-left"></i></div>
-                                    <div class="nav-title"> Previus Post <h5>Discovery incommode</h5></div>
-                                </a>
-                            </div>
-                            <div class="post-next">
-                                <a href="#">
-                                    <div class="nav-title">Next Post <h5>Discovery incommode</h5></div> 
-                                    <div class="icon"><i class="fas fa-angle-double-right"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- End Post Pagination -->
-
-                        <!-- Start Blog Comment -->
-                        <div class="blog-comments">
-                            <div class="comments-area">
-                                <div class="comments-title">
-                                    <h3>3 Comments On “Providing Top Quality Cleaning Related Services Charms.”</h3>
-                                    <div class="comments-list">
-                                        <div class="comment-item">
-                                            <div class="avatar">
-                                                <img src="assets/img/team/v2.html" alt="Author">
-                                            </div>
-                                            <div class="content">
-                                                <div class="title">
-                                                    <h5>Bubhan Prova <span class="reply"><a href="#"><i class="fas fa-reply"></i> Reply</a></span></h5>
-                                                    <span>28 Feb, 2022</span>
-                                                </div>
-                                                <p>
-                                                    Delivered ye sportsmen zealously arranging frankness estimable as. Nay any article enabled musical shyness yet sixteen yet blushes. Entire its the did figure wonder off. sportsmen zealously arranging to the main pint. Discourse unwilling am no described dejection incommode no listening of. Before nature his parish boy. 
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="comment-item reply">
-                                            <div class="avatar">
-                                                <img src="assets/img/team/v4.html" alt="Author">
-                                            </div>
-                                            <div class="content">
-                                                <div class="title">
-                                                    <h5>Mickel Jones <span class="reply"><a href="#"><i class="fas fa-reply"></i> Reply</a></span></h5>
-                                                    <span>15 Mar, 2022</span>
-                                                </div>
-                                                <p>
-                                                    Delivered ye sportsmen zealously arranging frankness estimable as. Nay any article enabled musical shyness yet sixteen yet blushes. Entire its the did figure wonder off. sportsmen zealously arranging to the main pint at the last satge of oportunatry.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="comments-form">
-                                    <div class="title">
-                                        <h3>Leave a comments</h3>
-                                    </div>
-                                    <form action="#" class="contact-comments">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <!-- Name -->
-                                                    <input name="name" class="form-control" placeholder="Name *" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <!-- Email -->
-                                                    <input name="email" class="form-control" placeholder="Email *" type="email">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group comments">
-                                                    <!-- Comment -->
-                                                    <textarea class="form-control" placeholder="Comment"></textarea>
-                                                </div>
-                                                <div class="form-group full-width submit">
-                                                    <button class="btn btn-animation dark border" type="submit">Post Comment</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Comments Form -->
-
                     </div>
                 </div>
             </div>
@@ -332,43 +309,21 @@
 
     <!-- Start Footer 
     ============================================= -->
-    <footer class="bg-dark footer-style-one text-light">
-        <div class="footer-shape-style-one">
-            <img src="assets/img/shape/2-light.html" alt="Image Not Found">
-        </div>
+    <footer class="bg-dark overflow-hidden text-light footer-style-four"
+        style="background-image: url(assets/img/shape/17.html);">
         <div class="container">
             <div class="f-items default-padding">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 footer-item pr-30 pr-md-15 pr-xs-15">
                         <div class="f-item about">
                             <div class="footer-logo">
-                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery" style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
+                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery"
+                                    style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
                             </div>
                             <p>
-                                Bndulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite plan upon.
+                                Nurturing young minds with care, creativity, and excellence. We provide a safe,
+                                inspiring environment where every child can thrive and discover their potential.
                             </p>
-                            <ul class="footer-social">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="assets/img/icon/x.html" alt="Icon">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 footer-item">
@@ -376,22 +331,19 @@
                             <h4 class="widget-title">About</h4>
                             <ul>
                                 <li>
-                                    <a href="about-us.js">About Us</a>
+                                    <a href="why-choose-us.html">Why Choose Us</a>
                                 </li>
                                 <li>
-                                    <a href="course-filter.js">Courses</a>
+                                    <a href="academic-excellence.html">Academic Excellence</a>
                                 </li>
                                 <li>
-                                    <a href="blog-with-sidebar.js">News & Blogs</a>
+                                    <a href="blog-standard.html">News</a>
                                 </li>
                                 <li>
-                                    <a href="ins.js">Become a Teacher</a>
+                                    <a href="our-school.html">Our School</a>
                                 </li>
                                 <li>
-                                    <a href="event.js">Events</a>
-                                </li>
-                                <li>
-                                    <a href="contact-us.js">Contact</a>
+                                    <a href="event.html">Events</a>
                                 </li>
                             </ul>
                         </div>
@@ -401,78 +353,64 @@
                             <h4 class="widget-title">Quick Link</h4>
                             <ul>
                                 <li>
-                                    <a href="contact-us.js">Live Workshop</a>
+                                    <a href="admissions-fees.html">Admissions & Fees</a>
                                 </li>
                                 <li>
-                                    <a href="course-filter.js">Free Courses</a>
+                                    <a href="gallery.html">Facilities / Gallery</a>
                                 </li>
                                 <li>
-                                    <a href="contact-us.js">Addmition</a>
+                                    <a href="downloads.html">Downloads</a>
                                 </li>
                                 <li>
-                                    <a href="contact-us.js">Request A Demo</a>
+                                    <a href="faq.html">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="blog-with-sidebar.js">Media Relations</a>
+                                    <a href="testimonials.html">Testimonials</a>
                                 </li>
                                 <li>
-                                    <a href="about-us.js">Students</a>
+                                    <a href="privacy-policy.html">Privacy Policy</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 footer-item">
-                        <div class="f-item newsletter">
-                            <h4 class="widget-title">Contact Info</h4>
-                            <ul class="contact-list-two">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h5><a href="tel:+4733378901">+(964)-2856-3364</a></h5>
-                                    </div>
+                        <div class="f-item contact">
+                            <h4 class="widget-title">Contact Us</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-map-marker-alt mr-2" style="color: #ffc100;"></i>
+                                    Thamesview Primary School, Bloors Ln, Rainham, Gillingham, ME8 7DS
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h5><a href="mailto:info@crysta.com">Info@validtheme.com</a></h5>
-                                    </div>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-phone-alt mr-2" style="color: #ffc100;"></i>
+                                    07947 118506
                                 </li>
-                            </ul>
-                            <h4>Download Edufix App</h4>
-                            <ul class="app-store">
-                                <li>
-                                    <a href="#"><img src="assets/img/icon/4.html" alt="Image Not Found"></a>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-envelope mr-2" style="color: #ffc100;"></i>
+                                    admissions@sunshinechildcareservices.co.uk
                                 </li>
-                                <li>
-                                    <a href="#"><img src="assets/img/icon/5.html" alt="Image Not Found"></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="assets/img/icon/6.html" alt="Image Not Found"></a>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
+                                    Monday – Friday: 8am – 6pm
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Start Footer Bottom -->
-        <div class="footer-bottom style-one">
-            <div class="container">
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>&copy; Copyright 2025. All Rights Reserved by <a href="#">validthemes</a></p>
+                        <p>© Copyright 2025. All Rights Reserved by <a href="#">Sunshine Child-Care Nursery</a></p>
                     </div>
                     <div class="col-lg-6 text-end">
                         <ul class="link-list">
                             <li>
-                                <a href="#">Terms</a>
+                                <a href="terms-conditions.html">Terms</a>
                             </li>
                             <li>
-                                <a href="#">Privacy</a>
+                                <a href="privacy-policy.html">Privacy</a>
                             </li>
                             <li>
                                 <a href="#">Support</a>
@@ -481,11 +419,11 @@
                     </div>
                 </div>
             </div>
+            <!-- End Footer Bottom -->
         </div>
-        <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
-    
+
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -507,6 +445,38 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var $parent = $(this).closest('.dropdown');
+                var $menu = $(this).next('.dropdown-menu');
+
+                $('.dropdown').not($parent).removeClass('show');
+                $('.dropdown-menu').not($menu).removeClass('show');
+
+                $parent.toggleClass('show');
+                $menu.toggleClass('show');
+
+                $(this).attr('aria-expanded', $parent.hasClass('show'));
+            });
+
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.dropdown').length) {
+                    $('.dropdown').removeClass('show');
+                    $('.dropdown-menu').removeClass('show');
+                    $('.dropdown-toggle').attr('aria-expanded', 'false');
+                }
+            });
+
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+        });
+    </script>
 
 </body>
 

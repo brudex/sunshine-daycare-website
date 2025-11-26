@@ -12446,8 +12446,8 @@ button.mfp-arrow.mfp-prevent-close::after {
 .faq-style-one button.accordion-button::before {
 	background: transparent;
 	content: "\f067";
-	font-family: "Font Awesome 5 Pro";
-	font-weight: 1;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	font-size: 20px;
 	position: absolute;
 	top: 25px;
@@ -12457,6 +12457,8 @@ button.mfp-arrow.mfp-prevent-close::after {
 .faq-style-one button.accordion-button:not(.collapsed)::before {
 	transform: none;
 	content: "\f068";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 }
 
 .faq-style-one button.accordion-button:focus {
