@@ -1,0 +1,2656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Sunshine Child-Care Nursery - Nurturing, safe, and professional early-education environment">
+
+    <!-- ========== Page Title ========== -->
+    <title>Sunshine Child-Care Nursery - Home</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+
+    <!-- Bootstrap 4 CSS (for compatibility with template) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons (Latest) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Template CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/validnavs.css" rel="stylesheet">
+    <link href="assets/css/helper.css" rel="stylesheet">
+    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- GDPR Cookie Consent Styles -->
+    <style>
+        #gdpr-cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+            z-index: 10000;
+            display: none;
+            border-top: 3px solid #ffc100;
+        }
+
+        #gdpr-cookie-consent.show {
+            display: block;
+        }
+
+        .gdpr-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gdpr-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .gdpr-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .gdpr-text a {
+            color: #ffc100;
+            text-decoration: underline;
+        }
+
+        .gdpr-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gdpr-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gdpr-btn-accept {
+            background: #ffc100;
+            color: #000;
+        }
+
+        .gdpr-btn-accept:hover {
+            background: #FFD700;
+        }
+
+        .gdpr-btn-reject {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .gdpr-btn-reject:hover {
+            background: #e0e0e0;
+        }
+
+        .gdpr-btn-settings {
+            background: transparent;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+        .gdpr-btn-settings:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .gdpr-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gdpr-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .gdpr-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+        
+        /* Cookie Settings Modal */
+        #gdpr-settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10001;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #gdpr-settings-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gdpr-modal-content {
+            background: #fff;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            pointer-events: auto;
+        }
+
+        .gdpr-modal-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .gdpr-modal-header h3 {
+            margin: 0;
+            color: #000;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .gdpr-modal-header p {
+            margin: 10px 0 0 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .gdpr-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .gdpr-modal-close:hover {
+            background: #f0f0f0;
+            color: #000;
+        }
+
+        .cookie-category {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .cookie-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cookie-category-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #000;
+            margin: 0;
+        }
+
+        .cookie-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .cookie-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .cookie-toggle input:checked+.cookie-slider {
+            background-color: #ffc100;
+        }
+
+        .cookie-toggle input:checked+.cookie-slider:before {
+            transform: translateX(24px);
+        }
+
+        .cookie-category-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .cookie-category.essential .cookie-toggle {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .gdpr-modal-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .gdpr-modal-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gdpr-modal-btn-save {
+            background: #ffc100;
+            color: #000;
+        }
+
+        .gdpr-modal-btn-save:hover {
+            background: #B8941F;
+        }
+
+        .gdpr-modal-btn-cancel {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .gdpr-modal-btn-cancel:hover {
+            background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .gdpr-modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .gdpr-modal-footer {
+                flex-direction: column;
+            }
+
+            .gdpr-modal-btn {
+                width: 100%;
+            }
+        }
+        
+        /* Button Hover Effects - Lighter Shade */
+        /* Target buttons with primary color in inline styles */
+        a.btn[style*="#ffc100"]:hover,
+        button.btn[style*="#ffc100"]:hover,
+        .btn[style*="background: #ffc100"]:hover,
+        .btn[style*="background-color: #ffc100"]:hover,
+        a[style*="background: #ffc100"]:hover,
+        a[style*="background-color: #ffc100"]:hover,
+        button[style*="background: #ffc100"]:hover,
+        button[style*="background-color: #ffc100"]:hover {
+            background: #ffd433 !important;
+            background-color: #ffd433 !important;
+            transition: background 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Specific button hover styles with elevation */
+        .btn.btn-gradient:hover,
+        .btn.btn-lg:hover,
+        .btn.btn-md:hover,
+        a.btn-lg:hover,
+        a.btn-md:hover {
+            background: #ffd433 !important;
+            background-color: #ffd433 !important;
+        }
+        
+        /* Enhanced hover for buttons with primary color */
+        a[style*="#ffc100"]:hover,
+        button[style*="#ffc100"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 209, 51, 0.4) !important;
+        }
+        
+        /* Add transition to all buttons for smooth hover */
+        .btn,
+        a.btn,
+        button.btn,
+        a[style*="#ffc100"],
+        button[style*="#ffc100"] {
+            transition: background 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+    
+    <!-- Navigation Links Styling -->
+    <style>
+        .navbar-nav>li>a {
+            color: #333 !important;
+            font-weight: 400;
+        }
+
+        .navbar-nav>li>a:hover,
+        .navbar-nav>li>a:focus {
+            color: #000 !important;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle {
+            color: #333 !important;
+        }
+
+        .navbar-nav>li.dropdown>a.dropdown-toggle:hover,
+        .navbar-nav>li.dropdown>a.dropdown-toggle:focus {
+            color: #000 !important;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        .dropdown-menu>li>a {
+            color: #333 !important;
+        }
+
+        .dropdown-menu>li>a:hover {
+            color: #000 !important;
+            background-color: #f5f5f5;
+
+        }
+
+        /* Header with Banner Background */
+        .header-overlay-banner {
+            position: relative;
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        /* Sticky Header Styles */
+        .header-overlay-banner.sticked {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 50px 0;
+            background: #ffc100 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: sticky 0.4s;
+        }
+        
+        .header-overlay-banner.sticked .header-banner-bg {
+            display: none;
+        }
+        
+        .header-overlay-banner.sticked .banner-yellow-overlay {
+            display: none;
+        }
+        
+        .header-overlay-banner.sticked .header-content-wrapper {
+            padding: 0;
+        }
+        
+        /* Add padding to body when header is sticky to prevent content jump */
+        body.header-sticky-active {
+            padding-top: 0;
+        }
+        
+        @keyframes sticky {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header-overlay-banner nav {
+            overflow: visible;
+        }
+
+        .header-banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(270.08deg, rgba(0, 0, 0, 0) -52.4%, #FFC100 75.31%);
+        }
+
+
+
+        .banner-yellow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .header-content-wrapper {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: 30px 0;
+            overflow: visible;
+        }
+
+        .header-content-wrapper .container {
+            position: relative;
+            padding-left: 50px;
+            padding-right: 50px;
+            overflow: visible;
+        }
+
+        /* Mobile Brand Logo - Hidden on desktop by default */
+        .navbar-brand-mobile {
+            display: none;
+        }
+
+        /* Main Navigation Wrapper */
+        .navbar-main-wrapper {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            justify-content: center;
+            width: 100% !important;
+            position: relative;
+            padding: 0;
+            overflow: visible;
+        }
+
+        /* Desktop Nav - Always visible on desktop */
+        .navbar-main-wrapper.desktop-nav {
+            display: flex !important;
+        }
+
+        /* Left Navigation - Starts from logo going left */
+        .navbar-nav.navbar-left {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none;
+            flex-wrap: nowrap !important;
+            flex-shrink: 0;
+            gap: 30px;
+            position: absolute;
+            right: calc(50% + 80px);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            overflow: visible;
+        }
+
+        .navbar-nav.navbar-left>li {
+            display: inline-block !important;
+            white-space: nowrap;
+            float: none !important;
+            position: relative;
+        }
+
+        .navbar-nav.navbar-left>li>a {
+            color: #000 !important;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 8px 0 !important;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        .navbar-nav.navbar-left>li>a:hover {
+            color: #333 !important;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        /* Dropdown Menu Styling - Matching Template Style */
+        .navbar-nav .dropdown {
+            position: relative !important;
+        }
+
+        .navbar-nav .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            z-index: 1000 !important;
+            min-width: 200px;
+            padding: 20px !important;
+            margin-top: 0 !important;
+            padding-top: 10px !important;
+            background-color: #fff !important;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.15);
+            display: none !important;
+            float: left;
+            font-size: 14px;
+            list-style: none;
+            text-align: left;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Add invisible bridge area above dropdown to make it easier to reach */
+        .navbar-nav .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: transparent;
+        }
+
+        .navbar-nav .dropdown.on>.dropdown-menu {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .navbar-nav .dropdown-menu.animated {
+            display: none !important;
+        }
+
+        .navbar-nav .dropdown-menu.animated.fadeInDown {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .navbar-nav .dropdown-menu>li {
+            position: relative;
+        }
+
+        .navbar-nav .dropdown-menu>li>a {
+            display: block;
+            padding: 12px 15px !important;
+            color: #333 !important;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar-nav .dropdown-menu>li:last-child>a {
+            border-bottom: none;
+        }
+
+        .navbar-nav .dropdown-menu>li>a:hover,
+        .navbar-nav .dropdown-menu>li>a:focus {
+            background-color: transparent !important;
+            color: #000 !important;
+        }
+
+        /* Centered Logo */
+        /* Desktop only - show centered logo */
+        @media (min-width: 992px) {
+            .navbar-brand-centered {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 10;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding: 0;
+                pointer-events: auto;
+            }
+            
+        }
+        
+        /* Mobile - hide centered logo by default */
+     
+
+        .navbar-brand-centered:hover {
+            text-decoration: none;
+        }
+
+        .navbar-brand-centered .logo-icon {
+            max-height: 55px;
+            height: auto;
+            width: auto;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .navbar-brand-centered .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .navbar-brand-centered .logo-tagline {
+            font-size: 0.9rem;
+            color: #000;
+            margin: 4px 0 0 0;
+            line-height: 1.2;
+        }
+
+        /* Right Navigation - Starts from logo going right */
+        .navbar-nav.navbar-right {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            padding: 0 !important;
+            list-style: none;
+            flex-wrap: nowrap !important;
+            flex-shrink: 0;
+            gap: 30px;
+            position: absolute;
+            left: calc(50% + 80px);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            overflow: visible;
+        }
+
+        .navbar-nav.navbar-right>li {
+            display: inline-block !important;
+            white-space: nowrap;
+            float: none !important;
+            position: relative;
+        }
+
+        .navbar-nav.navbar-right>li>a {
+            color: #000 !important;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 8px 0 !important;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        .navbar-nav.navbar-right>li>a:hover {
+            color: #333 !important;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        .navbar-nav.navbar-right>li>a:hover,
+        .navbar-nav.navbar-left>li>a:hover {
+            text-decoration: none;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        /* Override Bootstrap defaults */
+        .navbar-nav {
+            float: none !important;
+        }
+
+        .navbar-nav>li {
+            float: none !important;
+        }
+
+        /* Ensure banner is below navigation */
+        .banner-area {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Desktop - All on one line */
+        @media (min-width: 992px) {
+            .navbar-main-wrapper {
+                display: flex !important;
+            }
+
+            /* Hide all mobile menu elements on desktop */
+            .navbar-toggle {
+                display: none !important;
+            }
+
+            .navbar-header {
+                display: none !important;
+            }
+
+            .navbar-brand-mobile {
+                display: none !important;
+            }
+
+            /* Hide mobile collapse menu on desktop */
+            #navbar-menu,
+            .navbar-collapse#navbar-menu,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile,
+            nav.navbar.validnavs.mobile-sidenav #navbar-menu {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                left: -400px !important;
+                position: absolute !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.show,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.in,
+            #navbar-menu.show,
+            #navbar-menu.in {
+                display: none !important;
+                visibility: hidden !important;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .header-overlay-banner {
+                min-height: auto;
+                padding: 20px 0;
+            }
+            
+            .header-overlay-banner.sticked {
+                padding: 20px 0;
+            }
+
+            .header-content-wrapper {
+                padding: 15px 0;
+            }
+            
+            .header-content-wrapper .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            /* Hide desktop navigation on mobile */
+            .navbar-main-wrapper.desktop-nav {
+                display: none !important;
+                visibility: hidden !important;
+            }
+
+            /* Hide centered logo on mobile - Multiple selectors to ensure it's hidden */
+            .navbar-brand-centered,
+            a.navbar-brand-centered,
+            .navbar-brand-centered img,
+            .navbar-brand-centered .logo-icon {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                position: absolute !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                pointer-events: none !important;
+            }
+
+            /* Hide all desktop nav links on mobile */
+            .navbar-nav.navbar-left,
+            .navbar-nav.navbar-right {
+                display: none !important;
+                visibility: hidden !important;
+            }
+
+            /* Show mobile brand logo */
+            .navbar-brand-mobile {
+                display: block !important;
+                visibility: visible !important;
+                padding: 0;
+            }
+
+            /* Mobile header with toggle button */
+            nav.navbar.validnavs .navbar-header {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                position: relative;
+                z-index: 100000 !important; /* Above everything to ensure button is clickable */
+            }
+
+            nav.navbar.validnavs .navbar-toggle {
+                background: rgba(255, 255, 255, 0.95) !important;
+                border: 2px solid #000 !important;
+                padding: 10px 14px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-left: auto;
+                margin-right: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+                z-index: 100001 !important;
+                position: relative;
+                display: block !important;
+                visibility: visible !important;
+            }
+            
+            nav.navbar.validnavs .navbar-toggle:hover {
+                background: #fff;
+                transform: scale(1.05);
+            }
+            
+            nav.navbar.validnavs .navbar-toggle i {
+                font-size: 20px;
+                color: #000;
+            }
+
+            /* Mobile collapse menu styling - using validnavs.js pattern */
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+                position: fixed !important;
+                left: -400px;
+                top: 0;
+                width: 400px;
+                max-width: 85vw;
+                padding: 30px;
+                height: 100% !important;
+                min-height: 100vh !important;
+                background: #ffc100 !important;
+                overflow-y: scroll;
+                z-index: 99999 !important; /* Highest z-index - above everything */
+                transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                pointer-events: auto !important;
+                visibility: visible;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.show,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.in {
+                left: 0 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                z-index: 99999 !important;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .navbar-toggle {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                margin: 0;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile img {
+                margin-bottom: 30px;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .nav {
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .nav > li {
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .nav > li:last-child {
+                border-bottom: none;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .nav > li > a {
+                padding: 15px 0 !important;
+                display: block;
+                width: 100%;
+                font-size: 1rem;
+                color: #000 !important;
+                font-weight: 700;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .dropdown-menu {
+                position: static !important;
+                display: none;
+                width: 100%;
+                margin-top: 0;
+                padding: 0 !important;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background: rgba(0, 0, 0, 0.05);
+            }
+            
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .dropdown.on > .dropdown-menu,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .dropdown-menu.show {
+                display: block !important;
+            }
+            
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile .dropdown-menu > li > a {
+                padding: 12px 20px !important;
+                font-size: 0.95rem;
+                text-transform: none;
+                color: #333 !important;
+            }
+        }
+        
+        /* Small Mobile Devices */
+        @media (max-width: 576px) {
+            .header-overlay-banner {
+                padding: 15px 0;
+            }
+            
+            .header-overlay-banner.sticked {
+                padding: 15px 0;
+            }
+            
+            .header-content-wrapper {
+                padding: 10px 0;
+            }
+            
+            .navbar-header {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .navbar-toggle {
+                padding: 8px 12px;
+            }
+            
+            .navbar-main-wrapper {
+                margin-top: 50px;
+                padding: 15px 0;
+            }
+            
+            .navbar-nav.navbar-left>li>a,
+            .navbar-nav.navbar-right>li>a {
+                padding: 12px 15px !important;
+                font-size: 0.95rem;
+            }
+            
+            .navbar-nav .dropdown-menu > li > a {
+                padding: 10px 30px !important;
+                font-size: 0.9rem;
+            }
+            
+            /* Centered logo should remain hidden on small mobile devices */
+            /* Hide centered logo on small mobile devices */
+            .navbar-brand-centered,
+            a.navbar-brand-centered,
+            .navbar-brand-centered img,
+            .navbar-brand-centered .logo-icon {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                position: absolute !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                pointer-events: none !important;
+            }
+        }
+
+        /* Overlay Screen for Mobile Menu - COMPLETELY DISABLED */
+        .overlay-screen {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            z-index: -1 !important;
+        }
+
+        /* Never show overlay - completely disabled */
+        .overlay-screen.opened,
+        header .overlay-screen,
+        header .overlay-screen.opened {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            z-index: -1 !important;
+        }
+
+        /* Ensure nav doesn't break header layout */
+        header.header-overlay-banner nav.navbar.validnavs {
+            background: transparent;
+            border: none;
+            margin: 0;
+            min-height: auto;
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+
+        header.header-overlay-banner nav.navbar.validnavs .container {
+            padding: 0;
+        }
+
+        header.header-overlay-banner nav.navbar.validnavs .navbar-header {
+            width: 100%;
+        }
+
+        /* Ensure nav is relative on mobile */
+        @media (max-width: 991px) {
+            nav.navbar.validnavs.mobile-sidenav {
+                position: relative;
+            }
+        }
+
+        /* Banner Gradient Overlay */
+        .banner-area {
+            position: relative;
+        }
+
+        .banner-thumb {
+            position: relative;
+        }
+
+        .banner-thumb::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270.08deg, rgba(0, 0, 0, 0) -52.4%, #FFC100 75.31%);
+            border-radius: 0px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .banner-style-seven {
+            position: relative;
+        }
+
+        .banner-style-seven-info {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header 
+    ============================================= -->
+    <header class="header-overlay-banner">
+        <!-- Banner Background with Yellow Overlay -->
+        <div class="header-banner-bg">
+            <div class="banner-yellow-overlay"></div>
+        </div>
+
+        <!-- Navigation and Logo Container -->
+        <div class="header-content-wrapper">
+            <div class="container">
+                <!-- Start Navigation -->
+                <nav class="navbar mobile-sidenav navbar-default validnavs">
+                    <!-- Mobile Menu Header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand navbar-brand-mobile" href="index.html">
+                            <img src="assets/img/logo.svg" alt="Sunshine Logo" class="logo-icon" style="max-height: 55px; height: auto; width: auto;">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation Wrapper -->
+                    <div class="navbar-main-wrapper desktop-nav">
+                        <!-- Left Navigation Links -->
+                        <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Learning <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="academic-excellence.html">Academic Excellence</a></li>
+                                    <li><a href="gallery.html">Facilities</a></li>
+                                    <li><a href="blog-standard.html">News & Events</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- Centered Logo Between Learning and Admissions -->
+                        <a class="navbar-brand-centered" href="index.html">
+                            <img src="assets/img/logo.svg" alt="Sunshine Logo" class="logo-icon">
+                        </a>
+
+                        <!-- Right Navigation Links -->
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="admissions-fees.html">Admissions Journey</a></li>
+                                    <li><a href="admissions-fees.html#application-form">Admissions Form</a></li>
+                                    <li><a href="downloads.html">Downloads</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="schedule-tour.html">Schedule a Tour</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Menu (Collapsible) -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <div  style="max-height: 60px; height: auto; width: auto; margin-bottom: 20px;"> </div> 
+                       
+                        
+                        <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Learning <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="academic-excellence.html">Academic Excellence</a></li>
+                                    <li><a href="gallery.html">Facilities</a></li>
+                                    <li><a href="blog-standard.html">News & Events</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="admissions-fees.html">Admissions Journey</a></li>
+                                    <li><a href="admissions-fees.html#application-form">Admissions Form</a></li>
+                                    <li><a href="downloads.html">Downloads</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="schedule-tour.html">Schedule a Tour</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                <!-- End Navigation -->
+            </div>   
+        </div>
+        <!-- Overlay screen for menu - DISABLED -->
+        <!-- <div class="overlay-screen"></div> -->
+        <!-- End Overlay screen for menu -->
+    </header>
+    <!-- End Header -->
+    
+    <!-- Start Banner Area 
+    ============================================= -->
+    <div
+        class="banner-area banner-style-seven-area navigation-circle zoom-effect overflow-hidden text-light bg-gradient">
+
+        <!-- Slider main container -->
+        <div class="banner-fade">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide banner-style-seven">
+                    <div class="banner-thumb " style="
+                        background: linear-gradient(270.08deg, rgba(0, 0, 0, 0) -52.4%, #FFC100 75.31%);
+                        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
+                        url(assets/images/2b3e764975326bdde0a1bad402a122ac40fb964a.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        "></div>
+        <div class="container">
+                        <div class="banner-style-seven-info">
+                            <div class="row align-center">
+                                <div class="col-lg-8 offset-lg-2 text-left">
+                                    <div class="content">
+                                        <h1
+                                            style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: #000;">
+                                            Give Your
+                                            Child the Bright <br> Start They Deserve</h1>
+                                        <div class="info text-left">
+                                            <p
+                                                style="font-size: 1.3rem; margin-bottom: 30px; text-align: left; color: #000;">
+                                                Nurturing care, inspiring learning, and happy memories every day at
+                                                Sunshine Child-Care Nursery.</p>
+
+                                            <div class="button mb-4">
+                                                <a class="btn btn-sm  animation mr-3" href="admissions-fees.html"
+                                                    style="padding: 15px 40px; font-size: 1rem; background: #000 !important; border: none; color: #fff; font-weight: 400; border-radius: 16px; text-decoration: none;">
+                                                    Enroll Today
+                                                </a>
+                                                <a class="btn btn-sm btn-light animation" href="contact-us.html"
+                                                    style="padding: 15px 40px; font-size: 1rem; border: 2px solid #000; background: transparent; color: #000; font-weight: 400; border-radius: 16px;">
+                                                    Book a Visit
+                                                </a>
+                        </div>
+                                            <p
+                                                style="font-size: 16px; font-weight: 500; text-align: left; color: #000;">
+                                                <i class="fa fa-exclamation-circle mr-2"></i> Spaces are limited –
+                                                secure your child's place now!
+                                            </p>
+                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Slide 1 -->
+
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide banner-style-seven">
+                    <div class="banner-thumb " style="
+                        background: linear-gradient(270.08deg, rgba(0, 0, 0, 0) -52.4%, #FFC100 75.31%);
+                        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
+                        url(assets/images/3339382063_1787990634941372_6466562291207630470_n.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        "></div>
+        <div class="container">
+                        <div class="banner-style-seven-info">
+                            <div class="row align-center">
+                                <div class="col-lg-8 offset-lg-2 text-left">
+                                    <div class="content">
+                                        <h2
+                                            style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: #000;">
+                                            Give Your
+                                            Child the Bright <br> Start They Deserve</h1>
+                                        <div class="info text-left">
+                                            <p
+                                                style="font-size: 1.3rem; margin-bottom: 30px; text-align: left; color: #000;">
+                                                Nurturing care, inspiring learning, and happy memories every day at
+                                                Sunshine Child-Care Nursery.</p>
+
+                                            <div class="button mb-4">
+                                                <a class="btn btn-sm  animation mr-3" href="admissions-fees.html"
+                                                    style="padding: 15px 40px; font-size: 1rem; background: #000 !important; border: none; color: #fff; font-weight: 400; border-radius: 16px; text-decoration: none;">
+                                                    Enroll Today
+                                                </a>
+                                                <a class="btn btn-sm btn-light animation" href="contact-us.html"
+                                                    style="padding: 15px 40px; font-size: 1rem; border: 2px solid #000; background: transparent; color: #000; font-weight: 400; border-radius: 16px;">
+                                                    Book a Visit
+                                                </a>
+                        </div>
+                                            <p
+                                                style="font-size: 16px; font-weight: 500; text-align: left; color: #000;">
+                                                <i class="fa fa-exclamation-circle mr-2"></i> Spaces are limited –
+                                                secure your child's place now!
+                                            </p>
+                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Slide 1 -->
+
+
+                        </div>
+                                    </div>
+
+            </div>
+
+
+
+                                            </div>
+                                                        </div>
+    <!-- End Main -->
+
+    <!-- Start Welcome Section 
+    ============================================= -->
+    <div class="default-padding" style="background: #fff; padding-top: 60px; padding-bottom: 50px;">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-8">
+                    <div class="wow fadeInUp">
+                        <h2 style="color: #000; font-size: 2rem; font-weight: 400; margin-bottom: 20px;">A Nurturing
+                            Start for Curious Minds</h2>
+                        <p style="font-size: 1rem; color: #666; margin-bottom: 25px; line-height: 1.7;">
+                            Welcome to Sunshine Child-Care Nursery in Rainham, Kent. We provide a warm, safe, and
+                            stimulating environment where every child thrives through play-based learning and strong
+                            family partnerships.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul style="list-style: none; padding-left: 0; color: #666; margin-bottom: 0;">
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Safe & Welcoming</strong>
+                                                    </li>
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Learning Through Play</strong>
+                                                        </li>
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Experienced Team</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                            <div class="col-md-6">
+                                <ul style="list-style: none; padding-left: 0; color: #666; margin-bottom: 0;">
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Bright Spaces</strong>
+                                                    </li>
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Parent Partnerships</strong>
+                                                        </li>
+                                    <li style="margin-bottom: 12px; font-size: 0.95rem;">
+                                        <i class="fas fa-check-circle"
+                                            style="color: #ffc100; margin-right: 8px; font-size: 1rem;"></i>
+                                        <strong style="color: #000;">Outstanding Ofsted</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                        <div class="mt-3">
+                            <a href="why-choose-us.html" class="btn btn-lg animation mr-2"
+                                style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
+                                Learn More
+                            </a>
+                            <a href="contact-us.html" class="btn btn-lg animation"
+                                style="background: transparent; color: #000; border: 2px solid #000; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
+                                Book a Visit
+                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                <div class="col-lg-4">
+                    <div class="wow fadeInUp" data-wow-delay="200ms">
+                        <img src="assets/images/pexels-yankrukov-8613141.jpg" alt="Sunshine Nursery"
+                            style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                                </div>
+    <!-- End Welcome Section -->
+
+    <!-- Start Why Choose Section 
+    ============================================= -->
+    <div class="default-padding" style="background: #f8f9fa; padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-4">
+                    <div class="wow fadeInUp">
+                        <img src="assets/images/pexels-rdne-8364026.jpg" alt="Children Learning"
+                            style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                                            </div>
+                                                        </div>
+                <div class="col-lg-8">
+                    <div class="wow fadeInUp" data-wow-delay="200ms">
+                        <h2 style="color: #000; font-size: 2rem; font-weight: 400; margin-bottom: 20px;">Why Choose
+                            Sunshine?</h2>
+                        <p style="font-size: 1rem; color: #666; margin-bottom: 25px; line-height: 1.7;">
+                            Every day is an adventure filled with laughter, learning, and discovery. We nurture
+                            curiosity and confidence in a safe, caring environment where little minds shine.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div style="display: flex; align-items: start;">
+                                    <i class="fas fa-heart"
+                                        style="color: #ffc100; font-size: 1.5rem; margin-right: 15px; margin-top: 5px;"></i>
+                                    <div>
+                                        <h4
+                                            style="color: #000; font-size: 1.1rem; font-weight: 400; margin-bottom: 5px;">
+                                            Caring Environment</h4>
+                                        <p style="color: #666; font-size: 0.9rem; margin: 0;">A home-from-home setting
+                                            where children feel secure and happy.</p>
+                                            </div>
+                                                        </div>
+                                                </div>
+                            <div class="col-md-6 mb-3">
+                                <div style="display: flex; align-items: start;">
+                                    <i class="fas fa-lightbulb"
+                                        style="color: #ffc100; font-size: 1.5rem; margin-right: 15px; margin-top: 5px;"></i>
+                                    <div>
+                                        <h4
+                                            style="color: #000; font-size: 1.1rem; font-weight: 400; margin-bottom: 5px;">
+                                            Creative Learning</h4>
+                                        <p style="color: #666; font-size: 0.9rem; margin: 0;">Activities designed to
+                                            spark curiosity and build confidence.</p>
+                                            </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                        <a href="academic-excellence.html" class="btn btn-lg animation mt-2"
+                            style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px; font-size: 0.95rem;">
+                            Explore Our Approach
+                        </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            </div>
+                                                        </div>
+    <!-- End Why Choose Section -->
+
+    <!-- Start Key Metrics 
+    ============================================= -->
+    <div class="feature-style-two-area default-padding-top"
+        style="background: #ffc100; padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Single Metric -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="wow fadeInUp">
+                        <div
+                            style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1;">
+                            91<span style="font-size: 2.5rem;">%</span>
+                                            </div>
+                        <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Current
+                            Enrollments</h5>
+                        <p style="color: #000; font-size: 0.9rem; margin: 0;">8 spaces available</p>
+                                            </div>
+                                        </div>
+                <!-- End Single Metric -->
+                <!-- Single Metric -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="wow fadeInUp" data-wow-delay="100ms">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1.2;">
+                            Outstanding
+                                    </div>
+                        <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Ofsted Rating
+                        </h5>
+                        <p style="color: #000; font-size: 0.9rem; margin: 0;">Excellence you can trust</p>
+                                            </div>
+                                            </div>
+                <!-- End Single Metric -->
+                <!-- Single Metric -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="wow fadeInUp" data-wow-delay="200ms">
+                        <div
+                            style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 10px; line-height: 1;">
+                            30<span style="font-size: 2.5rem;">+</span>
+                                        </div>
+                        <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Years Serving
+                            Families</h5>
+                        <p style="color: #000; font-size: 0.9rem; margin: 0;">Rainham, Kent</p>
+                                    </div>
+                                </div>
+                <!-- End Single Metric -->
+                <!-- Single Metric -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="300ms">
+                        <div style="margin-bottom: 10px;">
+                            <i class="fas fa-users" style="font-size: 3rem; color: #000;"></i>
+                            </div>
+                        <h5 style="color: #000; font-weight: 400; margin-bottom: 5px; font-size: 1.1rem;">Optimal Ratios
+                        </h5>
+                        <p style="color: #000; font-size: 0.9rem; margin: 0;">1:4 for under 2s | 1:8 for over 3s</p>
+                        </div>
+                    </div>
+                <!-- End Single Metric -->
+                </div>
+                    </div>
+                </div>
+    <!-- End Key Metrics -->
+
+    <!-- Start Secure Place CTA 
+    ============================================= -->
+    <div class="default-padding-top" style="background: #fff; padding-top: 60px; padding-bottom: 40px;">
+        <div class="container text-center">
+            <div class="wow fadeInUp">
+                <h2 style="color: #000; font-size: 2rem; font-weight: 400; margin-bottom: 25px;">Secure Your Child's
+                    Place Today</h2>
+                <a href="admissions-fees.html" class="btn btn-lg animation"
+                    style="background: #ffc100; color: #000; border: none; padding: 18px 50px; font-size: 1.1rem; font-weight: 400; border-radius: 50px;">
+                    Enroll Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    <!-- End Secure Place CTA -->
+
+    <!-- Start Three Feature Blocks
+    ============================================= -->
+    <div class="faculty-area default-padding" style="background: #fff; padding-top: 80px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="faculty-style-one-items">
+            <div class="row">
+                    <!-- Single Item - Outstanding Ofsted Rating -->
+                    <div class="col-lg-4 col-md-6 mb-30">
+                        <div class="faculty-style-one-item wow fadeInUp"
+                            style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                            <div class="info">
+                                <div class="icon mb-4">
+                                    <i class="fas fa-star" style="font-size: 4rem; color: #ffc100;"></i>
+                    </div>
+                                <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
+                                    Outstanding Ofsted Rating</h3>
+                                <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
+                                    Excellence you can trust. We're proud to hold an Outstanding Ofsted rating,
+                                    reflecting our commitment to high-quality care and education for every child.
+                                        </p>
+                                <a href="downloads.html" class="btn btn-lg"
+                                    style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
+                                    Download Ofsted Report
+                                </a>
+                                                </div>
+                                                </div>
+                                            </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item - Holistic Curriculum -->
+                    <div class="col-lg-4 col-md-6 mb-30">
+                        <div class="faculty-style-one-item wow fadeInUp" data-wow-delay="200ms"
+                            style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                                                <div class="info">
+                                <div class="icon mb-4">
+                                    <i class="fas fa-book-reader" style="font-size: 4rem; color: #ffc100;"></i>
+                                                </div>
+                                <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
+                                    Holistic Curriculum</h3>
+                                <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
+                                    Learning beyond the classroom. Our play-based approach nurtures emotional, social,
+                                    physical, and cognitive growth—helping children develop confidence and curiosity.
+                                        </p>
+                                <a href="academic-excellence.html" class="btn btn-lg"
+                                    style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
+                                    Learn More
+                                </a>
+                                                </div>
+                                                </div>
+                                            </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item - Family Partnership -->
+                    <div class="col-lg-4 col-md-6 mb-30">
+                        <div class="faculty-style-one-item wow fadeInUp" data-wow-delay="400ms"
+                            style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                                                <div class="info">
+                                <div class="icon mb-4">
+                                    <i class="fas fa-users" style="font-size: 4rem; color: #ffc100;"></i>
+                                                </div>
+                                <h3 style="color: #000; font-weight: 400; margin-bottom: 20px; font-size: 1.8rem;">
+                                    Family Partnership</h3>
+                                <p style="color: #666; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">
+                                    Together, we make a difference. We work hand-in-hand with families, celebrating
+                                    milestones and supporting every step of your child's journey.
+                                </p>
+                                <a href="why-choose-us.html" class="btn btn-lg"
+                                    style="background: #ffc100; color: #000; border: none; padding: 12px 30px; font-weight: 400; border-radius: 50px;">
+                                    Discover More
+                                </a>
+                                                </div>
+                                                </div>
+                                            </div>
+                    <!-- End Single Item -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    <!-- End Three Feature Blocks -->
+
+    <!-- Start Academic Excellence Section
+    ============================================= -->
+    <div class="default-padding"
+        style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding-top: 80px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-6 pr-60 pr-md-15 pr-xs-15">
+                    <div class="wow fadeInUp">
+                        <h2 style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 25px;">Academic
+                            Excellence with Joyful Discovery</h2>
+                        <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px; line-height: 1.8;">
+                            At Sunshine Child-Care Nursery, we combine strong foundations in early learning with a
+                            playful, engaging approach. Every child experiences the joy of discovery while building
+                            skills that prepare them for lifelong success.
+                            </p>
+                        <div class="mt-4">
+                            <a href="academic-excellence.html" class="btn btn-lg animation"
+                                style="background: #ffc100; color: #000; border: none; padding: 15px 35px; font-weight: 400; border-radius: 50px;">
+                                Explore Our Curriculum
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-60 pl-md-15 pl-xs-15">
+                    <div class="wow fadeInUp" data-wow-delay="200ms">
+                        <img src="assets/images/pexels-kseniachernaya-8535235.jpg" alt="Academic Excellence"
+                            style="width: 100%; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+    <!-- End Academic Excellence Section -->
+
+    <!-- Start Simple CTA Section 
+    ============================================= -->
+    <div class="default-padding"
+        style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 100px 0;">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-10 offset-lg-1 text-center">
+                    <div class="wow fadeInUp">
+                        <h2 style="color: #000; font-size: 2.8rem; font-weight: 400; margin-bottom: 25px;">Ready to Join
+                            the Sunshine Family?</h2>
+                        <p style="color: #000; font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">
+                            Give your child the bright start they deserve. Spaces are limited – secure your child's
+                            place now!
+                        </p>
+                        <div class="button-group">
+                            <a href="admissions-fees.html" class="btn btn-lg animation mr-3 mb-3"
+                                style="background: #000; color: #ffc100; border: none; padding: 18px 50px; font-size: 1.1rem; font-weight: 400; border-radius: 50px;">
+                                <i class="fas fa-file-alt mr-2"></i> Apply for Admission
+                            </a>
+                            <a href="contact-us.html" class="btn btn-lg animation mb-3"
+                                style="background: #fff; color: #000; border: 3px solid #000; padding: 18px 50px; font-size: 1.1rem; font-weight: 400; border-radius: 50px;">
+                                <i class="fas fa-calendar-check mr-2"></i> Book a Visit
+                            </a>
+                </div>
+                        <p style="color: #000; margin-top: 30px; font-size: 1rem; opacity: 0.8;">
+                            <i class="fas fa-clock mr-2"></i> Quick & Easy Process | <i
+                                class="fas fa-shield-alt mr-2"></i> Secure & Confidential | <i
+                                class="fas fa-heart mr-2"></i> 30+ Years of Trust
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Simple CTA Section -->
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="bg-dark overflow-hidden text-light footer-style-four"
+        style="background-image: url(assets/img/shape/17.html);">
+        <div class="container">
+            <div class="f-items default-padding">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 footer-item pr-30 pr-md-15 pr-xs-15">
+                        <div class="f-item about">
+                            <div class="footer-logo">
+                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery"
+                                    style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
+                            </div>
+                            <p>
+                                Nurturing young minds with care, creativity, and excellence. We provide a safe,
+                                inspiring environment where every child can thrive and discover their potential.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-item">
+                        <div class="f-item link">
+                            <h4 class="widget-title">About</h4>
+                            <ul>
+                                <li>
+                                    <a href="why-choose-us.html">Why Choose Us</a>
+                                </li>
+                                <li>
+                                    <a href="academic-excellence.html">Academic Excellence</a>
+                                </li>
+                                <li>
+                                    <a href="blog-standard.html">News</a>
+                                </li>
+                                <li>
+                                    <a href="our-school.html">Our School</a>
+                                </li>
+                                <li>
+                                    <a href="event.html">Events</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-item">
+                        <div class="f-item link">
+                            <h4 class="widget-title">Quick Link</h4>
+                            <ul>
+                                <li>
+                                    <a href="admissions-fees.html">Admissions & Fees</a>
+                                </li>
+                                <li>
+                                    <a href="gallery.html">Facilities / Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="downloads.html">Downloads</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="testimonials.html">Testimonials</a>
+                                </li>
+                                <li>
+                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-item">
+                        <div class="f-item contact">
+                            <h4 class="widget-title">Contact Us</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-map-marker-alt mr-2" style="color: #ffc100;"></i>
+                                    Thamesview Primary School, Bloors Ln, Rainham, Gillingham, ME8 7DS
+                                </li>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-phone-alt mr-2" style="color: #ffc100;"></i>
+                                    020 000 000
+                                </li>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-envelope mr-2" style="color: #ffc100;"></i>
+                                    admissions@sunshinechildcareservices.co.uk
+                                </li>
+                                <li style="margin-bottom: 10px; color: #fff;">
+                                    <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
+                                    Monday – Friday: 8am – 6pm
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+            <div class="footer-bottom style-two">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>© Copyright 2025. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
+                    </div>
+                    <div class="col-lg-6 text-end">
+                        <ul class="link-list">
+                            <li>
+                                <a href="terms-conditions.html">Terms</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/loopcounter.js"></script>
+    <script src="assets/js/validnavs.js"></script>
+    <script src="assets/js/gsap.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Dropdowns for Custom Navigation -->
+    <script>
+        $(document).ready(function () {
+            // Sticky Header Functionality
+            var $header = $('.header-overlay-banner');
+            
+            function handleStickyHeader() {
+                var scrollTop = $(window).scrollTop();
+                var isMobile = $(window).width() <= 991;
+                
+                // On mobile, start sticking after less scroll for better UX
+                var threshold = isMobile ? 50 : 100;
+                
+                if (scrollTop > threshold) {
+                    $header.addClass('sticked');
+                    $('body').addClass('header-sticky-active');
+                } else {
+                    $header.removeClass('sticked');
+                    $('body').removeClass('header-sticky-active');
+                }
+            }
+            
+            // Handle scroll event with throttling for better performance
+            var scrollTimeout;
+            $(window).on('scroll', function() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(function() {
+                    handleStickyHeader();
+                }, 10);
+            });
+            
+            // Initial check
+            handleStickyHeader();
+            
+            // Get animation classes from data attributes
+            var getIn = $("ul.navbar-nav").data("in") || "fadeInDown";
+            var getOut = $("ul.navbar-nav").data("out") || "fadeOutUp";
+            
+            // Close all dropdowns on page load - ensure they start hidden
+            $("li.dropdown").removeClass("on");
+            $(".dropdown-menu").removeClass(getIn).addClass(getOut).stop().fadeOut().hide();
+            $(".dropdown-toggle").attr("aria-expanded", "false");
+
+            // Desktop hover dropdowns (window > 1023)
+            if ($(window).width() > 1023) {
+                // Function to close all dropdowns except the one specified
+                function closeAllDropdowns(exceptElement) {
+                    $("li.dropdown").not(exceptElement).each(function () {
+                        $(".dropdown-menu", this).removeClass(getIn);
+                        $(".dropdown-menu", this).stop().fadeOut().addClass(getOut);
+                        $(this).removeClass("on");
+                    });
+                }
+
+                // Apply to both home page and other pages
+                $("ul.navbar-nav, .navbar-main-wrapper ul.nav").each(function () {
+                    $("a.dropdown-toggle", this).off('click');
+                    $("a.dropdown-toggle", this).on('click', function (e) {
+                e.stopPropagation();
+                    });
+
+                    $(".dropdown-menu", this).addClass("animated");
+
+                    // Store timeout for each dropdown
+                    var dropdownTimeouts = {};
+
+                    $("li.dropdown", this).each(function () {
+                        var $dropdown = $(this);
+                        var dropdownId = $dropdown.index();
+                        var $menu = $(".dropdown-menu", $dropdown);
+
+                        // Handle mouse enter on dropdown link
+                        $dropdown.on("mouseenter", function () {
+                            // Clear any pending close timeout
+                            if (dropdownTimeouts[dropdownId]) {
+                                clearTimeout(dropdownTimeouts[dropdownId]);
+                                delete dropdownTimeouts[dropdownId];
+                            }
+
+                            // Close all other dropdowns first
+                            closeAllDropdowns($dropdown);
+                            // Open this dropdown
+                            $menu.removeClass(getOut);
+                            $menu.stop().fadeIn().addClass(getIn);
+                            $dropdown.addClass("on");
+                        });
+
+                        // Keep dropdown open when hovering over the menu itself
+                        $menu.on("mouseenter", function () {
+                            if (dropdownTimeouts[dropdownId]) {
+                                clearTimeout(dropdownTimeouts[dropdownId]);
+                                delete dropdownTimeouts[dropdownId];
+                            }
+                            $dropdown.addClass("on");
+                            $menu.removeClass(getOut).addClass(getIn).stop().fadeIn();
+                        });
+
+                        // Close dropdown when leaving both the link and menu
+                        $dropdown.on("mouseleave", function (e) {
+                            var relatedTarget = e.relatedTarget;
+
+                            // Check if mouse is moving to the dropdown menu or any child element
+                            if (relatedTarget) {
+                                // Check if moving to menu, menu children, or within dropdown area
+                                if ($menu.is(relatedTarget) ||
+                                    $menu.has(relatedTarget).length > 0 ||
+                                    $menu.find(relatedTarget).length > 0 ||
+                                    $(relatedTarget).closest('.dropdown-menu').length > 0) {
+                                    return; // Don't close if moving to menu
+                                }
+                            }
+
+                            // Add longer delay before closing to allow mouse to reach menu
+                            dropdownTimeouts[dropdownId] = setTimeout(function () {
+                                // Double check we're not hovering over menu, dropdown, or any child
+                                var isHovering = $dropdown.is(':hover') ||
+                                    $menu.is(':hover') ||
+                                    $menu.find(':hover').length > 0 ||
+                                    $dropdown.find(':hover').length > 0;
+
+                                if (!isHovering) {
+                                    $menu.removeClass(getIn).addClass(getOut).stop().fadeOut();
+                                    $dropdown.removeClass("on");
+                                    delete dropdownTimeouts[dropdownId];
+                                }
+                            }, 300); // Increased delay to 300ms
+                        });
+
+                        // Close when leaving the dropdown menu
+                        $menu.on("mouseleave", function (e) {
+                            var relatedTarget = e.relatedTarget;
+
+                            // Check if moving back to dropdown link or any child
+                            if (relatedTarget) {
+                                if ($dropdown.is(relatedTarget) ||
+                                    $dropdown.has(relatedTarget).length > 0 ||
+                                    $dropdown.find(relatedTarget).length > 0 ||
+                                    $(relatedTarget).closest('li.dropdown').length > 0) {
+                                    return; // Don't close if moving back to link
+                                }
+                            }
+
+                            dropdownTimeouts[dropdownId] = setTimeout(function () {
+                                var isHovering = $dropdown.is(':hover') ||
+                                    $menu.is(':hover') ||
+                                    $menu.find(':hover').length > 0 ||
+                                    $dropdown.find(':hover').length > 0;
+
+                                if (!isHovering) {
+                                    $menu.removeClass(getIn).addClass(getOut).stop().fadeOut();
+                                    $dropdown.removeClass("on");
+                                    delete dropdownTimeouts[dropdownId];
+                                }
+                            }, 200); // Increased delay to 200ms
+                        });
+                    });
+
+                    $(this).on("mouseleave", function () {
+                        // Close all dropdowns when leaving the entire nav area
+                        $("li.dropdown", this).each(function () {
+                            var dropdownId = $(this).index();
+                            if (dropdownTimeouts[dropdownId]) {
+                                clearTimeout(dropdownTimeouts[dropdownId]);
+                                delete dropdownTimeouts[dropdownId];
+                            }
+                            $(".dropdown-menu", this).removeClass(getIn).addClass(getOut).stop().fadeOut();
+                            $(this).removeClass("on");
+                        });
+                        return false;
+                    });
+                });
+            } else {
+                // Mobile click dropdowns
+                $("ul.navbar-nav, .navbar-main-wrapper ul.nav").each(function () {
+                    $(".dropdown-menu", this).addClass("animated");
+                    $(".dropdown-menu", this).removeClass(getOut);
+
+                    $("a.dropdown-toggle", this).off('click');
+                    $("a.dropdown-toggle", this).on('click', function (e) {
+                        e.stopPropagation();
+                        // Close all other dropdowns first
+                        $("li.dropdown").not($(this).closest("li.dropdown")).each(function () {
+                            $(".dropdown-menu", this).stop().fadeOut().removeClass(getIn);
+                            $(this).removeClass("on");
+                        });
+                // Toggle current dropdown
+                        $(this).closest("li.dropdown").find(".dropdown-menu").first().stop().fadeToggle().toggleClass(getIn);
+                        $(this).closest("li.dropdown").first().toggleClass("on");
+                        return false;
+                    });
+                });
+            }
+
+            // Handle window resize
+            $(window).on('resize', function () {
+                if ($(window).width() > 1023) {
+                    // Function to close all dropdowns except the one specified
+                    function closeAllDropdowns(exceptElement) {
+                        $("li.dropdown").not(exceptElement).each(function () {
+                            $(".dropdown-menu", this).removeClass(getIn);
+                            $(".dropdown-menu", this).stop().fadeOut().addClass(getOut);
+                            $(this).removeClass("on");
+                        });
+                    }
+
+                    // Apply to both home page and other pages
+                    $("ul.navbar-nav, .navbar-main-wrapper ul.nav").each(function () {
+                        // Clear all existing handlers
+                        $("li.dropdown", this).off("mouseenter mouseleave");
+                        $(".dropdown-menu", this).off("mouseenter mouseleave");
+                        $("a.dropdown-toggle", this).off('click');
+
+                        $("a.dropdown-toggle", this).on('click', function (e) {
+                            e.stopPropagation();
+                        });
+
+                        $(".dropdown-menu", this).addClass("animated");
+
+                        // Store timeout for each dropdown
+                        var dropdownTimeouts = {};
+
+                        $("li.dropdown", this).each(function () {
+                            var $dropdown = $(this);
+                            var dropdownId = $dropdown.index();
+                            var $menu = $(".dropdown-menu", $dropdown);
+
+                            // Handle mouse enter on dropdown link
+                            $dropdown.on("mouseenter", function () {
+                                // Clear any pending close timeout
+                                if (dropdownTimeouts[dropdownId]) {
+                                    clearTimeout(dropdownTimeouts[dropdownId]);
+                                    delete dropdownTimeouts[dropdownId];
+                                }
+
+                                // Close all other dropdowns first
+                                closeAllDropdowns($dropdown);
+                                // Open this dropdown
+                                $menu.removeClass(getOut);
+                                $menu.stop().fadeIn().addClass(getIn);
+                                $dropdown.addClass("on");
+                            });
+
+                            // Keep dropdown open when hovering over the menu itself
+                            $menu.on("mouseenter", function () {
+                                if (dropdownTimeouts[dropdownId]) {
+                                    clearTimeout(dropdownTimeouts[dropdownId]);
+                                    delete dropdownTimeouts[dropdownId];
+                                }
+                                $dropdown.addClass("on");
+                                $menu.removeClass(getOut).addClass(getIn).stop().fadeIn();
+                            });
+
+                            // Close dropdown when leaving both the link and menu
+                            $dropdown.on("mouseleave", function (e) {
+                                var relatedTarget = e.relatedTarget;
+
+                                // Check if mouse is moving to the dropdown menu or any child element
+                                if (relatedTarget) {
+                                    // Check if moving to menu, menu children, or within dropdown area
+                                    if ($menu.is(relatedTarget) ||
+                                        $menu.has(relatedTarget).length > 0 ||
+                                        $menu.find(relatedTarget).length > 0 ||
+                                        $(relatedTarget).closest('.dropdown-menu').length > 0) {
+                                        return; // Don't close if moving to menu
+                                    }
+                                }
+
+                                // Add longer delay before closing to allow mouse to reach menu
+                                dropdownTimeouts[dropdownId] = setTimeout(function () {
+                                    // Double check we're not hovering over menu, dropdown, or any child
+                                    var isHovering = $dropdown.is(':hover') ||
+                                        $menu.is(':hover') ||
+                                        $menu.find(':hover').length > 0 ||
+                                        $dropdown.find(':hover').length > 0;
+
+                                    if (!isHovering) {
+                                        $menu.removeClass(getIn).addClass(getOut).stop().fadeOut();
+                                        $dropdown.removeClass("on");
+                                        delete dropdownTimeouts[dropdownId];
+                                    }
+                                }, 300); // Increased delay to 300ms
+                            });
+
+                            // Close when leaving the dropdown menu
+                            $menu.on("mouseleave", function (e) {
+                                var relatedTarget = e.relatedTarget;
+
+                                // Check if moving back to dropdown link or any child
+                                if (relatedTarget) {
+                                    if ($dropdown.is(relatedTarget) ||
+                                        $dropdown.has(relatedTarget).length > 0 ||
+                                        $dropdown.find(relatedTarget).length > 0 ||
+                                        $(relatedTarget).closest('li.dropdown').length > 0) {
+                                        return; // Don't close if moving back to link
+                                    }
+                                }
+
+                                dropdownTimeouts[dropdownId] = setTimeout(function () {
+                                    var isHovering = $dropdown.is(':hover') ||
+                                        $menu.is(':hover') ||
+                                        $menu.find(':hover').length > 0 ||
+                                        $dropdown.find(':hover').length > 0;
+
+                                    if (!isHovering) {
+                                        $menu.removeClass(getIn).addClass(getOut).stop().fadeOut();
+                                        $dropdown.removeClass("on");
+                                        delete dropdownTimeouts[dropdownId];
+                                    }
+                                }, 200); // Increased delay to 200ms
+                            });
+                        });
+
+                        $(this).on("mouseleave", function () {
+                            // Close all dropdowns when leaving the entire nav area
+                            $("li.dropdown", this).each(function () {
+                                var dropdownId = $(this).index();
+                                if (dropdownTimeouts[dropdownId]) {
+                                    clearTimeout(dropdownTimeouts[dropdownId]);
+                                    delete dropdownTimeouts[dropdownId];
+                                }
+                                $(".dropdown-menu", this).removeClass(getIn).addClass(getOut).stop().fadeOut();
+                                $(this).removeClass("on");
+                            });
+                            return false;
+                        });
+                    });
+                } else {
+                    $("ul.navbar-nav, .navbar-main-wrapper ul.nav").each(function () {
+                        $("li.dropdown", this).off("mouseenter mouseleave");
+                        $("a.dropdown-toggle", this).off('click');
+
+                        $(".dropdown-menu", this).addClass("animated");
+                        $(".dropdown-menu", this).removeClass(getOut);
+
+                        $("a.dropdown-toggle", this).on('click', function (e) {
+                            e.stopPropagation();
+                            // Close all other dropdowns first
+                            $("li.dropdown").not($(this).closest("li.dropdown")).each(function () {
+                                $(".dropdown-menu", this).stop().fadeOut().removeClass(getIn);
+                                $(this).removeClass("on");
+                            });
+                            // Toggle current dropdown
+                            $(this).closest("li.dropdown").find(".dropdown-menu").first().stop().fadeToggle().toggleClass(getIn);
+                            $(this).closest("li.dropdown").first().toggleClass("on");
+                            return false;
+                        });
+                    });
+                }
+            });
+
+            // Megamenu title click to show/hide content
+            $('.megamenu-content .col-menu .title').on('click', function (e) {
+                e.preventDefault();
+                var $content = $(this).next('.content');
+                var $colMenu = $(this).closest('.col-menu');
+
+                $colMenu.toggleClass('on');
+                $content.slideToggle(300);
+            });
+
+            // Initialize WOW.js for scroll animations
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+
+            // Initialize Nice Select
+            if (typeof $.fn.niceSelect !== 'undefined') {
+                $('select').niceSelect();
+            }
+
+            // Bootstrap collapse mobile menu toggle - handled by validnavs.js
+            // The validnavs.js script will handle the toggle and overlay
+            
+            // Toggle hamburger icon based on menu state
+            var $toggleBtn = $('.navbar-header .navbar-toggle');
+            var $toggleIcon = $toggleBtn.find('i');
+            
+            // Function to update icon based on menu state
+            function updateToggleIcon() {
+                var $menu = $('#navbar-menu');
+                var isOpen = $menu.hasClass('show') || $menu.hasClass('in') || $menu.hasClass('collapse-mobile-show');
+                
+                if (isOpen) {
+                    // Menu is open - show times icon
+                    $toggleIcon.removeClass('fa-bars').addClass('fa-times');
+                } else {
+                    // Menu is closed - show bars icon
+                    $toggleIcon.removeClass('fa-times').addClass('fa-bars');
+                }
+            }
+            
+            // Handle toggle button click
+            $toggleBtn.on('click', function() {
+                // Small delay to let Bootstrap/validnavs.js update classes first
+                setTimeout(function() {
+                    updateToggleIcon();
+                }, 100);
+            });
+            
+            // Listen to Bootstrap collapse events
+            $('#navbar-menu').on('show.bs.collapse shown.bs.collapse', function() {
+                $toggleIcon.removeClass('fa-bars').addClass('fa-times');
+            });
+            
+            $('#navbar-menu').on('hide.bs.collapse hidden.bs.collapse', function() {
+                $toggleIcon.removeClass('fa-times').addClass('fa-bars');
+            });
+            
+            // Watch for class changes on the menu (for validnavs.js compatibility)
+            if (typeof MutationObserver !== 'undefined') {
+                var menuObserver = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                            if ($(window).width() <= 991) {
+                                updateToggleIcon();
+                            }
+                        }
+                    });
+                });
+                
+                var menuElement = document.getElementById('navbar-menu');
+                if (menuElement) {
+                    menuObserver.observe(menuElement, {
+                        attributes: true,
+                        attributeFilter: ['class']
+                    });
+                }
+            }
+            
+            // Fallback: Check periodically for class changes
+            setInterval(function() {
+                if ($(window).width() <= 991) {
+                    updateToggleIcon();
+                }
+            }, 300);
+            
+            // Ensure mobile dropdowns work with Bootstrap collapse
+            $('#navbar-menu .dropdown-toggle').on('click', function(e) {
+                if ($(window).width() <= 991) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var $parent = $(this).parent('.dropdown');
+                    var $menu = $(this).next('.dropdown-menu');
+                    
+                    // Close other dropdowns
+                    $('#navbar-menu .dropdown').not($parent).removeClass('on');
+                    $('#navbar-menu .dropdown-menu').not($menu).removeClass('show').slideUp();
+                    
+                    // Toggle current dropdown
+                    $parent.toggleClass('on');
+                    $menu.toggleClass('show').slideToggle();
+                }
+            });
+        });
+    </script>
+
+    <!-- GDPR Cookie Consent Banner -->
+    <div id="gdpr-cookie-consent">
+        <div class="gdpr-content">
+            <div class="gdpr-text">
+                <p>
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
+                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or
+                    learn more in our
+                    <a href="privacy-policy.html">Privacy Policy</a>.
+                </p>
+            </div>
+            <div class="gdpr-buttons">
+                <button class="gdpr-btn gdpr-btn-reject" id="gdpr-reject">Reject All</button>
+                <button class="gdpr-btn gdpr-btn-settings" id="gdpr-settings">Settings</button>
+                <button class="gdpr-btn gdpr-btn-accept" id="gdpr-accept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GDPR Cookie Consent Script -->
+    <script>
+        // Global functions for modal control (must be outside IIFE)
+        window.closeCookieModal = function () {
+            try {
+                const modal = document.getElementById('gdpr-settings-modal');
+                if (modal) {
+                    modal.classList.remove('show');
+                    // Reset to saved preferences
+                    const saved = localStorage.getItem('gdpr-cookie-preferences');
+                    if (saved) {
+                        try {
+                            const prefs = JSON.parse(saved);
+                            Object.keys(prefs).forEach(function (key) {
+                                const checkbox = document.getElementById('cookie-' + key);
+                                if (checkbox) {
+                                    checkbox.checked = prefs[key];
+                                }
+                            });
+                        } catch (e) {
+                            console.error('Error parsing saved preferences:', e);
+                        }
+                    } else {
+                        const essentialCheckbox = document.getElementById('cookie-essential');
+                        const analyticsCheckbox = document.getElementById('cookie-analytics');
+                        const marketingCheckbox = document.getElementById('cookie-marketing');
+                        if (essentialCheckbox) essentialCheckbox.checked = true;
+                        if (analyticsCheckbox) analyticsCheckbox.checked = false;
+                        if (marketingCheckbox) marketingCheckbox.checked = false;
+                    }
+                }
+            } catch (e) {
+                console.error('Error closing modal:', e);
+            }
+        };
+        
+        window.saveCookiePreferences = function () {
+            try {
+                const essentialCheckbox = document.getElementById('cookie-essential');
+                const analyticsCheckbox = document.getElementById('cookie-analytics');
+                const marketingCheckbox = document.getElementById('cookie-marketing');
+                
+                if (!essentialCheckbox || !analyticsCheckbox || !marketingCheckbox) {
+                    console.error('Cookie checkboxes not found');
+                    return;
+                }
+                
+                const preferences = {
+                    essential: essentialCheckbox.checked,
+                    analytics: analyticsCheckbox.checked,
+                    marketing: marketingCheckbox.checked
+                };
+                
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
+                localStorage.setItem('gdpr-cookie-consent', 'custom');
+                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                
+                // Apply preferences
+                if (preferences.analytics) {
+                    console.log('Analytics cookies enabled');
+                } else {
+                    console.log('Analytics cookies disabled');
+                }
+                
+                if (preferences.marketing) {
+                    console.log('Marketing cookies enabled');
+                } else {
+                    console.log('Marketing cookies disabled');
+                }
+                
+                // Close modal and banner
+                const modal = document.getElementById('gdpr-settings-modal');
+                const consentBanner = document.getElementById('gdpr-cookie-consent');
+                if (modal) {
+                    modal.classList.remove('show');
+                }
+                if (consentBanner) {
+                    consentBanner.classList.remove('show');
+                }
+            } catch (e) {
+                console.error('Error saving preferences:', e);
+            }
+        };
+        
+        (function () {
+            // Check if user has already made a choice
+            const consent = localStorage.getItem('gdpr-cookie-consent');
+            const consentBanner = document.getElementById('gdpr-cookie-consent');
+            
+            if (!consent) {
+                // Show banner after a short delay
+                setTimeout(function () {
+                    if (consentBanner) {
+                        consentBanner.classList.add('show');
+                    }
+                }, 1000);
+            }
+            
+            // Accept button
+            const acceptBtn = document.getElementById('gdpr-accept');
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'accepted');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    if (consentBanner) {
+                        consentBanner.classList.remove('show');
+                    }
+                    console.log('Cookies accepted');
+                });
+            }
+            
+            // Reject button
+            const rejectBtn = document.getElementById('gdpr-reject');
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'rejected');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    if (consentBanner) {
+                        consentBanner.classList.remove('show');
+                    }
+                    console.log('Cookies rejected');
+                });
+            }
+            
+            // Settings button - open modal
+            const settingsBtn = document.getElementById('gdpr-settings');
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', function () {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (modal) {
+                        modal.classList.add('show');
+                    }
+                });
+            }
+            
+            // Load saved preferences
+            function loadCookiePreferences() {
+                // Only load if cookie modal exists on this page
+                const modal = document.getElementById('gdpr-settings-modal');
+                if (!modal) {
+                    return; // Exit early if modal doesn't exist
+                }
+                
+                const saved = localStorage.getItem('gdpr-cookie-preferences');
+                if (saved) {
+                    try {
+                        const prefs = JSON.parse(saved);
+                        Object.keys(prefs).forEach(function (key) {
+                            const checkbox = document.getElementById('cookie-' + key);
+                            if (checkbox) {
+                                checkbox.checked = prefs[key];
+                            }
+                        });
+                    } catch (e) {
+                        console.error('Error parsing saved preferences:', e);
+                    }
+                } else {
+                    // Default: only essential cookies enabled
+                    const essentialCheckbox = document.getElementById('cookie-essential');
+                    const analyticsCheckbox = document.getElementById('cookie-analytics');
+                    const marketingCheckbox = document.getElementById('cookie-marketing');
+                    if (essentialCheckbox) essentialCheckbox.checked = true;
+                    if (analyticsCheckbox) analyticsCheckbox.checked = false;
+                    if (marketingCheckbox) marketingCheckbox.checked = false;
+                }
+            }
+            
+            // Initialize preferences on page load
+            loadCookiePreferences();
+            
+            // Close modal on background click
+            document.addEventListener('click', function (e) {
+                const modal = document.getElementById('gdpr-settings-modal');
+                if (modal && modal.classList.contains('show')) {
+                    // Close if clicking directly on the modal backdrop
+                    if (e.target === modal) {
+                        e.preventDefault();
+                        window.closeCookieModal();
+                    }
+                }
+            });
+            
+            // Close modal on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' || e.keyCode === 27) {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (modal && modal.classList.contains('show')) {
+                        e.preventDefault();
+                        window.closeCookieModal();
+                    }
+                }
+            });
+            
+            // Prevent modal content clicks from closing the modal
+            document.addEventListener('click', function (e) {
+                const modalContent = document.querySelector('.gdpr-modal-content');
+                if (modalContent && modalContent.contains(e.target)) {
+                    e.stopPropagation();
+                }
+            });
+            
+            // Update Accept/Reject to also save preferences
+            document.getElementById('gdpr-accept').addEventListener('click', function () {
+                const allAccepted = {
+                    essential: true,
+                    analytics: true,
+                    marketing: true
+                };
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
+                applyCookiePreferences(allAccepted);
+            });
+            
+            document.getElementById('gdpr-reject').addEventListener('click', function () {
+                const allRejected = {
+                    essential: true,
+                    analytics: false,
+                    marketing: false
+                };
+                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
+                applyCookiePreferences(allRejected);
+            });
+        })();
+    </script>
+    
+    <!-- Cookie Settings Modal -->
+    <div id="gdpr-settings-modal">
+        <div class="gdpr-modal-content">
+            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close"
+                onclick="window.closeCookieModal(); return false;">&times;</button>
+            <div class="gdpr-modal-header">
+                <h3>Cookie Settings</h3>
+                <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
+            </div>
+            
+            <div class="cookie-category essential">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Essential Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-essential" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies are necessary for the website to function properly. They cannot be disabled as they
+                    are essential for basic site functionality, security, and compliance.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Analytics Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies help us understand how visitors interact with our website by collecting and reporting
+                    information anonymously. This helps us improve our website's performance and user experience.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Marketing Cookies</h4>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may
+                    be set by advertising partners to build a profile of your interests.
+                </p>
+            </div>
+            
+            <div class="gdpr-modal-footer">
+                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings"
+                    onclick="window.closeCookieModal(); return false;">Cancel</button>
+                <button type="button" class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings"
+                    onclick="window.saveCookiePreferences(); return false;">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
