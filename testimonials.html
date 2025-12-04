@@ -592,7 +592,7 @@
                             </div>
                         <div class="testimonial-content" style="flex-grow: 1; margin-bottom: 25px;">
                             <p style="color: #666; font-size: 1rem; line-height: 1.8; margin-bottom: 20px;">
-                                "The Outstanding Ofsted rating speaks for itself, but what really matters is how happy our son is. He runs in every morning with a smile, and we know he's in safe, capable hands. The learning through play approach is fantastic!"
+                                "The Good Ofsted rating gives us confidence, but what really matters is how happy our son is. He runs in every morning with a smile, and we know he's in safe, capable hands. The learning through play approach is fantastic!"
                             </p>
                                 </div>
                         <div class="testimonial-author" style="display: flex; align-items: center; gap: 15px;">
@@ -851,7 +851,7 @@
             <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>© Copyright 2025. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
+                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
                     </div>
                     <div class="col-lg-6 text-end">
                         <ul class="link-list">
@@ -895,6 +895,11 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Dynamic Copyright Year -->
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Initialize Dropdowns and Megamenu -->
     <script>

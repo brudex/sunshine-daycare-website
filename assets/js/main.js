@@ -160,7 +160,7 @@
 			direction: "horizontal",
 			loop: true,
 			autoplay: {
-				delay: 7500,
+				delay: 12000,
 				disableOnInteraction: false,
 			},
 			effect: "fade",

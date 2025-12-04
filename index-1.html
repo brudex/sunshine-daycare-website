@@ -1844,7 +1844,7 @@
             <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>© Copyright 2025. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
+                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
                     </div>
                     <div class="col-lg-6 text-end">
                         <ul class="link-list">
@@ -1888,6 +1888,11 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Dynamic Copyright Year -->
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Initialize Dropdowns for Custom Navigation -->
     <script>
