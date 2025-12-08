@@ -2119,14 +2119,14 @@ nav.navbar.validnavs.brand-center {
 	nav.navbar.validnavs li.dropdown a.dropdown-toggle:before {
 		font-family: var(--fontawesome);
 		font-weight: 400;
-		content: "\f105";
+		/* content: "\f105"; */
 		float: right;
 		font-size: 16px;
 		margin-left: 10px;
 	}
 
 	nav.navbar.validnavs li.dropdown.on>a.dropdown-toggle:before {
-		content: "\f107";
+		/* content: "\f107"; */
 	}
 
 	nav.navbar.validnavs .navbar-nav>li>a {

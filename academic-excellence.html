@@ -427,18 +427,586 @@
     </style>
 
     <style>
+        /* Hide header border when mobile menu is open */
+        @media (max-width: 991px) {
+            body.menu-open header::after {
+                display: none;
+            }
+        }
+
         /* Mobile Menu Z-Index Fix */
         header {
             position: relative;
             z-index: 1001;
         }
         
+        /* Remove active underlines on mobile */
+        @media (max-width: 991px) {
+            .navbar-nav>li.active>a::after,
+            .navbar-nav>li.dropdown.active>a.dropdown-toggle::after,
+            .dropdown-menu>li.active>a::after {
+                display: none !important;
+                content: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+        }
+        
+        /* Enhanced Mobile Menu Styling */
+        @media (max-width: 991px) {
+            /* Mobile Menu Container */
         nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 85vw !important;
+                max-width: 400px !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+                box-shadow: 4px 0 30px rgba(0, 0, 0, 0.15) !important;
             z-index: 10000 !important;
+                overflow-y: auto;
+                overflow-x: hidden;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 0 !important;
+                border: none !important;
+                margin: 0 !important;
+            }
+
+            /* Remove any borders from mobile menu container */
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::before,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.show,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile.in {
+                left: 0 !important;
+            }
+
+            /* Mobile Menu Header */
+            #navbar-menu {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .mobile-menu-header {
+                position: relative;
+                padding: 20px 20px;
+                border-bottom: 2px solid rgba(14, 42, 71, 0.1);
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 90px;
+                flex-shrink: 0;
+                width: 100%;
+                box-sizing: border-box;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            /* Ensure border doesn't extend beyond drawer */
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+                overflow-x: hidden;
+            }
+
+            .mobile-menu-header::after {
+                display: none;
+            }
+
+            .mobile-menu-header img {
+                display: block;
+                max-height: 70px;
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                flex: 0 0 auto;
+                object-fit: contain;
+                align-self: center;
+            }
+
+            /* Ensure button aligns with logo */
+            .mobile-menu-header button {
+                align-self: center;
+            }
+
+            /* Close Button */
+            #navbar-menu .navbar-toggle.mobile-menu-close {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+                border: 2px solid #0e2a47 !important;
+                border-radius: 50%;
+                background: #fff;
+                color: #0e2a47;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin: 0;
+                padding: 0;
+                z-index: 10001;
+                flex-shrink: 0;
+                align-self: center;
+            }
+
+            /* Ensure both logo and close button align on the same line */
+            .mobile-menu-header {
+                align-items: center;
+            }
+
+            .mobile-menu-header > img,
+            .mobile-menu-header > button {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            #navbar-menu .navbar-toggle.mobile-menu-close:hover {
+                background: #0e2a47;
+                color: #fff;
+                transform: rotate(90deg);
+            }
+
+            #navbar-menu .navbar-toggle.mobile-menu-close i {
+                font-weight: 400;
+            }
+
+            /* Navigation Links */
+            #navbar-menu .nav.navbar-nav {
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none !important;
+                overflow: hidden;
+            }
+
+            #navbar-menu .nav.navbar-nav > li {
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid rgba(14, 42, 71, 0.1);
+                margin: 0;
+                padding: 0;
+                list-style: none !important;
+            }
+
+            /* Remove any boxes, markers, or pseudo-elements from main nav items */
+            #navbar-menu .nav.navbar-nav > li::before,
+            #navbar-menu .nav.navbar-nav > li::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            #navbar-menu .nav.navbar-nav > li:first-child {
+                border-top: none;
+            }
+
+            #navbar-menu .nav.navbar-nav > li:last-child {
+                border-bottom: none;
+            }
+
+            #navbar-menu .nav.navbar-nav > li > a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 18px 25px !important;
+                color: #0e2a47 !important;
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                background: transparent;
+                border: none;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            /* Ensure proper text and icon alignment in menu links */
+            #navbar-menu .nav.navbar-nav > li > a {
+                text-align: left;
+            }
+
+            /* Dropdown toggle - ensure text and icon are properly separated */
+            #navbar-menu .nav.navbar-nav > li.dropdown > a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                position: relative;
+                padding-right: 45px !important;
+            }
+
+            #navbar-menu .nav.navbar-nav > li > a:hover,
+            #navbar-menu .nav.navbar-nav > li > a:focus {
+                background: rgba(255, 193, 0, 0.1) !important;
+                color: #0e2a47 !important;
+                padding-left: 30px !important;
+            }
+
+            #navbar-menu .nav.navbar-nav > li.active > a {
+                background: rgba(255, 193, 0, 0.15) !important;
+                color: #0e2a47 !important;
+                font-weight: 600;
+                border-left: 4px solid #ffc100;
+                border-bottom: none !important;
+                border-top: none !important;
+                text-decoration: none !important;
+            }
+
+            /* Remove any underline or border from active items */
+            #navbar-menu .nav.navbar-nav > li.active > a::after,
+            #navbar-menu .nav.navbar-nav > li.active > a::before {
+                display: none !important;
+                content: none !important;
+            }
+
+            /* Dropdown Toggle Icon - Positioned absolutely to the right */
+            #navbar-menu .nav.navbar-nav > li.dropdown > a .fa-angle-down {
+                position: absolute;
+                right: 25px;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: transform 0.3s ease;
+                font-size: 14px;
+                width: 20px;
+                height: 20px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+
+            #navbar-menu .nav.navbar-nav > li.dropdown.on > a .fa-angle-down {
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            /* Ensure all icons are properly aligned */
+            #navbar-menu .nav.navbar-nav > li > a i {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+
+            /* Dropdown Menu */
+            #navbar-menu .dropdown-menu {
+                position: static !important;
+                float: none !important;
+                width: 100% !important;
+                background: rgba(14, 42, 71, 0.03) !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                display: none;
+                animation: slideDown 0.3s ease;
+                list-style: none !important;
+            }
+
+            #navbar-menu .dropdown-menu.show {
+                display: block !important;
+            }
+
+            #navbar-menu .dropdown-menu > li {
+                border-bottom: 1px solid rgba(14, 42, 71, 0.08);
+                list-style: none !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            #navbar-menu .dropdown-menu > li:last-child {
+                border-bottom: none;
+            }
+
+            #navbar-menu .dropdown-menu > li > a {
+                padding: 15px 25px 15px 25px !important;
+                color: #0e2a47 !important;
+                font-size: 15px;
+                font-weight: 400;
+                display: block;
+                transition: all 0.3s ease;
+                list-style: none !important;
+                text-decoration: none;
+            }
+
+            /* Remove any boxes, markers, or pseudo-elements from dropdown items */
+            #navbar-menu .dropdown-menu > li::before,
+            #navbar-menu .dropdown-menu > li::after,
+            #navbar-menu .dropdown-menu > li > a::before,
+            #navbar-menu .dropdown-menu > li > a::after {
+                display: none !important;
+                content: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                border: none !important;
+                background: none !important;
+            }
+
+            /* Ensure no list markers or boxes appear */
+            #navbar-menu .dropdown-menu,
+            #navbar-menu .dropdown-menu > li,
+            #navbar-menu .dropdown-menu > li > a {
+                list-style-type: none !important;
+                list-style: none !important;
+            }
+
+            /* Remove any background boxes or borders that might create box appearance */
+            #navbar-menu .dropdown-menu > li > a {
+                border-left: none !important;
+                border-right: none !important;
+                border-top: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+
+            #navbar-menu .dropdown-menu > li > a:hover {
+                background: rgba(255, 193, 0, 0.1) !important;
+                padding-left: 30px !important;
+                color: #0e2a47 !important;
+            }
+
+            #navbar-menu .dropdown-menu > li.active > a {
+                background: rgba(255, 193, 0, 0.15) !important;
+                color: #0e2a47 !important;
+                font-weight: 500;
+                border-bottom: none !important;
+                border-top: none !important;
+                text-decoration: none !important;
+            }
+
+            /* Remove any underline or border from active dropdown items */
+            #navbar-menu .dropdown-menu > li.active > a::after,
+            #navbar-menu .dropdown-menu > li.active > a::before {
+                display: none !important;
+                content: none !important;
+            }
+
+            /* Overlay Screen */
+            .overlay-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(4px);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.4s ease, visibility 0.4s ease;
+                z-index: 9999;
+                pointer-events: none;
         }
 
         .overlay-screen.opened {
-            z-index: 9999 !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+            }
+
+            /* Prevent body scroll when menu is open */
+            body.menu-open {
+                overflow: hidden !important;
+                position: fixed !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            /* Mobile Menu Toggle Button - Improved Design */
+            .navbar-toggle[data-toggle="collapse"] {
+                background: #fff !important;
+                border: 2px solid #0e2a47 !important;
+                padding: 12px 14px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 1001;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                min-width: 48px;
+                min-height: 48px;
+                margin: 10px 15px 10px 15px;
+                box-shadow: 0 2px 8px rgba(14, 42, 71, 0.15);
+            }
+
+            .navbar-toggle[data-toggle="collapse"]:hover {
+                background: #0e2a47 !important;
+                color: #fff !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(14, 42, 71, 0.25);
+            }
+
+            .navbar-toggle[data-toggle="collapse"]:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 6px rgba(14, 42, 71, 0.2);
+            }
+
+            .navbar-toggle[data-toggle="collapse"] i {
+                font-size: 22px;
+                color: #0e2a47;
+                transition: color 0.3s ease;
+                line-height: 1;
+                display: block;
+            }
+
+            .navbar-toggle[data-toggle="collapse"]:hover i {
+                color: #fff;
+            }
+
+            /* Mobile Header Layout - Logo left, Hamburger right */
+            @media (max-width: 991px) {
+                /* Container layout */
+                nav.navbar .container.d-flex {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    width: 100%;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+
+                /* Navbar header - contains logo and button */
+                .navbar-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 5px 0;
+                }
+
+                /* Logo on the left */
+                .navbar-header .navbar-brand {
+                    order: 1;
+                    flex: 0 0 auto;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* Hamburger button on the right */
+                .navbar-header .navbar-toggle[data-toggle="collapse"] {
+                    order: 2;
+                    flex-shrink: 0;
+                    margin: 10px 0 10px auto;
+                }
+
+                /* nav-item-box should not take up space in header but drawer should work */
+                .nav-item-box {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    overflow: visible;
+                    z-index: 10000;
+                }
+
+                /* Mobile menu drawer should be accessible */
+                .nav-item-box .navbar-collapse {
+                    position: fixed !important;
+                }
+            }
+
+            /* Smooth Scrollbar for Mobile Menu */
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::-webkit-scrollbar-track {
+                background: rgba(14, 42, 71, 0.05);
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::-webkit-scrollbar-thumb {
+                background: rgba(14, 42, 71, 0.2);
+                border-radius: 3px;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::-webkit-scrollbar-thumb:hover {
+                background: rgba(14, 42, 71, 0.3);
+            }
+
+            /* Animations */
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            /* Stagger animation for menu items */
+            #navbar-menu .nav.navbar-nav > li {
+                animation: slideInLeft 0.4s ease backwards;
+            }
+
+            #navbar-menu .nav.navbar-nav > li:nth-child(1) { animation-delay: 0.1s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(2) { animation-delay: 0.15s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(3) { animation-delay: 0.2s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(4) { animation-delay: 0.25s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(5) { animation-delay: 0.3s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(6) { animation-delay: 0.35s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(7) { animation-delay: 0.4s; }
+            #navbar-menu .nav.navbar-nav > li:nth-child(8) { animation-delay: 0.45s; }
+
+            /* Remove unwanted borders and elements */
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::after,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::before,
+            #navbar-menu::after,
+            #navbar-menu::before {
+                display: none !important;
+                content: none !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 575px) {
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+                width: 90vw !important;
+                max-width: 90vw !important;
+            }
+
+            /* Adjust hamburger button for smaller screens */
+            .navbar-toggle[data-toggle="collapse"] {
+                width: 44px !important;
+                height: 44px !important;
+                min-width: 44px !important;
+                min-height: 44px !important;
+                padding: 10px !important;
+                margin: 8px 12px 8px 12px !important;
+            }
+
+            .navbar-toggle[data-toggle="collapse"] i {
+                font-size: 20px !important;
+            }
         }
     </style>
 
@@ -475,12 +1043,16 @@
                 <div class="nav-item-box d-flex justify-content-between align-items-center">
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-
-                        <img src="assets/img/logo-4.png" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <!-- Mobile Menu Header with Logo and Close Button -->
+                        <div class="mobile-menu-header">
+                            <img src="assets/img/logo-4.png" alt="Sunshine Child-Care Nursery Logo"
+                                style="max-height: 70px; height: auto; width: auto;">
+                            <button type="button" class="navbar-toggle mobile-menu-close" data-toggle="collapse" data-target="#navbar-menu" aria-label="Close menu">
                         <i class="fa fa-times"></i>
                     </button>
+                        </div>
                     
+                        <!-- Mobile Menu Navigation -->
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -939,6 +1511,145 @@
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
 
+    <!-- Initialize Dropdowns and Mobile Menu -->
+    <script>
+        $(document).ready(function () {
+            // Initialize Bootstrap 4 dropdowns
+            $('.dropdown-toggle').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var $parent = $(this).closest('.dropdown');
+                var $menu = $(this).next('.dropdown-menu');
+
+                // Close all other dropdowns
+                $('.dropdown').not($parent).removeClass('show');
+                $('.dropdown-menu').not($menu).removeClass('show');
+
+                // Toggle current dropdown
+                $parent.toggleClass('show');
+                $menu.toggleClass('show');
+
+                // Update aria-expanded
+                $(this).attr('aria-expanded', $parent.hasClass('show'));
+            });
+
+            // Close dropdown when clicking outside
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.dropdown').length) {
+                    $('.dropdown').removeClass('show');
+                    $('.dropdown-menu').removeClass('show');
+                    $('.dropdown-toggle').attr('aria-expanded', 'false');
+                }
+            });
+
+            // Initialize WOW.js for scroll animations
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+
+            // Enhanced Mobile Menu Functionality
+            var $navbarToggle = $('.navbar-toggle[data-toggle="collapse"]');
+            var $navbarMenu = $('#navbar-menu');
+            var $overlay = $('.overlay-screen');
+
+            function updateMenuState() {
+                var isMenuOpen = $navbarMenu.hasClass('show') || $navbarMenu.hasClass('in');
+                
+                if (isMenuOpen) {
+                    $('body').addClass('menu-open');
+                    $overlay.addClass('opened');
+                } else {
+                    $('body').removeClass('menu-open');
+                    $overlay.removeClass('opened');
+                }
+            }
+
+            // Handle menu toggle with smooth animation
+            $navbarToggle.on('click', function() {
+                setTimeout(updateMenuState, 150);
+            });
+
+            // Handle menu close via close button inside menu
+            $('#navbar-menu .navbar-toggle').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $navbarMenu.removeClass('show').removeClass('in');
+                updateMenuState();
+            });
+
+            // Handle menu close via overlay click
+            $overlay.on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $navbarMenu.removeClass('show').removeClass('in');
+                updateMenuState();
+            });
+
+            // Enhanced dropdown functionality for mobile
+            $(document).on('click', '#navbar-menu .dropdown-toggle', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var $dropdown = $(this).closest('.dropdown');
+                var $dropdownMenu = $dropdown.find('.dropdown-menu').first();
+                var isOpen = $dropdown.hasClass('on');
+                
+                // Close all other dropdowns
+                $('#navbar-menu .dropdown').not($dropdown).removeClass('on');
+                $('#navbar-menu .dropdown-menu').not($dropdownMenu).removeClass('show').slideUp(300);
+                
+                // Toggle current dropdown
+                if (isOpen) {
+                    $dropdown.removeClass('on');
+                    $dropdownMenu.removeClass('show').slideUp(300);
+                } else {
+                    $dropdown.addClass('on');
+                    $dropdownMenu.addClass('show').slideDown(300);
+                }
+            });
+
+            // Close dropdowns when clicking outside
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#navbar-menu').length && !$(e.target).closest('.navbar-toggle[data-toggle="collapse"]').length) {
+                    $('#navbar-menu .dropdown').removeClass('on');
+                    $('#navbar-menu .dropdown-menu').removeClass('show').slideUp(300);
+                }
+            });
+
+            // Close menu when clicking on a link (for single page navigation)
+            $('#navbar-menu .nav.navbar-nav > li:not(.dropdown) > a').on('click', function() {
+                setTimeout(function() {
+                    $navbarMenu.removeClass('show').removeClass('in');
+                    updateMenuState();
+                }, 300);
+            });
+
+            // Watch for menu state changes (for external triggers like validnavs.js)
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        updateMenuState();
+                    }
+                });
+            });
+
+            if ($navbarMenu.length) {
+                observer.observe($navbarMenu[0], {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+            }
+
+            // Close menu on window resize (if menu is open)
+            $(window).on('resize', function() {
+                if ($(window).width() > 991) {
+                    $navbarMenu.removeClass('show').removeClass('in');
+                    updateMenuState();
+                }
+            });
+        });
+    </script>
 
     </div>
 
