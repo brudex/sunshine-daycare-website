@@ -400,6 +400,22 @@
         }
     </style>
 
+    <style>
+        /* Mobile Menu Z-Index Fix */
+        header {
+            position: relative;
+            z-index: 1001;
+        }
+        
+        nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+            z-index: 10000 !important;
+        }
+
+        .overlay-screen.opened {
+            z-index: 9999 !important;
+        }
+    </style>
+
 </head>
 
 <body>
