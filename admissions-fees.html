@@ -38,7 +38,7 @@
 
 
 
-<!-- Navigation Links Styling -->
+    <!-- Navigation Links Styling -->
     <style>
         /* Menu Hover Effects */
         .navbar-nav>li>a {
@@ -154,7 +154,7 @@
         }
     </style>
 
-<!-- GDPR Cookie Consent Styles -->
+    <!-- GDPR Cookie Consent Styles -->
     <style>
         #gdpr-cookie-consent {
             position: fixed;
@@ -162,15 +162,17 @@
             left: 0;
             right: 0;
             background: #fff;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             padding: 25px 30px;
             z-index: 10000;
             display: none;
             border-top: 3px solid #ffc100;
         }
+
         #gdpr-cookie-consent.show {
             display: block;
         }
+
         .gdpr-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -180,25 +182,30 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .gdpr-text {
             flex: 1;
             min-width: 300px;
         }
+
         .gdpr-text p {
             margin: 0;
             font-size: 0.95rem;
             line-height: 1.6;
             color: #333;
         }
+
         .gdpr-text a {
             color: #ffc100;
             text-decoration: underline;
         }
+
         .gdpr-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
+
         .gdpr-btn {
             padding: 12px 30px;
             border: none;
@@ -208,43 +215,52 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-btn-accept {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-btn-accept:hover {
             background: #FFD700;
         }
+
         .gdpr-btn-reject {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-btn-reject:hover {
             background: #e0e0e0;
         }
+
         .gdpr-btn-settings {
             background: transparent;
             color: #666;
             border: 1px solid #ddd;
         }
+
         .gdpr-btn-settings:hover {
             background: #f5f5f5;
         }
+
         @media (max-width: 768px) {
             .gdpr-content {
                 flex-direction: column;
                 text-align: center;
             }
+
             .gdpr-buttons {
                 width: 100%;
                 justify-content: center;
             }
+
             .gdpr-btn {
                 flex: 1;
                 min-width: 120px;
             }
         }
-        
+
         /* Cookie Settings Modal */
         #gdpr-settings-modal {
             display: none;
@@ -258,11 +274,13 @@
             overflow-y: auto;
             padding: 20px;
         }
+
         #gdpr-settings-modal.show {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .gdpr-modal-content {
             background: #fff;
             border-radius: 10px;
@@ -272,24 +290,28 @@
             overflow-y: auto;
             padding: 30px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
+
         .gdpr-modal-header {
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
         }
+
         .gdpr-modal-header h3 {
             margin: 0;
             color: #000;
             font-size: 1.8rem;
             font-weight: 400;
         }
+
         .gdpr-modal-header p {
             margin: 10px 0 0 0;
             color: #666;
             font-size: 0.95rem;
         }
+
         .gdpr-modal-close {
             position: absolute;
             top: 20px;
@@ -307,10 +329,12 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-close:hover {
             background: #f0f0f0;
             color: #000;
         }
+
         .cookie-category {
             margin-bottom: 25px;
             padding: 20px;
@@ -318,29 +342,34 @@
             border-radius: 8px;
             border: 1px solid #eee;
         }
+
         .cookie-category-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         .cookie-category-title {
             font-size: 1.2rem;
             font-weight: 400;
             color: #000;
             margin: 0;
         }
+
         .cookie-toggle {
             position: relative;
             display: inline-block;
             width: 50px;
             height: 26px;
         }
+
         .cookie-toggle input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .cookie-slider {
             position: absolute;
             cursor: pointer;
@@ -352,6 +381,7 @@
             transition: 0.3s;
             border-radius: 26px;
         }
+
         .cookie-slider:before {
             position: absolute;
             content: "";
@@ -363,22 +393,27 @@
             transition: 0.3s;
             border-radius: 50%;
         }
-        .cookie-toggle input:checked + .cookie-slider {
+
+        .cookie-toggle input:checked+.cookie-slider {
             background-color: #0e2a47;
         }
-        .cookie-toggle input:checked + .cookie-slider:before {
+
+        .cookie-toggle input:checked+.cookie-slider:before {
             transform: translateX(24px);
         }
+
         .cookie-category-description {
             font-size: 0.9rem;
             color: #666;
             line-height: 1.6;
             margin-top: 10px;
         }
+
         .cookie-category.essential .cookie-toggle {
             opacity: 0.5;
             cursor: not-allowed;
         }
+
         .gdpr-modal-footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -388,6 +423,7 @@
             justify-content: flex-end;
             flex-wrap: wrap;
         }
+
         .gdpr-modal-btn {
             padding: 12px 30px;
             border: none;
@@ -397,33 +433,40 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-btn-save {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-modal-btn-save:hover {
             background: #B8941F;
         }
+
         .gdpr-modal-btn-cancel {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-modal-btn-cancel:hover {
             background: #e0e0e0;
         }
+
         @media (max-width: 768px) {
             .gdpr-modal-content {
                 padding: 20px;
                 margin: 10px;
             }
+
             .gdpr-modal-footer {
                 flex-direction: column;
             }
+
             .gdpr-modal-btn {
                 width: 100%;
             }
         }
-        
+
         /* Submit Button Hover - Lighter Shade */
         #submit:hover,
         button#submit:hover {
@@ -447,7 +490,7 @@
         <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs white navbar-fixed no-background">
 
 
-            <div class="container d-flex justify-content-between align-items-center">            
+            <div class="container d-flex justify-content-between align-items-center">
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
@@ -455,21 +498,24 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <div class="nav-item-box d-flex justify-content-between align-items-center">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
 
-                        <img src="assets/img/logo-4.png" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-times"></i>
-                    </button>
-                    
+                        <img src="assets/img/logo-4.png" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-times"></i>
+                        </button>
+
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -481,8 +527,8 @@
                                     <li><a href="gallery.html">Facilities</a></li>
                                     <li><a href="blog-standard.html">News & Events</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
-                                                </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
@@ -490,24 +536,24 @@
                                     <li class="active"><a href="admissions-fees.html">Admissions Journey</a></li>
                                     <li><a href="admissions-fees.html#application-form">Admissions Form</a></li>
                                     <li><a href="downloads.html">Downloads</a></li>
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="schedule-tour.html">Schedule a Tour</a></li>
-                                                </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <li><a href="testimonials.html">Testimonials</a></li>
-                                                    <li><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
 
-                        
-                    </div>
 
-                        </div>
+                </div>
+
+            </div>
             <!-- Overlay screen for menu -->
             <div class="overlay-screen"></div>
             <!-- End Overlay screen for menu -->
@@ -517,23 +563,42 @@
     <!-- End Header -->
     <!-- Start Admissions Page Header Banner 
     ============================================= -->
-    <div class="breadcrumb-area text-center" style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 150px 0 100px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 30px rgba(0,0,0,0.05);">
+    <div class="breadcrumb-area text-center"
+        style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 150px 0 100px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 30px rgba(0,0,0,0.05);">
         <!-- Decorative geometric shapes with shadows -->
-        <div style="position: absolute; top: -80px; right: -50px; width: 250px; height: 250px; background: rgba(255,255,255,0.15); border-radius: 50%; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 10px 30px rgba(255,255,255,0.2); transform: rotate(15deg);"></div>
-        <div style="position: absolute; bottom: -60px; left: -40px; width: 200px; height: 200px; background: rgba(255,255,255,0.12); border-radius: 50%; z-index: 1; box-shadow: 0 15px 50px rgba(0,0,0,0.12), inset 0 8px 25px rgba(255,255,255,0.15); transform: rotate(-20deg);"></div>
-        <div style="position: absolute; top: 50%; left: 10%; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 20px; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 5px 15px rgba(255,255,255,0.2); transform: rotate(45deg);"></div>
-        <div style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 15px; z-index: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 4px 12px rgba(255,255,255,0.15); transform: rotate(-30deg);"></div>
-        <div style="position: absolute; bottom: 15%; right: 25%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50% 20% 50% 20%; z-index: 1; box-shadow: 0 12px 45px rgba(0,0,0,0.1), inset 0 6px 20px rgba(255,255,255,0.18); transform: rotate(25deg);"></div>
-        
+        <div
+            style="position: absolute; top: -80px; right: -50px; width: 250px; height: 250px; background: rgba(255,255,255,0.15); border-radius: 50%; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 10px 30px rgba(255,255,255,0.2); transform: rotate(15deg);">
+        </div>
+        <div
+            style="position: absolute; bottom: -60px; left: -40px; width: 200px; height: 200px; background: rgba(255,255,255,0.12); border-radius: 50%; z-index: 1; box-shadow: 0 15px 50px rgba(0,0,0,0.12), inset 0 8px 25px rgba(255,255,255,0.15); transform: rotate(-20deg);">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 10%; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 20px; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 5px 15px rgba(255,255,255,0.2); transform: rotate(45deg);">
+        </div>
+        <div
+            style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 15px; z-index: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 4px 12px rgba(255,255,255,0.15); transform: rotate(-30deg);">
+        </div>
+        <div
+            style="position: absolute; bottom: 15%; right: 25%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50% 20% 50% 20%; z-index: 1; box-shadow: 0 12px 45px rgba(0,0,0,0.1), inset 0 6px 20px rgba(255,255,255,0.18); transform: rotate(25deg);">
+        </div>
+
         <!-- Additional depth layers -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 70%); z-index: 1;"></div>
-        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: radial-gradient(ellipse at bottom left, rgba(255,255,255,0.08) 0%, transparent 60%); z-index: 1;"></div>
-        
+        <div
+            style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 70%); z-index: 1;">
+        </div>
+        <div
+            style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: radial-gradient(ellipse at bottom left, rgba(255,255,255,0.08) 0%, transparent 60%); z-index: 1;">
+        </div>
+
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <h1 style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">Enrollments Open – Secure Your Spot Today!</h1>
-                    <p style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px; text-shadow: 0 1px 5px rgba(0,0,0,0.08);">Your child's bright future starts here</p>
+                    <h1
+                        style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        Enrollments Open – Secure Your Spot Today!</h1>
+                    <p
+                        style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px; text-shadow: 0 1px 5px rgba(0,0,0,0.08);">
+                        Your child's bright future starts here</p>
                     <div class="mt-40">
                         <a href="#application-form" class="btn btn-lg animation"
                             style="background: #ffc100; color: #000; border: none; padding: 18px 50px; font-size: 1.2rem; font-weight: 400; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
@@ -555,9 +620,9 @@
                     <div class="wow fadeInUp">
                         <h2 style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 20px;">Why Choose
                             Sunshine?</h2>
-                        </div>
                     </div>
                 </div>
+            </div>
             <div class="row">
                 <!-- Feature 1 -->
                 <div class="col-lg-4 col-md-6 mb-30">
@@ -565,40 +630,41 @@
                         style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
                             <i class="fas fa-star" style="font-size: 3.5rem; color: #ffc100;"></i>
-                                </div>
+                        </div>
                         <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">Good Ofsted Rating</h4>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
-                            We are proud of our 'Good' rating from Ofsted, which recognizes our high-quality provision, safe environment, and the excellent progress children make.
-                                    </p>
-                                </div>
-                            </div>
+                            We are proud of our 'Good' rating from Ofsted, which recognizes our high-quality provision,
+                            safe environment, and the excellent progress children make.
+                        </p>
+                    </div>
+                </div>
                 <!-- Feature 2 -->
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="wow fadeInUp" data-wow-delay="200ms"
                         style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
                             <i class="fas fa-book-reader" style="font-size: 3.5rem; color: #ffc100;"></i>
-                            </div>
+                        </div>
                         <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">Holistic Curriculum</h4>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
                             Learning beyond the classroom with our play-based approach.
                         </p>
-                        </div>
                     </div>
+                </div>
                 <!-- Feature 3 -->
                 <div class="col-lg-4 col-md-6 mb-30">
                     <div class="wow fadeInUp" data-wow-delay="400ms"
                         style="background: #f8f9fa; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                         <div class="icon mb-4">
                             <i class="fas fa-users" style="font-size: 3.5rem; color: #ffc100;"></i>
-                </div>
+                        </div>
                         <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">Family Partnership</h4>
                         <p style="color: #666; font-size: 1.05rem; line-height: 1.7;">
                             Working hand-in-hand with families every step of the way.
                         </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
         </div>
     </div>
     <!-- End Section 1: Why Choose Sunshine? -->
@@ -610,43 +676,55 @@
             <div class="row align-center">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="wow fadeInUp">
-                        <h2 style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 25px; text-align: center;">Admission Fees</h2>
-                        <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px; line-height: 1.8; text-align: center;">
-                            We offer flexible session options to fit your family's needs. Our fees are competitive and transparent, with no hidden costs.
+                        <h2
+                            style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 25px; text-align: center;">
+                            Admission Fees</h2>
+                        <p
+                            style="font-size: 1.1rem; color: #666; margin-bottom: 40px; line-height: 1.8; text-align: center;">
+                            We offer flexible session options to fit your family's needs. Our fees are competitive and
+                            transparent, with no hidden costs.
                         </p>
                         <div class="row">
                             <div class="col-lg-4 col-md-6 mb-30">
-                                <div style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                                <div
+                                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                                     <div class="icon mb-3">
                                         <i class="fas fa-sun" style="font-size: 2.5rem; color: #ffc100;"></i>
                                     </div>
                                     <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">Breakfast Club</h4>
-                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong style="color: #000; font-size: 1.5rem;">£8.50</strong></p>
+                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong
+                                            style="color: #000; font-size: 1.5rem;">£8.50</strong></p>
                                     <p style="color: #666; font-size: 0.95rem;">per session</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-30">
-                                <div style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                                <div
+                                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                                     <div class="icon mb-3">
                                         <i class="fas fa-book-reader" style="font-size: 2.5rem; color: #ffc100;"></i>
                                     </div>
                                     <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">Preschool</h4>
-                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong style="color: #000; font-size: 1.5rem;">£8.50</strong></p>
+                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong
+                                            style="color: #000; font-size: 1.5rem;">£8.50</strong></p>
                                     <p style="color: #666; font-size: 0.95rem;">per session</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-30">
-                                <div style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
+                                <div
+                                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; height: 100%;">
                                     <div class="icon mb-3">
                                         <i class="fas fa-clock" style="font-size: 2.5rem; color: #ffc100;"></i>
                                     </div>
-                                    <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">After School Club</h4>
-                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong style="color: #000; font-size: 1.5rem;">£13.50</strong></p>
+                                    <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">After School Club
+                                    </h4>
+                                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong
+                                            style="color: #000; font-size: 1.5rem;">£13.50</strong></p>
                                     <p style="color: #666; font-size: 0.95rem;">per session</p>
                                 </div>
                             </div>
                         </div>
-                        <div style="background: #ffc100; border-radius: 15px; padding: 30px; margin-top: 30px; text-align: center;">
+                        <div
+                            style="background: #ffc100; border-radius: 15px; padding: 30px; margin-top: 30px; text-align: center;">
                             <h4 style="color: #000; font-weight: 400; margin-bottom: 15px;">
                                 <i class="fas fa-tag mr-2"></i>Special Discount
                             </h4>
@@ -674,7 +752,8 @@
             <div class="row mb-40">
                 <div class="col-lg-12 text-center">
                     <div class="wow fadeInUp">
-                        <h2 style="color: #000; font-size: 2.2rem; font-weight: 400; margin-bottom: 15px;">Admissions Process</h2>
+                        <h2 style="color: #000; font-size: 2.2rem; font-weight: 400; margin-bottom: 15px;">Admissions
+                            Process</h2>
                         <p style="font-size: 1rem; color: #666;">Simple steps to join the Sunshine family</p>
                     </div>
                 </div>
@@ -690,9 +769,11 @@
                         <div class="icon mb-3 mt-15">
                             <i class="fas fa-file-alt" style="font-size: 2.5rem; color: #ffc100;"></i>
                         </div>
-                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Complete Your Application</h4>
+                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Complete Your
+                            Application</h4>
                         <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Complete and submit the online Application Form (or PDF). Ensure your phone number and email address are correct and functional, as this is our primary way to contact you.
+                            Complete and submit the online Application Form (or PDF). Ensure your phone number and email
+                            address are correct and functional, as this is our primary way to contact you.
                         </p>
                     </div>
                 </div>
@@ -706,9 +787,12 @@
                         <div class="icon mb-3 mt-15">
                             <i class="fas fa-phone-alt" style="font-size: 2.5rem; color: #ffc100;"></i>
                         </div>
-                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Personalized Consultation</h4>
+                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Personalized
+                            Consultation</h4>
                         <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            The Nursery Manager will contact you via phone to discuss your application, answer any immediate questions, and explain the various session types available. We will help you select the session that best supports your child and family's needs.
+                            The Nursery Manager will contact you via phone to discuss your application, answer any
+                            immediate questions, and explain the various session types available. We will help you
+                            select the session that best supports your child and family's needs.
                         </p>
                     </div>
                 </div>
@@ -722,9 +806,12 @@
                         <div class="icon mb-3 mt-15">
                             <i class="fas fa-envelope" style="font-size: 2.5rem; color: #ffc100;"></i>
                         </div>
-                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Final Enrolment Details</h4>
+                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Final
+                            Enrolment Details</h4>
                         <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Following your consultation, the Manager will send the final part of the enrolment form, which requires detailed personal, medical, and emergency information, via a secured official email. Please complete and return this form promptly.
+                            Following your consultation, the Manager will send the final part of the enrolment form,
+                            which requires detailed personal, medical, and emergency information, via a secured official
+                            email. Please complete and return this form promptly.
                         </p>
                     </div>
                 </div>
@@ -738,9 +825,12 @@
                         <div class="icon mb-3 mt-15">
                             <i class="fas fa-lock" style="font-size: 2.5rem; color: #ffc100;"></i>
                         </div>
-                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Secure Your Place</h4>
+                        <h4 style="color: #000; font-weight: 500; margin-bottom: 12px; font-size: 1.1rem;">Secure Your
+                            Place</h4>
                         <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            A non-refundable registration fee of £25 is required to finalize the enrolment process. Once this fee is paid and all forms are received, the Manager will confirm that your child's place is officially secured.
+                            A non-refundable registration fee of £25 is required to finalize the enrolment process. Once
+                            this fee is paid and all forms are received, the Manager will confirm that your child's
+                            place is officially secured.
                         </p>
                     </div>
                 </div>
@@ -764,10 +854,10 @@
                             Ready to join the Sunshine family? Complete our simple online application form. Spaces are
                             limited - secure your child's place today!
                         </p>
-                        </div>
-                     </div>
-               </div>
-               <div class="row">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="wow fadeInUp"
                         style="background: #fff; border-radius: 20px; padding: 50px; box-shadow: 0 10px 50px rgba(0,0,0,0.1);">
@@ -820,7 +910,7 @@
                                             <span class="alert-error"></span>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mb-30">
@@ -913,50 +1003,65 @@
                             <!-- Consent & Privacy Section -->
                             <div class="form-section mb-40"
                                 style="background: #f8f9fa; padding: 30px; border-radius: 15px; border: 2px solid #ffc100;">
-                                <h4 style="color: #000; font-size: 1.5rem; font-weight: 400; margin-bottom: 20px; display: flex; align-items: center;">
-                                    <i class="fas fa-shield-alt" style="color: #ffc100; margin-right: 10px; font-size: 1.3rem;"></i>
+                                <h4
+                                    style="color: #000; font-size: 1.5rem; font-weight: 400; margin-bottom: 20px; display: flex; align-items: center;">
+                                    <i class="fas fa-shield-alt"
+                                        style="color: #ffc100; margin-right: 10px; font-size: 1.3rem;"></i>
                                     Consent & Privacy
                                 </h4>
                                 <p style="color: #666; margin-bottom: 25px; font-size: 1rem; line-height: 1.6;">
                                     By submitting this form, you confirm that:
                                 </p>
-                                
+
                                 <div class="mb-20" style="margin-bottom: 20px;">
-                                    <label style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
+                                    <label
+                                        style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
                                         <input type="checkbox" name="terms" required
                                             style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer; flex-shrink: 0; accent-color: #ffc100; vertical-align: middle;">
-                                        <span style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
+                                        <span
+                                            style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
                                             I agree to Sunshine Child-Care Nursery's <a href="terms-conditions.html"
-                                                style="color: #ffc100; text-decoration: underline; font-weight: 500;">Terms & Conditions</a>
+                                                style="color: #ffc100; text-decoration: underline; font-weight: 500;">Terms
+                                                & Conditions</a>
                                         </span>
                                     </label>
                                 </div>
-                                
+
                                 <div class="mb-20" style="margin-bottom: 20px;">
-                                    <label style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
+                                    <label
+                                        style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
                                         <input type="checkbox" name="privacy" required
                                             style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer; flex-shrink: 0; accent-color: #ffc100; vertical-align: middle;">
-                                        <span style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
+                                        <span
+                                            style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
                                             I have read and accepted the <a href="privacy-policy.html"
-                                                style="color: #ffc100; text-decoration: underline; font-weight: 500;">Privacy Policy</a>
+                                                style="color: #ffc100; text-decoration: underline; font-weight: 500;">Privacy
+                                                Policy</a>
                                         </span>
                                     </label>
                                 </div>
-                                
+
                                 <div class="mb-20" style="margin-bottom: 20px;">
-                                    <label style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
+                                    <label
+                                        style="display: flex; align-items: center; margin-bottom: 15px; cursor: pointer; line-height: 1.5;">
                                         <input type="checkbox" name="data-use" required
                                             style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer; flex-shrink: 0; accent-color: #ffc100; vertical-align: middle;">
-                                        <span style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
-                                            I understand that my personal data will be handled securely and used only for the purpose of processing my child's enrollment
+                                        <span
+                                            style="color: #000; font-size: 1rem; display: inline-block; vertical-align: middle;">
+                                            I understand that my personal data will be handled securely and used only
+                                            for the purpose of processing my child's enrollment
                                         </span>
                                     </label>
                                 </div>
-                                
-                                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #ddd; display: flex; align-items: flex-start;">
-                                    <i class="fas fa-lock" style="color: #ffc100; margin-right: 10px; font-size: 1rem; margin-top: 2px; flex-shrink: 0;"></i>
+
+                                <div
+                                    style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #ddd; display: flex; align-items: flex-start;">
+                                    <i class="fas fa-lock"
+                                        style="color: #ffc100; margin-right: 10px; font-size: 1rem; margin-top: 2px; flex-shrink: 0;"></i>
                                     <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.6;">
-                                        <strong style="color: #000;">Security Assurance:</strong> Your information is protected under GDPR guidelines. We use secure systems to ensure your data remains confidential and safe.
+                                        <strong style="color: #000;">Security Assurance:</strong> Your information is
+                                        protected under GDPR guidelines. We use secure systems to ensure your data
+                                        remains confidential and safe.
                                     </p>
                                 </div>
                             </div>
@@ -967,18 +1072,18 @@
                                     style=" border: none; padding: 18px 60px; font-size: 1.2rem; font-weight: 400; border-radius: 50px; cursor: pointer; transition: all 0.3s ease;">
                                     <i class="fa fa-paper-plane mr-2"></i> Submit Application
                                 </button>
-                                            </div>
+                            </div>
 
                             <!-- Alert Message -->
                             <div class="col-lg-12 alert-notification mt-30">
                                 <div id="message" class="alert-msg"></div>
-                                                </div>
-                        </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Section 4: Online Application Form -->
 
     <!-- Start Footer 
@@ -991,10 +1096,12 @@
                     <div class="col-lg-4 col-md-6 footer-item pr-30 pr-md-15 pr-xs-15">
                         <div class="f-item about">
                             <div class="footer-logo">
-                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery" style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
+                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery"
+                                    style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
                             </div>
                             <p>
-                                Nurturing young minds with care, creativity, and excellence. We provide a safe, inspiring environment where every child can thrive and discover their potential.
+                                Nurturing young minds with care, creativity, and excellence. We provide a safe,
+                                inspiring environment where every child can thrive and discover their potential.
                             </p>
                         </div>
                     </div>
@@ -1066,15 +1173,16 @@
                                     Monday – Friday: 8am – 6pm
                                 </li>
                             </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Start Footer Bottom -->
+            <!-- Start Footer Bottom -->
             <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
+                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a
+                                href="index.html">Sunshine Child-Care Nursery</a></p>
                     </div>
                     <div class="col-lg-6 text-end">
                         <ul class="link-list">
@@ -1088,14 +1196,14 @@
                                 <a href="contact-us.html">Support</a>
                             </li>
                         </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Footer Bottom -->
+            <!-- End Footer Bottom -->
         </div>
     </footer>
     <!-- End Footer -->
-    
+
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -1126,15 +1234,16 @@
 
     </div>
 
-    
 
-<!-- GDPR Cookie Consent Banner -->
+
+    <!-- GDPR Cookie Consent Banner -->
     <div id="gdpr-cookie-consent">
         <div class="gdpr-content">
             <div class="gdpr-text">
                 <p>
-                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
-                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our 
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.
+                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or
+                    learn more in our
                     <a href="privacy-policy.html">Privacy Policy</a>.
                 </p>
             </div>
@@ -1145,260 +1254,264 @@
             </div>
         </div>
 
-    
-
-    
 
 
 
-    <!-- GDPR Cookie Consent Script -->
-    <script>
-        (function() {
-            // Check if user has already made a choice
-            const consent = localStorage.getItem('gdpr-cookie-consent');
-            const consentBanner = document.getElementById('gdpr-cookie-consent');
-            
-            if (!consent) {
-                // Show banner after a short delay
-                setTimeout(function() {
-                    consentBanner.classList.add('show');
-                }, 1000);
-            }
-            
-            // Accept button
-            document.getElementById('gdpr-accept').addEventListener('click', function() {
-                localStorage.setItem('gdpr-cookie-consent', 'accepted');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                consentBanner.classList.remove('show');
-                // Enable analytics and other cookies here
-                console.log('Cookies accepted');
-            });
-            
-            // Reject button
-            document.getElementById('gdpr-reject').addEventListener('click', function() {
-                localStorage.setItem('gdpr-cookie-consent', 'rejected');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                consentBanner.classList.remove('show');
-                // Disable non-essential cookies here
-                console.log('Cookies rejected');
-            });
-            
-            // Settings button - open modal
-            document.getElementById('gdpr-settings').addEventListener('click', function() {
-                document.getElementById('gdpr-settings-modal').classList.add('show');
-            });
-            
-            // Load saved preferences
-            function loadCookiePreferences() {
-                // Only load if cookie modal exists on this page
-                const modal = document.getElementById('gdpr-settings-modal');
-                if (!modal) {
-                    return; // Exit early if modal doesn't exist
+
+
+
+        <!-- GDPR Cookie Consent Script -->
+        <script>
+            (function () {
+                // Check if user has already made a choice
+                const consent = localStorage.getItem('gdpr-cookie-consent');
+                const consentBanner = document.getElementById('gdpr-cookie-consent');
+
+                if (!consent) {
+                    // Show banner after a short delay
+                    setTimeout(function () {
+                        consentBanner.classList.add('show');
+                    }, 1000);
                 }
-            }
-            
-            // Save preferences
-            function saveCookiePreferences() {
-                const preferences = {
-                    essential: document.getElementById('cookie-essential').checked,
-                    analytics: document.getElementById('cookie-analytics').checked,
-                    marketing: document.getElementById('cookie-marketing').checked
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
-                localStorage.setItem('gdpr-cookie-consent', 'custom');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                
-                // Apply preferences
-                applyCookiePreferences(preferences);
-                
-                // Close modal and banner
-                document.getElementById('gdpr-settings-modal').classList.remove('show');
-                consentBanner.classList.remove('show');
-            }
-            
-            // Apply cookie preferences
-            function applyCookiePreferences(prefs) {
-                if (prefs.analytics) {
-                    // Enable analytics cookies (e.g., Google Analytics)
-                    console.log('Analytics cookies enabled');
-                } else {
-                    // Disable analytics cookies
-                    console.log('Analytics cookies disabled');
+
+                // Accept button
+                document.getElementById('gdpr-accept').addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'accepted');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    consentBanner.classList.remove('show');
+                    // Enable analytics and other cookies here
+                    console.log('Cookies accepted');
+                });
+
+                // Reject button
+                document.getElementById('gdpr-reject').addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'rejected');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    consentBanner.classList.remove('show');
+                    // Disable non-essential cookies here
+                    console.log('Cookies rejected');
+                });
+
+                // Settings button - open modal
+                document.getElementById('gdpr-settings').addEventListener('click', function () {
+                    document.getElementById('gdpr-settings-modal').classList.add('show');
+                });
+
+                // Load saved preferences
+                function loadCookiePreferences() {
+                    // Only load if cookie modal exists on this page
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (!modal) {
+                        return; // Exit early if modal doesn't exist
+                    }
                 }
-                
-                if (prefs.marketing) {
-                    // Enable marketing cookies
-                    console.log('Marketing cookies enabled');
-                } else {
-                    // Disable marketing cookies
-                    console.log('Marketing cookies disabled');
-                }
-            }
-            
-            // Initialize preferences on page load
-            loadCookiePreferences();
-            
-            // Function to close modal
-            function closeCookieModal() {
-                const modal = document.getElementById('gdpr-settings-modal');
-                if (modal) {
-                    modal.classList.remove('show');
-                    loadCookiePreferences(); // Reset to saved preferences
-                }
-            }
-            
-            // Wait for DOM to be ready before attaching event listeners
-            function initCookieModal() {
-                const modal = document.getElementById('gdpr-settings-modal');
-                const modalContent = modal ? modal.querySelector('.gdpr-modal-content') : null;
-                const saveBtn = document.getElementById('gdpr-save-settings');
-                const cancelBtn = document.getElementById('gdpr-cancel-settings');
-                const closeBtn = document.getElementById('gdpr-modal-close');
-                
-                // Close button (X)
-                if (closeBtn) {
-                    closeBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeCookieModal();
-                        return false;
+
+                // Save preferences
+                function saveCookiePreferences() {
+                    const preferences = {
+                        essential: document.getElementById('cookie-essential').checked,
+                        analytics: document.getElementById('cookie-analytics').checked,
+                        marketing: document.getElementById('cookie-marketing').checked
                     };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
+                    localStorage.setItem('gdpr-cookie-consent', 'custom');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+
+                    // Apply preferences
+                    applyCookiePreferences(preferences);
+
+                    // Close modal and banner
+                    document.getElementById('gdpr-settings-modal').classList.remove('show');
+                    consentBanner.classList.remove('show');
                 }
-                
-                // Cancel button
-                if (cancelBtn) {
-                    cancelBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeCookieModal();
-                        return false;
-                    };
+
+                // Apply cookie preferences
+                function applyCookiePreferences(prefs) {
+                    if (prefs.analytics) {
+                        // Enable analytics cookies (e.g., Google Analytics)
+                        console.log('Analytics cookies enabled');
+                    } else {
+                        // Disable analytics cookies
+                        console.log('Analytics cookies disabled');
+                    }
+
+                    if (prefs.marketing) {
+                        // Enable marketing cookies
+                        console.log('Marketing cookies enabled');
+                    } else {
+                        // Disable marketing cookies
+                        console.log('Marketing cookies disabled');
+                    }
                 }
-                
-                // Save button
-                if (saveBtn) {
-                    saveBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        saveCookiePreferences();
-                        return false;
-                    };
+
+                // Initialize preferences on page load
+                loadCookiePreferences();
+
+                // Function to close modal
+                function closeCookieModal() {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (modal) {
+                        modal.classList.remove('show');
+                        loadCookiePreferences(); // Reset to saved preferences
+                    }
                 }
-                
-                // Close modal on background click
-                if (modal) {
-                    modal.onclick = function(e) {
-                        // Only close if clicking directly on the modal backdrop (not on modal-content)
-                        if (e.target === modal) {
+
+                // Wait for DOM to be ready before attaching event listeners
+                function initCookieModal() {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    const modalContent = modal ? modal.querySelector('.gdpr-modal-content') : null;
+                    const saveBtn = document.getElementById('gdpr-save-settings');
+                    const cancelBtn = document.getElementById('gdpr-cancel-settings');
+                    const closeBtn = document.getElementById('gdpr-modal-close');
+
+                    // Close button (X)
+                    if (closeBtn) {
+                        closeBtn.onclick = function (e) {
                             e.preventDefault();
+                            e.stopPropagation();
                             closeCookieModal();
                             return false;
-                        }
-                    };
-                    
-                    // Prevent modal content clicks from closing the modal
-                    if (modalContent) {
-                        modalContent.onclick = function(e) {
-                            e.stopPropagation();
                         };
                     }
-                }
-                
-                // Close modal on Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' || e.keyCode === 27) {
-                        if (modal && modal.classList.contains('show')) {
+
+                    // Cancel button
+                    if (cancelBtn) {
+                        cancelBtn.onclick = function (e) {
                             e.preventDefault();
+                            e.stopPropagation();
                             closeCookieModal();
+                            return false;
+                        };
+                    }
+
+                    // Save button
+                    if (saveBtn) {
+                        saveBtn.onclick = function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            saveCookiePreferences();
+                            return false;
+                        };
+                    }
+
+                    // Close modal on background click
+                    if (modal) {
+                        modal.onclick = function (e) {
+                            // Only close if clicking directly on the modal backdrop (not on modal-content)
+                            if (e.target === modal) {
+                                e.preventDefault();
+                                closeCookieModal();
+                                return false;
+                            }
+                        };
+
+                        // Prevent modal content clicks from closing the modal
+                        if (modalContent) {
+                            modalContent.onclick = function (e) {
+                                e.stopPropagation();
+                            };
                         }
                     }
-                });
-            }
-            
-            // Initialize modal when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initCookieModal);
-            } else {
-                // Use setTimeout to ensure DOM is fully ready
-                setTimeout(initCookieModal, 100);
-            }
-            
-            // Update Accept/Reject to also save preferences
-            document.getElementById('gdpr-accept').addEventListener('click', function() {
-                const allAccepted = {
-                    essential: true,
-                    analytics: true,
-                    marketing: true
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
-                applyCookiePreferences(allAccepted);
-            });
-            
-            document.getElementById('gdpr-reject').addEventListener('click', function() {
-                const allRejected = {
-                    essential: true,
-                    analytics: false,
-                    marketing: false
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
-                applyCookiePreferences(allRejected);
-            });
-        })();
-    </script>
 
-    <!-- Cookie Settings Modal -->
-    <div id="gdpr-settings-modal">
-        <div class="gdpr-modal-content" onclick="event.stopPropagation();">
-            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
-            <div class="gdpr-modal-header">
-                <h3>Cookie Settings</h3>
-                <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
-            </div>
-            
-            <div class="cookie-category essential">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Essential Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-essential" checked disabled>
-                        <span class="cookie-slider"></span>
-                    </label>
+                    // Close modal on Escape key
+                    document.addEventListener('keydown', function (e) {
+                        if (e.key === 'Escape' || e.keyCode === 27) {
+                            if (modal && modal.classList.contains('show')) {
+                                e.preventDefault();
+                                closeCookieModal();
+                            }
+                        }
+                    });
+                }
+
+                // Initialize modal when DOM is ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initCookieModal);
+                } else {
+                    // Use setTimeout to ensure DOM is fully ready
+                    setTimeout(initCookieModal, 100);
+                }
+
+                // Update Accept/Reject to also save preferences
+                document.getElementById('gdpr-accept').addEventListener('click', function () {
+                    const allAccepted = {
+                        essential: true,
+                        analytics: true,
+                        marketing: true
+                    };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
+                    applyCookiePreferences(allAccepted);
+                });
+
+                document.getElementById('gdpr-reject').addEventListener('click', function () {
+                    const allRejected = {
+                        essential: true,
+                        analytics: false,
+                        marketing: false
+                    };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
+                    applyCookiePreferences(allRejected);
+                });
+            })();
+        </script>
+
+        <!-- Cookie Settings Modal -->
+        <div id="gdpr-settings-modal">
+            <div class="gdpr-modal-content" onclick="event.stopPropagation();">
+                <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
+                <div class="gdpr-modal-header">
+                    <h3>Cookie Settings</h3>
+                    <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies are necessary for the website to function properly. They cannot be disabled as they are essential for basic site functionality, security, and compliance.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Analytics Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-analytics">
-                        <span class="cookie-slider"></span>
-                    </label>
+
+                <div class="cookie-category essential">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Essential Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-essential" checked disabled>
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies are necessary for the website to function properly. They cannot be disabled as
+                        they are essential for basic site functionality, security, and compliance.
+                    </p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Marketing Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-marketing">
-                        <span class="cookie-slider"></span>
-                    </label>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Analytics Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies help us understand how visitors interact with our website by collecting and
+                        reporting information anonymously. This helps us improve our website's performance and user
+                        experience.
+                    </p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may be set by advertising partners to build a profile of your interests.
-                </p>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Marketing Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-marketing">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies are used to deliver relevant advertisements and track campaign effectiveness. They
+                        may be set by advertising partners to build a profile of your interests.
+                    </p>
+                </div>
+
+                <div class="gdpr-modal-footer">
+                    <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
+                    <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
+                </div>
             </div>
-            
-            <div class="gdpr-modal-footer">
-                <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
-                <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
-            </div>
-        </div>
 
 </body>
 
