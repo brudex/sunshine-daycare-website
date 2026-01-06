@@ -38,7 +38,7 @@
 
 
 
-<!-- Navigation Links Styling -->
+    <!-- Navigation Links Styling -->
     <style>
         /* Menu Hover Effects */
         .navbar-nav>li>a {
@@ -156,7 +156,7 @@
         }
     </style>
 
-<!-- GDPR Cookie Consent Styles -->
+    <!-- GDPR Cookie Consent Styles -->
     <style>
         #gdpr-cookie-consent {
             position: fixed;
@@ -164,15 +164,17 @@
             left: 0;
             right: 0;
             background: #fff;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             padding: 25px 30px;
             z-index: 10000;
             display: none;
             border-top: 3px solid #ffc100;
         }
+
         #gdpr-cookie-consent.show {
             display: block;
         }
+
         .gdpr-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -182,25 +184,30 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .gdpr-text {
             flex: 1;
             min-width: 300px;
         }
+
         .gdpr-text p {
             margin: 0;
             font-size: 0.95rem;
             line-height: 1.6;
             color: #333;
         }
+
         .gdpr-text a {
             color: #ffc100;
             text-decoration: underline;
         }
+
         .gdpr-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
+
         .gdpr-btn {
             padding: 12px 30px;
             border: none;
@@ -210,43 +217,52 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-btn-accept {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-btn-accept:hover {
             background: #FFD700;
         }
+
         .gdpr-btn-reject {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-btn-reject:hover {
             background: #e0e0e0;
         }
+
         .gdpr-btn-settings {
             background: transparent;
             color: #666;
             border: 1px solid #ddd;
         }
+
         .gdpr-btn-settings:hover {
             background: #f5f5f5;
         }
+
         @media (max-width: 768px) {
             .gdpr-content {
                 flex-direction: column;
                 text-align: center;
             }
+
             .gdpr-buttons {
                 width: 100%;
                 justify-content: center;
             }
+
             .gdpr-btn {
                 flex: 1;
                 min-width: 120px;
             }
         }
-        
+
         /* Cookie Settings Modal */
         #gdpr-settings-modal {
             display: none;
@@ -260,11 +276,13 @@
             overflow-y: auto;
             padding: 20px;
         }
+
         #gdpr-settings-modal.show {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .gdpr-modal-content {
             background: #fff;
             border-radius: 10px;
@@ -274,24 +292,28 @@
             overflow-y: auto;
             padding: 30px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
+
         .gdpr-modal-header {
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
         }
+
         .gdpr-modal-header h3 {
             margin: 0;
             color: #000;
             font-size: 1.8rem;
             font-weight: 400;
         }
+
         .gdpr-modal-header p {
             margin: 10px 0 0 0;
             color: #666;
             font-size: 0.95rem;
         }
+
         .gdpr-modal-close {
             position: absolute;
             top: 20px;
@@ -309,10 +331,12 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-close:hover {
             background: #f0f0f0;
             color: #000;
         }
+
         .cookie-category {
             margin-bottom: 25px;
             padding: 20px;
@@ -320,29 +344,34 @@
             border-radius: 8px;
             border: 1px solid #eee;
         }
+
         .cookie-category-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
         }
+
         .cookie-category-title {
             font-size: 1.2rem;
             font-weight: 400;
             color: #000;
             margin: 0;
         }
+
         .cookie-toggle {
             position: relative;
             display: inline-block;
             width: 50px;
             height: 26px;
         }
+
         .cookie-toggle input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .cookie-slider {
             position: absolute;
             cursor: pointer;
@@ -354,6 +383,7 @@
             transition: 0.3s;
             border-radius: 26px;
         }
+
         .cookie-slider:before {
             position: absolute;
             content: "";
@@ -365,22 +395,27 @@
             transition: 0.3s;
             border-radius: 50%;
         }
-        .cookie-toggle input:checked + .cookie-slider {
+
+        .cookie-toggle input:checked+.cookie-slider {
             background-color: #0e2a47;
         }
-        .cookie-toggle input:checked + .cookie-slider:before {
+
+        .cookie-toggle input:checked+.cookie-slider:before {
             transform: translateX(24px);
         }
+
         .cookie-category-description {
             font-size: 0.9rem;
             color: #666;
             line-height: 1.6;
             margin-top: 10px;
         }
+
         .cookie-category.essential .cookie-toggle {
             opacity: 0.5;
             cursor: not-allowed;
-        } 
+        }
+
         .gdpr-modal-footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -390,6 +425,7 @@
             justify-content: flex-end;
             flex-wrap: wrap;
         }
+
         .gdpr-modal-btn {
             padding: 12px 30px;
             border: none;
@@ -399,28 +435,35 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .gdpr-modal-btn-save {
             background: #ffc100;
             color: #000;
         }
+
         .gdpr-modal-btn-save:hover {
             background: #B8941F;
         }
+
         .gdpr-modal-btn-cancel {
             background: #f0f0f0;
             color: #333;
         }
+
         .gdpr-modal-btn-cancel:hover {
             background: #e0e0e0;
         }
+
         @media (max-width: 768px) {
             .gdpr-modal-content {
                 padding: 20px;
                 margin: 10px;
             }
+
             .gdpr-modal-footer {
                 flex-direction: column;
             }
+
             .gdpr-modal-btn {
                 width: 100%;
             }
@@ -440,9 +483,10 @@
             position: relative;
             z-index: 1001;
         }
-        
+
         /* Remove active underlines on mobile */
         @media (max-width: 991px) {
+
             .navbar-nav>li.active>a::after,
             .navbar-nav>li.dropdown.active>a.dropdown-toggle::after,
             .dropdown-menu>li.active>a::after {
@@ -452,9 +496,10 @@
                 height: 0 !important;
             }
         }
-        
+
         /* Enhanced Mobile Menu Styling */
         @media (max-width: 991px) {
+
             /* Mobile Menu Container */
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
                 position: fixed;
@@ -572,8 +617,8 @@
                 align-items: center;
             }
 
-            .mobile-menu-header > img,
-            .mobile-menu-header > button {
+            .mobile-menu-header>img,
+            .mobile-menu-header>button {
                 margin-top: 0;
                 margin-bottom: 0;
             }
@@ -598,7 +643,7 @@
                 overflow: hidden;
             }
 
-            #navbar-menu .nav.navbar-nav > li {
+            #navbar-menu .nav.navbar-nav>li {
                 width: 100%;
                 display: block;
                 border-bottom: 1px solid rgba(14, 42, 71, 0.1);
@@ -608,21 +653,21 @@
             }
 
             /* Remove any boxes, markers, or pseudo-elements from main nav items */
-            #navbar-menu .nav.navbar-nav > li::before,
-            #navbar-menu .nav.navbar-nav > li::after {
+            #navbar-menu .nav.navbar-nav>li::before,
+            #navbar-menu .nav.navbar-nav>li::after {
                 display: none !important;
                 content: none !important;
             }
 
-            #navbar-menu .nav.navbar-nav > li:first-child {
+            #navbar-menu .nav.navbar-nav>li:first-child {
                 border-top: none;
             }
 
-            #navbar-menu .nav.navbar-nav > li:last-child {
+            #navbar-menu .nav.navbar-nav>li:last-child {
                 border-bottom: none;
             }
 
-            #navbar-menu .nav.navbar-nav > li > a {
+            #navbar-menu .nav.navbar-nav>li>a {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -639,12 +684,12 @@
             }
 
             /* Ensure proper text and icon alignment in menu links */
-            #navbar-menu .nav.navbar-nav > li > a {
+            #navbar-menu .nav.navbar-nav>li>a {
                 text-align: left;
             }
 
             /* Dropdown toggle - ensure text and icon are properly separated */
-            #navbar-menu .nav.navbar-nav > li.dropdown > a {
+            #navbar-menu .nav.navbar-nav>li.dropdown>a {
                 display: flex !important;
                 align-items: center !important;
                 justify-content: space-between !important;
@@ -652,14 +697,14 @@
                 padding-right: 45px !important;
             }
 
-            #navbar-menu .nav.navbar-nav > li > a:hover,
-            #navbar-menu .nav.navbar-nav > li > a:focus {
+            #navbar-menu .nav.navbar-nav>li>a:hover,
+            #navbar-menu .nav.navbar-nav>li>a:focus {
                 background: rgba(255, 193, 0, 0.1) !important;
                 color: #0e2a47 !important;
                 padding-left: 30px !important;
             }
 
-            #navbar-menu .nav.navbar-nav > li.active > a {
+            #navbar-menu .nav.navbar-nav>li.active>a {
                 background: rgba(255, 193, 0, 0.15) !important;
                 color: #0e2a47 !important;
                 font-weight: 600;
@@ -670,14 +715,14 @@
             }
 
             /* Remove any underline or border from active items */
-            #navbar-menu .nav.navbar-nav > li.active > a::after,
-            #navbar-menu .nav.navbar-nav > li.active > a::before {
+            #navbar-menu .nav.navbar-nav>li.active>a::after,
+            #navbar-menu .nav.navbar-nav>li.active>a::before {
                 display: none !important;
                 content: none !important;
             }
 
             /* Dropdown Toggle Icon - Positioned absolutely to the right */
-            #navbar-menu .nav.navbar-nav > li.dropdown > a .fa-angle-down {
+            #navbar-menu .nav.navbar-nav>li.dropdown>a .fa-angle-down {
                 position: absolute;
                 right: 25px;
                 top: 50%;
@@ -692,12 +737,12 @@
                 line-height: 1;
             }
 
-            #navbar-menu .nav.navbar-nav > li.dropdown.on > a .fa-angle-down {
+            #navbar-menu .nav.navbar-nav>li.dropdown.on>a .fa-angle-down {
                 transform: translateY(-50%) rotate(180deg);
             }
 
             /* Ensure all icons are properly aligned */
-            #navbar-menu .nav.navbar-nav > li > a i {
+            #navbar-menu .nav.navbar-nav>li>a i {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -723,18 +768,18 @@
                 display: block !important;
             }
 
-            #navbar-menu .dropdown-menu > li {
+            #navbar-menu .dropdown-menu>li {
                 border-bottom: 1px solid rgba(14, 42, 71, 0.08);
                 list-style: none !important;
                 margin: 0;
                 padding: 0;
             }
 
-            #navbar-menu .dropdown-menu > li:last-child {
+            #navbar-menu .dropdown-menu>li:last-child {
                 border-bottom: none;
             }
 
-            #navbar-menu .dropdown-menu > li > a {
+            #navbar-menu .dropdown-menu>li>a {
                 padding: 15px 25px 15px 25px !important;
                 color: #0e2a47 !important;
                 font-size: 15px;
@@ -746,10 +791,10 @@
             }
 
             /* Remove any boxes, markers, or pseudo-elements from dropdown items */
-            #navbar-menu .dropdown-menu > li::before,
-            #navbar-menu .dropdown-menu > li::after,
-            #navbar-menu .dropdown-menu > li > a::before,
-            #navbar-menu .dropdown-menu > li > a::after {
+            #navbar-menu .dropdown-menu>li::before,
+            #navbar-menu .dropdown-menu>li::after,
+            #navbar-menu .dropdown-menu>li>a::before,
+            #navbar-menu .dropdown-menu>li>a::after {
                 display: none !important;
                 content: none !important;
                 width: 0 !important;
@@ -760,14 +805,14 @@
 
             /* Ensure no list markers or boxes appear */
             #navbar-menu .dropdown-menu,
-            #navbar-menu .dropdown-menu > li,
-            #navbar-menu .dropdown-menu > li > a {
+            #navbar-menu .dropdown-menu>li,
+            #navbar-menu .dropdown-menu>li>a {
                 list-style-type: none !important;
                 list-style: none !important;
             }
 
             /* Remove any background boxes or borders that might create box appearance */
-            #navbar-menu .dropdown-menu > li > a {
+            #navbar-menu .dropdown-menu>li>a {
                 border-left: none !important;
                 border-right: none !important;
                 border-top: none !important;
@@ -775,13 +820,13 @@
                 box-shadow: none !important;
             }
 
-            #navbar-menu .dropdown-menu > li > a:hover {
+            #navbar-menu .dropdown-menu>li>a:hover {
                 background: rgba(255, 193, 0, 0.1) !important;
                 padding-left: 30px !important;
                 color: #0e2a47 !important;
             }
 
-            #navbar-menu .dropdown-menu > li.active > a {
+            #navbar-menu .dropdown-menu>li.active>a {
                 background: rgba(255, 193, 0, 0.15) !important;
                 color: #0e2a47 !important;
                 font-weight: 500;
@@ -791,8 +836,8 @@
             }
 
             /* Remove any underline or border from active dropdown items */
-            #navbar-menu .dropdown-menu > li.active > a::after,
-            #navbar-menu .dropdown-menu > li.active > a::before {
+            #navbar-menu .dropdown-menu>li.active>a::after,
+            #navbar-menu .dropdown-menu>li.active>a::before {
                 display: none !important;
                 content: none !important;
             }
@@ -874,6 +919,7 @@
 
             /* Mobile Header Layout - Logo left, Hamburger right */
             @media (max-width: 991px) {
+
                 /* Container layout */
                 nav.navbar .container.d-flex {
                     display: flex !important;
@@ -947,6 +993,7 @@
                     opacity: 0;
                     transform: translateY(-10px);
                 }
+
                 to {
                     opacity: 1;
                     transform: translateY(0);
@@ -958,6 +1005,7 @@
                     opacity: 0;
                     transform: translateX(-20px);
                 }
+
                 to {
                     opacity: 1;
                     transform: translateX(0);
@@ -965,18 +1013,41 @@
             }
 
             /* Stagger animation for menu items */
-            #navbar-menu .nav.navbar-nav > li {
+            #navbar-menu .nav.navbar-nav>li {
                 animation: slideInLeft 0.4s ease backwards;
             }
 
-            #navbar-menu .nav.navbar-nav > li:nth-child(1) { animation-delay: 0.1s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(2) { animation-delay: 0.15s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(3) { animation-delay: 0.2s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(4) { animation-delay: 0.25s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(5) { animation-delay: 0.3s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(6) { animation-delay: 0.35s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(7) { animation-delay: 0.4s; }
-            #navbar-menu .nav.navbar-nav > li:nth-child(8) { animation-delay: 0.45s; }
+            #navbar-menu .nav.navbar-nav>li:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(2) {
+                animation-delay: 0.15s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(3) {
+                animation-delay: 0.2s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(4) {
+                animation-delay: 0.25s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(5) {
+                animation-delay: 0.3s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(6) {
+                animation-delay: 0.35s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(7) {
+                animation-delay: 0.4s;
+            }
+
+            #navbar-menu .nav.navbar-nav>li:nth-child(8) {
+                animation-delay: 0.45s;
+            }
 
             /* Remove unwanted borders and elements */
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse.collapse-mobile::after,
@@ -1026,7 +1097,7 @@
         <nav class="navbar mobile-sidenav navbar-sticky navbar-default validnavs white navbar-fixed no-background">
 
 
-            <div class="container d-flex justify-content-between align-items-center">            
+            <div class="container d-flex justify-content-between align-items-center">
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
@@ -1034,22 +1105,25 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
-                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo" style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-display" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
+                        <img src="assets/img/logo-4.png" class="logo logo-scrolled" alt="Logo"
+                            style="max-height: 60px; height: auto; width: auto;">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <div class="nav-item-box d-flex justify-content-between align-items-center">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
                         <!-- Mobile Menu Header with Logo and Close Button -->
                         <div class="mobile-menu-header">
                             <img src="assets/img/logo-4.png" alt="Sunshine Child-Care Nursery Logo"
                                 style="max-height: 70px; height: auto; width: auto;">
-                            <button type="button" class="navbar-toggle mobile-menu-close" data-toggle="collapse" data-target="#navbar-menu" aria-label="Close menu">
-                            <i class="fa fa-times"></i>
-                        </button>
+                            <button type="button" class="navbar-toggle mobile-menu-close" data-toggle="collapse"
+                                data-target="#navbar-menu" aria-label="Close menu">
+                                <i class="fa fa-times"></i>
+                            </button>
                         </div>
 
                         <!-- Mobile Menu Navigation -->
@@ -1065,8 +1139,8 @@
                                     <li><a href="gallery.html">Facilities</a></li>
                                     <li><a href="blog-standard.html">News & Events</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
-                                                </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Admissions <i class="fa fa-angle-down"></i></a>
@@ -1074,24 +1148,24 @@
                                     <li><a href="admissions-fees.html">Admissions Journey</a></li>
                                     <li><a href="admissions-fees.html#application-form">Admissions Form</a></li>
                                     <li><a href="downloads.html">Downloads</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Tour <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="schedule-tour.html">Schedule a Tour</a></li>
-                                                </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <li><a href="testimonials.html">Testimonials</a></li>
-                                                    <li class="active"><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
+                            <li class="active"><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
 
-                        
-                    </div>
 
-                        </div>
+                </div>
+
+            </div>
             <!-- Overlay screen for menu -->
             <div class="overlay-screen"></div>
             <!-- End Overlay screen for menu -->
@@ -1100,25 +1174,44 @@
     </header>
     <!-- End Header -->
 
-        <!-- Start Page Header 
+    <!-- Start Page Header 
     ============================================= -->
-    <div class="breadcrumb-area text-center" style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 120px 0 80px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 30px rgba(0,0,0,0.05);">
+    <div class="breadcrumb-area text-center"
+        style="background: linear-gradient(135deg, #ffc100 0%, #FFE570 100%); padding: 120px 0 80px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 30px rgba(0,0,0,0.05);">
         <!-- Decorative geometric shapes with shadows -->
-        <div style="position: absolute; top: -80px; right: -50px; width: 250px; height: 250px; background: rgba(255,255,255,0.15); border-radius: 50%; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 10px 30px rgba(255,255,255,0.2); transform: rotate(15deg);"></div>
-        <div style="position: absolute; bottom: -60px; left: -40px; width: 200px; height: 200px; background: rgba(255,255,255,0.12); border-radius: 50%; z-index: 1; box-shadow: 0 15px 50px rgba(0,0,0,0.12), inset 0 8px 25px rgba(255,255,255,0.15); transform: rotate(-20deg);"></div>
-        <div style="position: absolute; top: 50%; left: 10%; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 20px; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 5px 15px rgba(255,255,255,0.2); transform: rotate(45deg);"></div>
-        <div style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 15px; z-index: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 4px 12px rgba(255,255,255,0.15); transform: rotate(-30deg);"></div>
-        <div style="position: absolute; bottom: 15%; right: 25%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50% 20% 50% 20%; z-index: 1; box-shadow: 0 12px 45px rgba(0,0,0,0.1), inset 0 6px 20px rgba(255,255,255,0.18); transform: rotate(25deg);"></div>
-        
+        <div
+            style="position: absolute; top: -80px; right: -50px; width: 250px; height: 250px; background: rgba(255,255,255,0.15); border-radius: 50%; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.15), inset 0 10px 30px rgba(255,255,255,0.2); transform: rotate(15deg);">
+        </div>
+        <div
+            style="position: absolute; bottom: -60px; left: -40px; width: 200px; height: 200px; background: rgba(255,255,255,0.12); border-radius: 50%; z-index: 1; box-shadow: 0 15px 50px rgba(0,0,0,0.12), inset 0 8px 25px rgba(255,255,255,0.15); transform: rotate(-20deg);">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 10%; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 20px; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1), inset 0 5px 15px rgba(255,255,255,0.2); transform: rotate(45deg);">
+        </div>
+        <div
+            style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 15px; z-index: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 4px 12px rgba(255,255,255,0.15); transform: rotate(-30deg);">
+        </div>
+        <div
+            style="position: absolute; bottom: 15%; right: 25%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50% 20% 50% 20%; z-index: 1; box-shadow: 0 12px 45px rgba(0,0,0,0.1), inset 0 6px 20px rgba(255,255,255,0.18); transform: rotate(25deg);">
+        </div>
+
         <!-- Additional depth layers -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 70%); z-index: 1;"></div>
-        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: radial-gradient(ellipse at bottom left, rgba(255,255,255,0.08) 0%, transparent 60%); z-index: 1;"></div>
-        
+        <div
+            style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 70%); z-index: 1;">
+        </div>
+        <div
+            style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: radial-gradient(ellipse at bottom left, rgba(255,255,255,0.08) 0%, transparent 60%); z-index: 1;">
+        </div>
+
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <h1 style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">Contact Us</h1>
-                    <p style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px; text-shadow: 0 1px 5px rgba(0,0,0,0.08);">Get in touch with us - we're here to answer your questions</p>
+                    <h1
+                        style="font-size: 3.5rem; font-weight: 400; color: #000; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        Contact Us</h1>
+                    <p
+                        style="font-size: 1.4rem; color: #000; font-weight: 500; margin-bottom: 30px; text-shadow: 0 1px 5px rgba(0,0,0,0.08);">
+                        Get in touch with us - we're here to answer your questions</p>
                 </div>
             </div>
         </div>
@@ -1127,17 +1220,21 @@
 
     <!-- Start Contact Us 
     ============================================= -->
-    <div class="contact-style-one-area overflow-hidden default-padding" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="contact-style-one-area overflow-hidden default-padding"
+        style="padding-top: 100px; padding-bottom: 100px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="contact-form-style-one wow fadeInUp">
-                        <h2 class="heading text-center" style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 40px;">Send us a message</h2>
+                        <h2 class="heading text-center"
+                            style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 40px;">Send us a
+                            message</h2>
                         <form action="#" method="POST" class="contact-form contact-form">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="name" name="name" placeholder="Your Name" type="text" required>
+                                        <input class="form-control" id="name" name="name" placeholder="Your Name"
+                                            type="text" required>
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -1145,13 +1242,15 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="email" name="email" placeholder="Your Email*" type="email" required>
+                                        <input class="form-control" id="email" name="email" placeholder="Your Email*"
+                                            type="email" required>
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="phone" name="phone" placeholder="Phone Number" type="text">
+                                        <input class="form-control" id="phone" name="phone" placeholder="Phone Number"
+                                            type="text">
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -1159,7 +1258,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="subject" name="subject" placeholder="Subject" type="text">
+                                        <input class="form-control" id="subject" name="subject" placeholder="Subject"
+                                            type="text">
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -1167,13 +1267,15 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Your Message *" rows="6" required></textarea>
+                                        <textarea class="form-control" id="comments" name="comments"
+                                            placeholder="Your Message *" rows="6" required></textarea>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="row">
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" name="submit" id="submit" style=" border: none; padding: 15px 50px; font-weight: 400; border-radius: 50px; font-size: 1.1rem;">
+                                    <button type="submit" name="submit" id="submit"
+                                        style=" border: none; padding: 15px 50px; font-weight: 400; border-radius: 50px; font-size: 1.1rem;">
                                         <i class="fa fa-paper-plane"></i> Send Message
                                     </button>
                                 </div>
@@ -1192,65 +1294,94 @@
 
     <!-- Start Contact Information
     ============================================= -->
-    <div class="contact-info-area overflow-hidden default-padding-bottom" style="padding-top: 0; padding-bottom: 80px; background: #f8f9fa;">
+    <div class="contact-info-area overflow-hidden default-padding-bottom"
+        style="padding-top: 0; padding-bottom: 80px; background: #f8f9fa;">
         <div class="container" style="max-width: 100%;">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact-style-one-info">
                         <div class="heading text-center mb-50">
-                            <h4 class="sub-title" style="color: #666; font-size: 1.1rem; margin-bottom: 10px;">Have Questions?</h4>
-                            <h2 class="title" style="color: #000; font-size: 2.5rem; font-weight: 400;">Contact Information</h2>
+                            <h4 class="sub-title" style="color: #666; font-size: 1.1rem; margin-bottom: 10px;">Have
+                                Questions?</h4>
+                            <h2 class="title" style="color: #000; font-size: 2.5rem; font-weight: 400;">Contact
+                                Information</h2>
                         </div>
                         <div class="contact-info-items" style="width: 100%; display: block !important;">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-6 mb-30">
-                                    <div class="item-single wow fadeInUp text-center" style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
-                                        <div class="icon mb-20" style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
-                                            <i class="fa fa-phone-alt" style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
-                                </div>
+                                    <div class="item-single wow fadeInUp text-center"
+                                        style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
+                                        <div class="icon mb-20"
+                                            style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
+                                            <i class="fa fa-phone-alt"
+                                                style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
+                                        </div>
                                         <div class="content" style="flex: 1;">
-                                            <h4 style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">Phone</h4>
+                                            <h4
+                                                style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">
+                                                Phone</h4>
                                             <ul style="list-style: none; padding: 0; margin: 0;">
                                                 <li style="margin-bottom: 10px;">
-                                                    <a href="tel:+447947118506" style="color: #666; text-decoration: none; font-size: 1rem; white-space: nowrap;">07947 118506</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                                                    <a href="tel:+447947118506"
+                                                        style="color: #666; text-decoration: none; font-size: 1rem; white-space: nowrap;">07947
+                                                        118506</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 mb-30">
-                                    <div class="item-single wow fadeInUp text-center" data-wow-delay="200ms" style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
-                                        <div class="icon mb-20" style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
-                                            <i class="fa fa-map-marker-alt" style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
-                                </div>
+                                    <div class="item-single wow fadeInUp text-center" data-wow-delay="200ms"
+                                        style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
+                                        <div class="icon mb-20"
+                                            style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
+                                            <i class="fa fa-map-marker-alt"
+                                                style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
+                                        </div>
                                         <div class="info" style="flex: 1;">
-                                            <h4 style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">Location</h4>
-                                            <p style="color: #666; font-size: 1rem; line-height: 1.6; margin: 0; text-align: center;">
-                                                Thamesview Primary School,<br>Bloors Ln,<br>Rainham,<br>Gillingham,<br>ME8 7DS
+                                            <h4
+                                                style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">
+                                                Location</h4>
+                                            <p
+                                                style="color: #666; font-size: 1rem; line-height: 1.6; margin: 0; text-align: center;">
+                                                Thamesview Primary School,<br>Bloors
+                                                Ln,<br>Rainham,<br>Gillingham,<br>ME8 7DX
                                             </p>
-                                            <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-top: 15px; margin-bottom: 0; text-align: center;">
+                                            <p
+                                                style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-top: 15px; margin-bottom: 0; text-align: center;">
                                                 <strong>Opening Hours:</strong><br>
                                                 Monday – Friday: 8am – 6pm<br>
                                                 Limited Saturday tours monthly
-                                    </p>
-                                </div>
-                            </div>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 mb-30">
-                                    <div class="item-single wow fadeInUp text-center" data-wow-delay="400ms" style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
-                                        <div class="icon mb-20" style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
-                                            <i class="fa fa-envelope" style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
-                                </div>
+                                    <div class="item-single wow fadeInUp text-center" data-wow-delay="400ms"
+                                        style="background: #fff; padding: 40px 30px; border-radius: 15px; border: 1px solid #eee; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;">
+                                        <div class="icon mb-20"
+                                            style="width: 70px; height: 70px; background: #ffc100; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; flex-shrink: 0;">
+                                            <i class="fa fa-envelope"
+                                                style="font-size: 28px; color: #000; display: block; line-height: 1; text-align: center; margin: 0;"></i>
+                                        </div>
                                         <div class="info" style="flex: 1;">
-                                            <h4 style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">Email</h4>
+                                            <h4
+                                                style="color: #000; font-size: 1.3rem; font-weight: 400; margin-bottom: 15px;">
+                                                Email</h4>
                                             <ul style="list-style: none; padding: 0; margin: 0;">
                                                 <li style="margin-bottom: 10px;">
-                                                    <a href="mailto:admissions@sunshinechildcareservices.co.uk" style="color: #666; text-decoration: none; font-size: 0.95rem; word-break: break-word; overflow-wrap: break-word; display: block; line-height: 1.5; text-align: center;">admissions@sunshinechildcareservices.co.uk</a>
-                                        </li>
-                                        <li>
-                                                    <a href="mailto:dsl@sunshinechildcareservices.co.uk" style="color: #666; text-decoration: none; font-size: 0.95rem; word-break: break-word; overflow-wrap: break-word; display: block; line-height: 1.5; text-align: center;">dsl@sunshinechildcareservices.co.uk</a>
-                                        </li>
-                                    </ul>
+                                                    <a href="mailto:admissions@sunshinechildcareservices.co.uk"
+                                                        style="color: #666; text-decoration: none; font-size: 0.95rem; word-break: break-word; overflow-wrap: break-word; display: block; line-height: 1.5; text-align: center;">admissions@sunshinechildcareservices.co.uk</a>
+                                                </li>
+                                                <li>
+                                                    <a href="mailto:dsl@sunshinechildcareservices.co.uk"
+                                                        style="color: #666; text-decoration: none; font-size: 0.95rem; word-break: break-word; overflow-wrap: break-word; display: block; line-height: 1.5; text-align: center;">dsl@sunshinechildcareservices.co.uk</a>
+                                                </li> 
+                                                <li>
+                                                    <a href="mailto:sunshinenurserymanager@sunshinechildcareservices.co.uk"
+                                                        style="color: #666; text-decoration: none; font-size: 0.95rem; word-break: break-word; overflow-wrap: break-word; display: block; line-height: 1.5; text-align: center;">sunshinenurserymanager@sunshinechildcareservices.co.uk</a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -1270,7 +1401,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="google-maps" style="border-radius: 15px; overflow: hidden; border: 1px solid #eee;">
-                        <iframe src="https://www.google.com/maps?q=Thamesview+Primary+School,+Bloors+Ln,+Rainham,+Gillingham,+ME8+7DS&output=embed" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps?q=Thamesview+Primary+School,+Bloors+Ln,+Rainham,+Gillingham,+ME8+7DS&output=embed"
+                            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -1288,10 +1422,12 @@
                     <div class="col-lg-4 col-md-6 footer-item pr-30 pr-md-15 pr-xs-15">
                         <div class="f-item about">
                             <div class="footer-logo">
-                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery" style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
+                                <img src="assets/img/sunshine_white_logo.svg" alt="Sunshine Child-Care Nursery"
+                                    style="max-height: 120px; height: auto; width: auto; margin-bottom: 15px;">
                             </div>
                             <p>
-                                Nurturing young minds with care, creativity, and excellence. We provide a safe, inspiring environment where every child can thrive and discover their potential.
+                                Nurturing young minds with care, creativity, and excellence. We provide a safe,
+                                inspiring environment where every child can thrive and discover their potential.
                             </p>
                         </div>
                     </div>
@@ -1315,7 +1451,7 @@
                                     <a href="meet-the-team.html">Meet the Team</a>
                                 </li>
                                 <li>
-                                    <a href="event.html">Events</a>
+                                    <a href="blog-standard.html">Events</a>
                                 </li>
                             </ul>
                         </div>
@@ -1351,7 +1487,7 @@
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-map-marker-alt mr-2" style="color: #ffc100;"></i>
-                                    Thamesview Primary School, Bloors Ln, Rainham, Gillingham, ME8 7DS
+                                    Thamesview Primary School, Bloors Ln, Rainham, Gillingham, ME8 7DX
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-phone-alt mr-2" style="color: #ffc100;"></i>
@@ -1366,15 +1502,16 @@
                                     Monday – Friday: 8am – 6pm
                                 </li>
                             </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Start Footer Bottom -->
+            <!-- Start Footer Bottom -->
             <div class="footer-bottom style-two">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a href="index.html">Sunshine Child-Care Nursery</a></p>
+                        <p>© Copyright <span id="copyright-year">2025</span>. All Rights Reserved by <a
+                                href="index.html">Sunshine Child-Care Nursery</a></p>
                     </div>
                     <div class="col-lg-6 text-end">
                         <ul class="link-list">
@@ -1388,15 +1525,15 @@
                                 <a href="contact-us.html">Support</a>
                             </li>
                         </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End Footer Bottom -->
+            <!-- End Footer Bottom -->
         </div>
     </footer>
     <!-- End Footer -->
 
-    
+
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -1475,7 +1612,7 @@
 
             function updateMenuState() {
                 var isMenuOpen = $navbarMenu.hasClass('show') || $navbarMenu.hasClass('in');
-                
+
                 if (isMenuOpen) {
                     $('body').addClass('menu-open');
                     $overlay.addClass('opened');
@@ -1486,12 +1623,12 @@
             }
 
             // Handle menu toggle with smooth animation
-            $navbarToggle.on('click', function() {
+            $navbarToggle.on('click', function () {
                 setTimeout(updateMenuState, 150);
             });
 
             // Handle menu close via close button inside menu
-            $('#navbar-menu .navbar-toggle').on('click', function(e) {
+            $('#navbar-menu .navbar-toggle').on('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 $navbarMenu.removeClass('show').removeClass('in');
@@ -1499,7 +1636,7 @@
             });
 
             // Handle menu close via overlay click
-            $overlay.on('click', function(e) {
+            $overlay.on('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 $navbarMenu.removeClass('show').removeClass('in');
@@ -1507,18 +1644,18 @@
             });
 
             // Enhanced dropdown functionality for mobile
-            $(document).on('click', '#navbar-menu .dropdown-toggle', function(e) {
+            $(document).on('click', '#navbar-menu .dropdown-toggle', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 var $dropdown = $(this).closest('.dropdown');
                 var $dropdownMenu = $dropdown.find('.dropdown-menu').first();
                 var isOpen = $dropdown.hasClass('on');
-                
+
                 // Close all other dropdowns
                 $('#navbar-menu .dropdown').not($dropdown).removeClass('on');
                 $('#navbar-menu .dropdown-menu').not($dropdownMenu).removeClass('show').slideUp(300);
-                
+
                 // Toggle current dropdown
                 if (isOpen) {
                     $dropdown.removeClass('on');
@@ -1530,7 +1667,7 @@
             });
 
             // Close dropdowns when clicking outside
-            $(document).on('click', function(e) {
+            $(document).on('click', function (e) {
                 if (!$(e.target).closest('#navbar-menu').length && !$(e.target).closest('.navbar-toggle[data-toggle="collapse"]').length) {
                     $('#navbar-menu .dropdown').removeClass('on');
                     $('#navbar-menu .dropdown-menu').removeClass('show').slideUp(300);
@@ -1538,16 +1675,16 @@
             });
 
             // Close menu when clicking on a link (for single page navigation)
-            $('#navbar-menu .nav.navbar-nav > li:not(.dropdown) > a').on('click', function() {
-                setTimeout(function() {
+            $('#navbar-menu .nav.navbar-nav > li:not(.dropdown) > a').on('click', function () {
+                setTimeout(function () {
                     $navbarMenu.removeClass('show').removeClass('in');
                     updateMenuState();
                 }, 300);
             });
 
             // Watch for menu state changes (for external triggers like validnavs.js)
-            var observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
+            var observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
                     if (mutation.attributeName === 'class') {
                         updateMenuState();
                     }
@@ -1562,7 +1699,7 @@
             }
 
             // Close menu on window resize (if menu is open)
-            $(window).on('resize', function() {
+            $(window).on('resize', function () {
                 if ($(window).width() > 991) {
                     $navbarMenu.removeClass('show').removeClass('in');
                     updateMenuState();
@@ -1574,15 +1711,16 @@
 
     </div>
 
-    
 
-<!-- GDPR Cookie Consent Banner -->
+
+    <!-- GDPR Cookie Consent Banner -->
     <div id="gdpr-cookie-consent">
         <div class="gdpr-content">
             <div class="gdpr-text">
                 <p>
-                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
-                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our 
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.
+                    By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or
+                    learn more in our
                     <a href="privacy-policy.html">Privacy Policy</a>.
                 </p>
             </div>
@@ -1593,260 +1731,264 @@
             </div>
         </div>
 
-    
-
-    
 
 
 
-    <!-- GDPR Cookie Consent Script -->
-    <script>
-        (function() {
-            // Check if user has already made a choice
-            const consent = localStorage.getItem('gdpr-cookie-consent');
-            const consentBanner = document.getElementById('gdpr-cookie-consent');
-            
-            if (!consent) {
-                // Show banner after a short delay
-                setTimeout(function() {
-                    consentBanner.classList.add('show');
-                }, 1000);
-            }
-            
-            // Accept button
-            document.getElementById('gdpr-accept').addEventListener('click', function() {
-                localStorage.setItem('gdpr-cookie-consent', 'accepted');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                consentBanner.classList.remove('show');
-                // Enable analytics and other cookies here
-                console.log('Cookies accepted');
-            });
-            
-            // Reject button
-            document.getElementById('gdpr-reject').addEventListener('click', function() {
-                localStorage.setItem('gdpr-cookie-consent', 'rejected');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                consentBanner.classList.remove('show');
-                // Disable non-essential cookies here
-                console.log('Cookies rejected');
-            });
-            
-            // Settings button - open modal
-            document.getElementById('gdpr-settings').addEventListener('click', function() {
-                document.getElementById('gdpr-settings-modal').classList.add('show');
-            });
-            
-            // Load saved preferences
-            function loadCookiePreferences() {
-                // Only load if cookie modal exists on this page
-                const modal = document.getElementById('gdpr-settings-modal');
-                if (!modal) {
-                    return; // Exit early if modal doesn't exist
+
+
+
+        <!-- GDPR Cookie Consent Script -->
+        <script>
+            (function () {
+                // Check if user has already made a choice
+                const consent = localStorage.getItem('gdpr-cookie-consent');
+                const consentBanner = document.getElementById('gdpr-cookie-consent');
+
+                if (!consent) {
+                    // Show banner after a short delay
+                    setTimeout(function () {
+                        consentBanner.classList.add('show');
+                    }, 1000);
                 }
-            }
-            
-            // Save preferences
-            function saveCookiePreferences() {
-                const preferences = {
-                    essential: document.getElementById('cookie-essential').checked,
-                    analytics: document.getElementById('cookie-analytics').checked,
-                    marketing: document.getElementById('cookie-marketing').checked
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
-                localStorage.setItem('gdpr-cookie-consent', 'custom');
-                localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
-                
-                // Apply preferences
-                applyCookiePreferences(preferences);
-                
-                // Close modal and banner
-                document.getElementById('gdpr-settings-modal').classList.remove('show');
-                consentBanner.classList.remove('show');
-            }
-            
-            // Apply cookie preferences
-            function applyCookiePreferences(prefs) {
-                if (prefs.analytics) {
-                    // Enable analytics cookies (e.g., Google Analytics)
-                    console.log('Analytics cookies enabled');
-                } else {
-                    // Disable analytics cookies
-                    console.log('Analytics cookies disabled');
+
+                // Accept button
+                document.getElementById('gdpr-accept').addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'accepted');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    consentBanner.classList.remove('show');
+                    // Enable analytics and other cookies here
+                    console.log('Cookies accepted');
+                });
+
+                // Reject button
+                document.getElementById('gdpr-reject').addEventListener('click', function () {
+                    localStorage.setItem('gdpr-cookie-consent', 'rejected');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+                    consentBanner.classList.remove('show');
+                    // Disable non-essential cookies here
+                    console.log('Cookies rejected');
+                });
+
+                // Settings button - open modal
+                document.getElementById('gdpr-settings').addEventListener('click', function () {
+                    document.getElementById('gdpr-settings-modal').classList.add('show');
+                });
+
+                // Load saved preferences
+                function loadCookiePreferences() {
+                    // Only load if cookie modal exists on this page
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (!modal) {
+                        return; // Exit early if modal doesn't exist
+                    }
                 }
-                
-                if (prefs.marketing) {
-                    // Enable marketing cookies
-                    console.log('Marketing cookies enabled');
-                } else {
-                    // Disable marketing cookies
-                    console.log('Marketing cookies disabled');
-                }
-            }
-            
-            // Initialize preferences on page load
-            loadCookiePreferences();
-            
-            // Function to close modal
-            function closeCookieModal() {
-                const modal = document.getElementById('gdpr-settings-modal');
-                if (modal) {
-                    modal.classList.remove('show');
-                    loadCookiePreferences(); // Reset to saved preferences
-                }
-            }
-            
-            // Wait for DOM to be ready before attaching event listeners
-            function initCookieModal() {
-                const modal = document.getElementById('gdpr-settings-modal');
-                const modalContent = modal ? modal.querySelector('.gdpr-modal-content') : null;
-                const saveBtn = document.getElementById('gdpr-save-settings');
-                const cancelBtn = document.getElementById('gdpr-cancel-settings');
-                const closeBtn = document.getElementById('gdpr-modal-close');
-                
-                // Close button (X)
-                if (closeBtn) {
-                    closeBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeCookieModal();
-                        return false;
+
+                // Save preferences
+                function saveCookiePreferences() {
+                    const preferences = {
+                        essential: document.getElementById('cookie-essential').checked,
+                        analytics: document.getElementById('cookie-analytics').checked,
+                        marketing: document.getElementById('cookie-marketing').checked
                     };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(preferences));
+                    localStorage.setItem('gdpr-cookie-consent', 'custom');
+                    localStorage.setItem('gdpr-cookie-consent-date', new Date().toISOString());
+
+                    // Apply preferences
+                    applyCookiePreferences(preferences);
+
+                    // Close modal and banner
+                    document.getElementById('gdpr-settings-modal').classList.remove('show');
+                    consentBanner.classList.remove('show');
                 }
-                
-                // Cancel button
-                if (cancelBtn) {
-                    cancelBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeCookieModal();
-                        return false;
-                    };
+
+                // Apply cookie preferences
+                function applyCookiePreferences(prefs) {
+                    if (prefs.analytics) {
+                        // Enable analytics cookies (e.g., Google Analytics)
+                        console.log('Analytics cookies enabled');
+                    } else {
+                        // Disable analytics cookies
+                        console.log('Analytics cookies disabled');
+                    }
+
+                    if (prefs.marketing) {
+                        // Enable marketing cookies
+                        console.log('Marketing cookies enabled');
+                    } else {
+                        // Disable marketing cookies
+                        console.log('Marketing cookies disabled');
+                    }
                 }
-                
-                // Save button
-                if (saveBtn) {
-                    saveBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        saveCookiePreferences();
-                        return false;
-                    };
+
+                // Initialize preferences on page load
+                loadCookiePreferences();
+
+                // Function to close modal
+                function closeCookieModal() {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (modal) {
+                        modal.classList.remove('show');
+                        loadCookiePreferences(); // Reset to saved preferences
+                    }
                 }
-                
-                // Close modal on background click
-                if (modal) {
-                    modal.onclick = function(e) {
-                        // Only close if clicking directly on the modal backdrop (not on modal-content)
-                        if (e.target === modal) {
+
+                // Wait for DOM to be ready before attaching event listeners
+                function initCookieModal() {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    const modalContent = modal ? modal.querySelector('.gdpr-modal-content') : null;
+                    const saveBtn = document.getElementById('gdpr-save-settings');
+                    const cancelBtn = document.getElementById('gdpr-cancel-settings');
+                    const closeBtn = document.getElementById('gdpr-modal-close');
+
+                    // Close button (X)
+                    if (closeBtn) {
+                        closeBtn.onclick = function (e) {
                             e.preventDefault();
+                            e.stopPropagation();
                             closeCookieModal();
                             return false;
-                        }
-                    };
-                    
-                    // Prevent modal content clicks from closing the modal
-                    if (modalContent) {
-                        modalContent.onclick = function(e) {
-                            e.stopPropagation();
                         };
                     }
-                }
-                
-                // Close modal on Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' || e.keyCode === 27) {
-                        if (modal && modal.classList.contains('show')) {
+
+                    // Cancel button
+                    if (cancelBtn) {
+                        cancelBtn.onclick = function (e) {
                             e.preventDefault();
+                            e.stopPropagation();
                             closeCookieModal();
+                            return false;
+                        };
+                    }
+
+                    // Save button
+                    if (saveBtn) {
+                        saveBtn.onclick = function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            saveCookiePreferences();
+                            return false;
+                        };
+                    }
+
+                    // Close modal on background click
+                    if (modal) {
+                        modal.onclick = function (e) {
+                            // Only close if clicking directly on the modal backdrop (not on modal-content)
+                            if (e.target === modal) {
+                                e.preventDefault();
+                                closeCookieModal();
+                                return false;
+                            }
+                        };
+
+                        // Prevent modal content clicks from closing the modal
+                        if (modalContent) {
+                            modalContent.onclick = function (e) {
+                                e.stopPropagation();
+                            };
                         }
                     }
-                });
-            }
-            
-            // Initialize modal when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initCookieModal);
-            } else {
-                // Use setTimeout to ensure DOM is fully ready
-                setTimeout(initCookieModal, 100);
-            }
-            
-            // Update Accept/Reject to also save preferences
-            document.getElementById('gdpr-accept').addEventListener('click', function() {
-                const allAccepted = {
-                    essential: true,
-                    analytics: true,
-                    marketing: true
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
-                applyCookiePreferences(allAccepted);
-            });
-            
-            document.getElementById('gdpr-reject').addEventListener('click', function() {
-                const allRejected = {
-                    essential: true,
-                    analytics: false,
-                    marketing: false
-                };
-                localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
-                applyCookiePreferences(allRejected);
-            });
-        })();
-    </script>
 
-    <!-- Cookie Settings Modal -->
-    <div id="gdpr-settings-modal">
-        <div class="gdpr-modal-content" onclick="event.stopPropagation();">
-            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
-            <div class="gdpr-modal-header">
-                <h3>Cookie Settings</h3>
-                <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
-            </div>
-            
-            <div class="cookie-category essential">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Essential Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-essential" checked disabled>
-                        <span class="cookie-slider"></span>
-                    </label>
+                    // Close modal on Escape key
+                    document.addEventListener('keydown', function (e) {
+                        if (e.key === 'Escape' || e.keyCode === 27) {
+                            if (modal && modal.classList.contains('show')) {
+                                e.preventDefault();
+                                closeCookieModal();
+                            }
+                        }
+                    });
+                }
+
+                // Initialize modal when DOM is ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initCookieModal);
+                } else {
+                    // Use setTimeout to ensure DOM is fully ready
+                    setTimeout(initCookieModal, 100);
+                }
+
+                // Update Accept/Reject to also save preferences
+                document.getElementById('gdpr-accept').addEventListener('click', function () {
+                    const allAccepted = {
+                        essential: true,
+                        analytics: true,
+                        marketing: true
+                    };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allAccepted));
+                    applyCookiePreferences(allAccepted);
+                });
+
+                document.getElementById('gdpr-reject').addEventListener('click', function () {
+                    const allRejected = {
+                        essential: true,
+                        analytics: false,
+                        marketing: false
+                    };
+                    localStorage.setItem('gdpr-cookie-preferences', JSON.stringify(allRejected));
+                    applyCookiePreferences(allRejected);
+                });
+            })();
+        </script>
+
+        <!-- Cookie Settings Modal -->
+        <div id="gdpr-settings-modal">
+            <div class="gdpr-modal-content" onclick="event.stopPropagation();">
+                <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
+                <div class="gdpr-modal-header">
+                    <h3>Cookie Settings</h3>
+                    <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies are necessary for the website to function properly. They cannot be disabled as they are essential for basic site functionality, security, and compliance.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Analytics Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-analytics">
-                        <span class="cookie-slider"></span>
-                    </label>
+
+                <div class="cookie-category essential">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Essential Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-essential" checked disabled>
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies are necessary for the website to function properly. They cannot be disabled as
+                        they are essential for basic site functionality, security, and compliance.
+                    </p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Marketing Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-marketing">
-                        <span class="cookie-slider"></span>
-                    </label>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Analytics Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies help us understand how visitors interact with our website by collecting and
+                        reporting information anonymously. This helps us improve our website's performance and user
+                        experience.
+                    </p>
                 </div>
-                <p class="cookie-category-description">
-                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may be set by advertising partners to build a profile of your interests.
-                </p>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4 class="cookie-category-title">Marketing Cookies</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-marketing">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        These cookies are used to deliver relevant advertisements and track campaign effectiveness. They
+                        may be set by advertising partners to build a profile of your interests.
+                    </p>
+                </div>
+
+                <div class="gdpr-modal-footer">
+                    <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
+                    <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
+                </div>
             </div>
-            
-            <div class="gdpr-modal-footer">
-                <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
-                <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
-            </div>
-        </div>
 
 </body>
 
