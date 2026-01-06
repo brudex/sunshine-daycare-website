@@ -1456,7 +1456,7 @@
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
-                                    Monday – Friday: 8am – 6pm
+                                    Monday – Friday: 8am – 6pm - 7:30 am - 6:00pm
                                 </li>
                             </ul>
                     </div>
@@ -1690,11 +1690,15 @@
             const consent = localStorage.getItem('gdpr-cookie-consent');
             const consentBanner = document.getElementById('gdpr-cookie-consent');
             
-            if (!consent) {
+            // Only show banner if user hasn't given consent yet
+            if (!consent && consentBanner) {
                 // Show banner after a short delay
-                setTimeout(function() {
+                setTimeout(function () {
                     consentBanner.classList.add('show');
                 }, 1000);
+            } else if (consentBanner) {
+                // Hide banner if consent already given
+                consentBanner.classList.remove('show');
             }
             
             // Accept button
@@ -1715,10 +1719,13 @@
                 console.log('Cookies rejected');
             });
             
-            // Settings button - open modal
-            document.getElementById('gdpr-settings').addEventListener('click', function() {
-                document.getElementById('gdpr-settings-modal').classList.add('show');
-            });
+            // Settings button - redirect to index.html (modal only on index page)
+                const settingsBtn = document.getElementById('gdpr-settings');
+                if (settingsBtn) {
+                    settingsBtn.addEventListener('click', function () {
+                        window.location.href = 'index.html#cookie-settings';
+                    });
+                }
             
             // Load saved preferences
             function loadCookiePreferences() {
@@ -1878,60 +1885,6 @@
         })();
     </script>
 
-    <!-- Cookie Settings Modal -->
-    <div id="gdpr-settings-modal">
-        <div class="gdpr-modal-content" onclick="event.stopPropagation();">
-            <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
-            <div class="gdpr-modal-header">
-                <h3>Cookie Settings</h3>
-                <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
-            </div>
-            
-            <div class="cookie-category essential">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Essential Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-essential" checked disabled>
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    These cookies are necessary for the website to function properly. They cannot be disabled as they are essential for basic site functionality, security, and compliance.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Analytics Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-analytics">
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.
-                </p>
-            </div>
-            
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Marketing Cookies</h4>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="cookie-marketing">
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    These cookies are used to deliver relevant advertisements and track campaign effectiveness. They may be set by advertising partners to build a profile of your interests.
-                </p>
-            </div>
-            
-            <div class="gdpr-modal-footer">
-                <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
-                <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
-            </div>
-        </div>
-
-</body>
+    </body>
 
 </html>

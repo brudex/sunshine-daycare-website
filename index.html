@@ -1856,7 +1856,7 @@
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
-                                    Monday – Friday: 8am – 6pm
+                                    Monday – Friday: 8am – 6pm - 7:30 am - 6:00pm
                                 </li>
                             </ul>
                         </div>
@@ -2183,13 +2183,15 @@
             const consent = localStorage.getItem('gdpr-cookie-consent');
             const consentBanner = document.getElementById('gdpr-cookie-consent');
 
-            if (!consent) {
+            // Only show banner if user hasn't given consent yet
+            if (!consent && consentBanner) {
                 // Show banner after a short delay
                 setTimeout(function () {
-                    if (consentBanner) {
-                        consentBanner.classList.add('show');
-                    }
+                    consentBanner.classList.add('show');
                 }, 1000);
+            } else if (consentBanner) {
+                // Hide banner if consent already given
+                consentBanner.classList.remove('show');
             }
 
             // Accept button
@@ -2227,6 +2229,18 @@
                         modal.classList.add('show');
                     }
                 });
+            }
+
+            // Check if user came from another page with #cookie-settings hash
+            if (window.location.hash === '#cookie-settings') {
+                setTimeout(function () {
+                    const modal = document.getElementById('gdpr-settings-modal');
+                    if (modal) {
+                        modal.classList.add('show');
+                        // Remove hash from URL
+                        history.replaceState(null, null, ' ');
+                    }
+                }, 500);
             }
 
             // Load saved preferences

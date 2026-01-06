@@ -478,6 +478,33 @@
             box-shadow: 0 5px 15px rgba(255, 209, 51, 0.4);
             transition: all 0.3s ease;
         }
+
+        /* Terms and Conditions Download Link Hover */
+        a[href*="Terms and Conditions"]:hover {
+            color: #FFD700 !important;
+            text-decoration: underline !important;
+        }
+
+        /* Form Alert Messages */
+        .alert-msg .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .alert-msg .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-msg .alert-danger {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 
     <style>
@@ -1451,7 +1478,7 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="wow fadeInUp"
                         style="background: #fff; border-radius: 20px; padding: 50px; box-shadow: 0 10px 50px rgba(0,0,0,0.1);">
-                        <form action="#" method="POST" id="admission-form">
+                        <form action="admissions-form-handler.php" method="POST" id="admission-form">
                             <!-- Parent/Guardian Information -->
                             <div class="form-section mb-40">
                                 <h3
@@ -1656,6 +1683,20 @@
                                 </div>
                             </div>
 
+                            <!-- Terms and Conditions Download Link -->
+                            <div class="text-center mb-30" style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; border: 1px solid #e0e0e0;">
+                                <p style="color: #666; font-size: 0.95rem; margin-bottom: 0; line-height: 1.6;">
+                                    <i class="fas fa-file-pdf" style="color: #ffc100; margin-right: 8px;"></i>
+                                    <strong style="color: #000;">Before submitting, please review our </strong>
+                                    <a href="assets/Terms and Conditions (Admissions) - Sunshine Nursery.pdf" 
+                                       target="_blank" 
+                                       download
+                                       style="color: #ffc100; text-decoration: underline; font-weight: 500; transition: all 0.3s ease;">
+                                        Terms and Conditions (PDF)
+                                    </a>
+                                </p>
+                            </div>
+
                             <!-- Submit Button -->
                             <div class="text-center">
                                 <button type="submit" name="submit" id="submit" class="btn btn-lg animation"
@@ -1763,7 +1804,7 @@
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
-                                    Monday – Friday: 8am – 6pm
+                                    Monday – Friday: 8am – 6pm - 7:30 am - 6:00pm
                                 </li>
                             </ul>
                         </div>
@@ -1961,6 +2002,50 @@
                     updateMenuState();
                 }
             });
+
+            // Admissions Form Submission Handler
+            $('#admission-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                var $form = $(this);
+                var $submitBtn = $form.find('button[type="submit"]');
+                var $messageDiv = $('#message');
+                var originalBtnText = $submitBtn.html();
+                
+                // Disable submit button
+                $submitBtn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+                $messageDiv.removeClass('success error').html('');
+                
+                // Serialize form data
+                var formData = $form.serialize();
+                
+                // Submit via AJAX
+                $.ajax({
+                    url: 'admissions-form-handler.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            $messageDiv.addClass('success').html('<div class="alert alert-success" style="padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 20px;">' + response.message + '</div>');
+                            $form[0].reset();
+                            // Scroll to message
+                            $('html, body').animate({
+                                scrollTop: $messageDiv.offset().top - 100
+                            }, 500);
+                        } else {
+                            $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">' + response.message + '</div>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">Sorry, there was an error submitting your application. Please try again later or contact us directly.</div>');
+                    },
+                    complete: function() {
+                        // Re-enable submit button
+                        $submitBtn.prop('disabled', false).html(originalBtnText);
+                    }
+                });
+            });
         });
     </script>
 
@@ -1994,17 +2079,21 @@
 
         <!-- GDPR Cookie Consent Script -->
         <script>
-            (function () {
-                // Check if user has already made a choice
-                const consent = localStorage.getItem('gdpr-cookie-consent');
-                const consentBanner = document.getElementById('gdpr-cookie-consent');
+        (function () {
+            // Check if user has already made a choice
+            const consent = localStorage.getItem('gdpr-cookie-consent');
+            const consentBanner = document.getElementById('gdpr-cookie-consent');
 
-                if (!consent) {
-                    // Show banner after a short delay
-                    setTimeout(function () {
-                        consentBanner.classList.add('show');
-                    }, 1000);
-                }
+            // Only show banner if user hasn't given consent yet
+            if (!consent && consentBanner) {
+                // Show banner after a short delay
+                setTimeout(function () {
+                    consentBanner.classList.add('show');
+                }, 1000);
+            } else if (consentBanner) {
+                // Hide banner if consent already given
+                consentBanner.classList.remove('show');
+            }
 
                 // Accept button
                 document.getElementById('gdpr-accept').addEventListener('click', function () {
@@ -2024,10 +2113,13 @@
                     console.log('Cookies rejected');
                 });
 
-                // Settings button - open modal
-                document.getElementById('gdpr-settings').addEventListener('click', function () {
-                    document.getElementById('gdpr-settings-modal').classList.add('show');
-                });
+                // Settings button - redirect to index.html (modal only on index page)
+                const settingsBtn = document.getElementById('gdpr-settings');
+                if (settingsBtn) {
+                    settingsBtn.addEventListener('click', function () {
+                        window.location.href = 'index.html#cookie-settings';
+                    });
+                }
 
                 // Load saved preferences
                 function loadCookiePreferences() {
@@ -2186,64 +2278,6 @@
                 });
             })();
         </script>
-
-        <!-- Cookie Settings Modal -->
-        <div id="gdpr-settings-modal">
-            <div class="gdpr-modal-content" onclick="event.stopPropagation();">
-                <button type="button" class="gdpr-modal-close" id="gdpr-modal-close" aria-label="Close">&times;</button>
-                <div class="gdpr-modal-header">
-                    <h3>Cookie Settings</h3>
-                    <p>Manage your cookie preferences. You can enable or disable different types of cookies below.</p>
-                </div>
-
-                <div class="cookie-category essential">
-                    <div class="cookie-category-header">
-                        <h4 class="cookie-category-title">Essential Cookies</h4>
-                        <label class="cookie-toggle">
-                            <input type="checkbox" id="cookie-essential" checked disabled>
-                            <span class="cookie-slider"></span>
-                        </label>
-                    </div>
-                    <p class="cookie-category-description">
-                        These cookies are necessary for the website to function properly. They cannot be disabled as
-                        they are essential for basic site functionality, security, and compliance.
-                    </p>
-                </div>
-
-                <div class="cookie-category">
-                    <div class="cookie-category-header">
-                        <h4 class="cookie-category-title">Analytics Cookies</h4>
-                        <label class="cookie-toggle">
-                            <input type="checkbox" id="cookie-analytics">
-                            <span class="cookie-slider"></span>
-                        </label>
-                    </div>
-                    <p class="cookie-category-description">
-                        These cookies help us understand how visitors interact with our website by collecting and
-                        reporting information anonymously. This helps us improve our website's performance and user
-                        experience.
-                    </p>
-                </div>
-
-                <div class="cookie-category">
-                    <div class="cookie-category-header">
-                        <h4 class="cookie-category-title">Marketing Cookies</h4>
-                        <label class="cookie-toggle">
-                            <input type="checkbox" id="cookie-marketing">
-                            <span class="cookie-slider"></span>
-                        </label>
-                    </div>
-                    <p class="cookie-category-description">
-                        These cookies are used to deliver relevant advertisements and track campaign effectiveness. They
-                        may be set by advertising partners to build a profile of your interests.
-                    </p>
-                </div>
-
-                <div class="gdpr-modal-footer">
-                    <button class="gdpr-modal-btn gdpr-modal-btn-cancel" id="gdpr-cancel-settings">Cancel</button>
-                    <button class="gdpr-modal-btn gdpr-modal-btn-save" id="gdpr-save-settings">Save Preferences</button>
-                </div>
-            </div>
 
 </body>
 
