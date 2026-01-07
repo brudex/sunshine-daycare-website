@@ -1,7 +1,7 @@
 <?php
 /**
  * Admissions Form Handler
- * Sends admissions form submissions to admissions and nursery manager emails
+ * Sends admissions and holiday club applications to HR/Admin and Nursery Manager
  */
 
 // Prevent direct access
@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Email configuration
+// Email configuration - admissions & holiday club go to HR/Admin and Nursery Manager
 $to_emails = [
-    'admissions@sunshinechildcareservices.co.uk',
-    'sunshinenurserymanager@sunshinechildcareservices.co.uk'
+    'hr.admin@sunshinechildcareservices.co.uk',
+    'nurserymanager@sunshinechildcareservices.co.uk',
 ];
 
 // Sanitize and validate input
@@ -40,6 +40,12 @@ $address = isset($_POST['address']) ? sanitize_input($_POST['address']) : '';
 $child_name = isset($_POST['child-name']) ? sanitize_input($_POST['child-name']) : '';
 $child_age = isset($_POST['child-age']) ? sanitize_input($_POST['child-age']) : '';
 $sessions = isset($_POST['session']) ? $_POST['session'] : [];
+
+// Cost Information
+$total_cost = isset($_POST['total_cost']) ? sanitize_input($_POST['total_cost']) : '';
+$subtotal = isset($_POST['subtotal']) ? sanitize_input($_POST['subtotal']) : '';
+$discount = isset($_POST['discount']) ? sanitize_input($_POST['discount']) : '';
+$session_summary = isset($_POST['session_summary']) ? $_POST['session_summary'] : '';
 
 // Consent
 $terms = isset($_POST['terms']) ? 'Yes' : 'No';
@@ -81,6 +87,17 @@ if (empty($child_age)) {
 
 if (empty($sessions)) {
     $errors[] = 'Please select at least one session preference';
+} else {
+    // Validate that each selected session has at least one day selected
+    foreach ($sessions as $session) {
+        $days_key = $session . '-days';
+        $session_days = isset($_POST[$days_key]) ? $_POST[$days_key] : [];
+        
+        if (empty($session_days)) {
+            $session_name = isset($session_names[$session]) ? $session_names[$session] : ucfirst($session);
+            $errors[] = 'Please select at least one day for ' . $session_name;
+        }
+    }
 }
 
 if ($terms !== 'Yes') {
@@ -105,20 +122,46 @@ if (!empty($errors)) {
     exit;
 }
 
-// Prepare session preferences text
+// Prepare session preferences text with days
 $session_names = [
     'breakfast' => 'Breakfast Club (07:30–09:00)',
     'preschool' => 'Preschool (09:00–15:00)',
     'after-school' => 'After School Club (15:00–18:00)'
 ];
 
+$day_names = [
+    'monday' => 'Monday',
+    'tuesday' => 'Tuesday',
+    'wednesday' => 'Wednesday',
+    'thursday' => 'Thursday',
+    'friday' => 'Friday'
+];
+
 $selected_sessions = [];
 foreach ($sessions as $session) {
     if (isset($session_names[$session])) {
-        $selected_sessions[] = $session_names[$session];
+        // Get days for this session
+        $days_key = $session . '-days';
+        $session_days = isset($_POST[$days_key]) ? $_POST[$days_key] : [];
+        
+        $session_text = $session_names[$session];
+        
+        if (!empty($session_days)) {
+            $day_list = [];
+            foreach ($session_days as $day) {
+                if (isset($day_names[$day])) {
+                    $day_list[] = $day_names[$day];
+                }
+            }
+            if (!empty($day_list)) {
+                $session_text .= ' - Days: ' . implode(', ', $day_list);
+            }
+        }
+        
+        $selected_sessions[] = $session_text;
     }
 }
-$sessions_text = !empty($selected_sessions) ? implode(', ', $selected_sessions) : 'None selected';
+$sessions_text = !empty($selected_sessions) ? implode("\n", $selected_sessions) : 'None selected';
 
 // Prepare email content
 $email_subject = 'New Admissions Application - Sunshine Child-Care Nursery';
@@ -137,8 +180,28 @@ $email_body .= "Address: " . $address . "\n\n";
 $email_body .= "CHILD INFORMATION\n";
 $email_body .= "--------------------------------\n";
 $email_body .= "Child's Name: " . $child_name . "\n";
-$email_body .= "Child's Age: " . $child_age . "\n";
-$email_body .= "Session Preferences: " . $sessions_text . "\n\n";
+$email_body .= "Child's Age: " . $child_age . "\n\n";
+
+$email_body .= "SESSION PREFERENCES & DAYS\n";
+$email_body .= "--------------------------------\n";
+if (!empty($session_summary)) {
+    $email_body .= $session_summary . "\n";
+} else {
+    $email_body .= $sessions_text . "\n";
+}
+
+$email_body .= "\nESTIMATED COST\n";
+$email_body .= "--------------------------------\n";
+if (!empty($subtotal) && floatval($subtotal) > 0) {
+    $email_body .= "Subtotal: £" . $subtotal . "\n";
+    if (!empty($discount) && floatval($discount) > 0) {
+        $email_body .= "Discount (30%): -£" . $discount . "\n";
+    }
+    $email_body .= "Total Weekly Cost: £" . $total_cost . "\n";
+} else {
+    $email_body .= "No cost calculated\n";
+}
+$email_body .= "\n";
 
 $email_body .= "CONSENT & PRIVACY\n";
 $email_body .= "--------------------------------\n";

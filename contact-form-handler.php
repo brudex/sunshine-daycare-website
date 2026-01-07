@@ -1,7 +1,7 @@
 <?php
 /**
  * Contact Form Handler
- * Sends contact form submissions to admissions and nursery manager emails
+ * Sends general contact, tour and other enquiries to the main info email address
  */
 
 // Prevent direct access
@@ -10,10 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Email configuration
+// Email configuration - all contact, tour and general enquiries go to the main info inbox
 $to_emails = [
-    'admissions@sunshinechildcareservices.co.uk',
-    'sunshinenurserymanager@sunshinechildcareservices.co.uk'
+    'info@sunshinechildcareservices.co.uk',
 ];
 
 // Sanitize and validate input
