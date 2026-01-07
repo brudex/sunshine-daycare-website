@@ -1769,6 +1769,32 @@
     </div>
     <!-- End Simple CTA Section -->
 
+    <!-- Events Notification Toast -->
+    <div id="events-toast" style="position: fixed; right: 20px; bottom: 20px; z-index: 11000; max-width: 340px; background: #ffffff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 18px 18px 16px 18px; display: none; border: 2px solid #ffc100;">
+        <div style="display: flex; align-items: flex-start;">
+            <div style="flex: 1; padding-right: 10px;">
+                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #ffc100; color: #000; margin-right: 8px;">
+                        <i class="fas fa-calendar-day" style="font-size: 0.9rem;"></i>
+                    </span>
+                    <strong style="color: #000; font-size: 0.95rem;">New Holiday Club Event</strong>
+                </div>
+                <p style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;">
+                    The Ultimate Half-Term Adventure Awaits! Safe, engaging childcare for ages 4–11 this February at Thames View.
+                </p>
+                <a href="https://sunshinenurseryholidayclub.builder-preview.com/" target="_blank" rel="noopener"
+                   style="display: inline-block; font-size: 0.8rem; font-weight: 500; color: #000; background: #ffc100; padding: 6px 14px; border-radius: 999px; text-decoration: none;">
+                    View Holiday Club
+                </a>
+            </div>
+            <button id="events-toast-close" type="button"
+                    style="border: none; background: transparent; color: #999; cursor: pointer; padding: 0; margin-left: 6px; font-size: 1rem; line-height: 1;">
+                &times;
+            </button>
+        </div>
+    </div>
+    <!-- End Events Notification Toast -->
+
     <!-- Start Footer 
     ============================================= -->
     <footer class="bg-dark overflow-hidden text-light footer-style-four"
@@ -2072,6 +2098,34 @@
 
             // Initial state check
             updateMenuState();
+
+            // Events notification toast (show once per browser via localStorage)
+            try {
+                var toastDismissed = localStorage.getItem('sunshine_events_toast_dismissed');
+                if (!toastDismissed) {
+                    setTimeout(function () {
+                        $('#events-toast').fadeIn(400);
+                    }, 2500);
+
+                    $('#events-toast-close').on('click', function () {
+                        $('#events-toast').fadeOut(300);
+                        try {
+                            localStorage.setItem('sunshine_events_toast_dismissed', 'true');
+                        } catch (e) {
+                            // ignore storage errors
+                        }
+                    });
+                }
+            } catch (e) {
+                // If localStorage fails, just show the toast once this visit
+                setTimeout(function () {
+                    $('#events-toast').fadeIn(400);
+                }, 2500);
+
+                $('#events-toast-close').on('click', function () {
+                    $('#events-toast').fadeOut(300);
+                });
+            }
         });
     </script>
 
