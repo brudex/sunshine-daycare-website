@@ -470,12 +470,24 @@
         }
 
         /* Form Alert Messages */
+        .alert-notification {
+            min-height: 20px;
+            margin-top: 20px;
+        }
+
+        .alert-msg {
+            min-height: 0;
+        }
+
         .alert-msg .alert {
             padding: 15px 20px;
             border-radius: 8px;
             margin-top: 20px;
             font-size: 1rem;
             line-height: 1.5;
+            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .alert-msg .alert-success {
@@ -1371,7 +1383,7 @@
                                             <p
                                                 style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-top: 15px; margin-bottom: 0; text-align: center;">
                                                 <strong>Opening Hours:</strong><br>
-                                                Monday – Friday: 8am – 6pm - 7:30 am - 6:00pm<br>
+                                                Monday – Friday: 7:30am – 6:00pm<br>
                                                 Limited Saturday tours monthly
                                             </p>
                                         </div>
@@ -1520,7 +1532,7 @@
                                 </li>
                                 <li style="margin-bottom: 10px; color: #fff;">
                                     <i class="fas fa-clock mr-2" style="color: #ffc100;"></i>
-                                    Monday – Friday: 8am – 6pm - 7:30 am - 6:00pm
+                                    Monday – Friday: 7:30am – 6:00pm
                                 </li>
                             </ul>
                         </div>
@@ -1750,19 +1762,53 @@
                     data: formData,
                     dataType: 'json',
                     success: function(response) {
-                        if (response.status === 'success') {
-                            $messageDiv.addClass('success').html('<div class="alert alert-success">' + response.message + '</div>');
-                            $form[0].reset();
-                            // Scroll to message
-                            $('html, body').animate({
-                                scrollTop: $messageDiv.offset().top - 100
-                            }, 500);
+                        // Handle response - check if it's already parsed or needs parsing
+                        var parsedResponse = response;
+                        if (typeof response === 'string') {
+                            try {
+                                parsedResponse = JSON.parse(response);
+                            } catch (e) {
+                                console.error('Failed to parse JSON response:', e);
+                                $messageDiv.addClass('error').html('<div class="alert alert-danger">Invalid response from server. Please try again.</div>');
+                                $submitBtn.prop('disabled', false).html(originalBtnText);
+                                return;
+                            }
+                        }
+                        
+                        // Check if response has the expected structure
+                        if (parsedResponse && parsedResponse.status) {
+                            if (parsedResponse.status === 'success') {
+                                $messageDiv.addClass('success').html('<div class="alert alert-success">' + (parsedResponse.message || 'Thank you for contacting us! We will get back to you soon.') + '</div>');
+                                $form[0].reset();
+                                // Scroll to message
+                                setTimeout(function() {
+                                    $('html, body').animate({
+                                        scrollTop: $messageDiv.offset().top - 100
+                                    }, 500);
+                                }, 100);
+                            } else {
+                                $messageDiv.addClass('error').html('<div class="alert alert-danger">' + (parsedResponse.message || 'An error occurred. Please try again.') + '</div>');
+                            }
                         } else {
-                            $messageDiv.addClass('error').html('<div class="alert alert-danger">' + response.message + '</div>');
+                            $messageDiv.addClass('error').html('<div class="alert alert-danger">Unexpected response format. Please try again.</div>');
                         }
                     },
                     error: function(xhr, status, error) {
-                        $messageDiv.addClass('error').html('<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again later or contact us directly.</div>');
+                        // Try to parse error response if it's JSON
+                        var errorMessage = 'Sorry, there was an error sending your message. Please try again later or contact us directly.';
+                        
+                        if (xhr.responseText) {
+                            try {
+                                var errorResponse = JSON.parse(xhr.responseText);
+                                if (errorResponse.message) {
+                                    errorMessage = errorResponse.message;
+                                }
+                            } catch (e) {
+                                // Not JSON, use default message
+                            }
+                        }
+                        
+                        $messageDiv.addClass('error').html('<div class="alert alert-danger">' + errorMessage + '</div>');
                     },
                     complete: function() {
                         // Re-enable submit button

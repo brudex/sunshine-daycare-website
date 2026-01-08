@@ -486,12 +486,24 @@
         }
 
         /* Form Alert Messages */
+        .alert-notification {
+            min-height: 20px;
+            margin-top: 20px;
+        }
+
+        .alert-msg {
+            min-height: 0;
+        }
+
         .alert-msg .alert {
             padding: 15px 20px;
             border-radius: 8px;
             margin-top: 20px;
             font-size: 1rem;
             line-height: 1.5;
+            display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .alert-msg .alert-success {
@@ -2384,24 +2396,58 @@
                     data: formData,
                     dataType: 'json',
                     success: function(response) {
-                        if (response.status === 'success') {
-                            $messageDiv.addClass('success').html('<div class="alert alert-success" style="padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 20px;">' + response.message + '</div>');
-                            $form[0].reset();
-                            // Hide all day selections
-                            $('.days-selection').slideUp(300);
-                            // Reset cost calculator
-                            $('#cost-calculator').hide();
-                            calculateCost();
-                            // Scroll to message
-                            $('html, body').animate({
-                                scrollTop: $messageDiv.offset().top - 100
-                            }, 500);
+                        // Handle response - check if it's already parsed or needs parsing
+                        var parsedResponse = response;
+                        if (typeof response === 'string') {
+                            try {
+                                parsedResponse = JSON.parse(response);
+                            } catch (e) {
+                                console.error('Failed to parse JSON response:', e);
+                                $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">Invalid response from server. Please try again.</div>');
+                                $submitBtn.prop('disabled', false).html(originalBtnText);
+                                return;
+                            }
+                        }
+                        
+                        // Check if response has the expected structure
+                        if (parsedResponse && parsedResponse.status) {
+                            if (parsedResponse.status === 'success') {
+                                $messageDiv.addClass('success').html('<div class="alert alert-success" style="padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 20px;">' + (parsedResponse.message || 'Thank you for your application! We will contact you soon.') + '</div>');
+                                $form[0].reset();
+                                // Hide all day selections
+                                $('.days-selection').slideUp(300);
+                                // Reset cost calculator
+                                $('#cost-calculator').hide();
+                                calculateCost();
+                                // Scroll to message
+                                setTimeout(function() {
+                                    $('html, body').animate({
+                                        scrollTop: $messageDiv.offset().top - 100
+                                    }, 500);
+                                }, 100);
+                            } else {
+                                $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">' + (parsedResponse.message || 'An error occurred. Please try again.') + '</div>');
+                            }
                         } else {
-                            $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">' + response.message + '</div>');
+                            $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">Unexpected response format. Please try again.</div>');
                         }
                     },
                     error: function(xhr, status, error) {
-                        $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">Sorry, there was an error submitting your application. Please try again later or contact us directly.</div>');
+                        // Try to parse error response if it's JSON
+                        var errorMessage = 'Sorry, there was an error submitting your application. Please try again later or contact us directly.';
+                        
+                        if (xhr.responseText) {
+                            try {
+                                var errorResponse = JSON.parse(xhr.responseText);
+                                if (errorResponse.message) {
+                                    errorMessage = errorResponse.message;
+                                }
+                            } catch (e) {
+                                // Not JSON, use default message
+                            }
+                        }
+                        
+                        $messageDiv.addClass('error').html('<div class="alert alert-danger" style="padding: 15px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin-top: 20px;">' + errorMessage + '</div>');
                     },
                     complete: function() {
                         // Re-enable submit button
