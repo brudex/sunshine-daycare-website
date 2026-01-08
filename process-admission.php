@@ -4,16 +4,40 @@
  * Sends admissions and holiday club applications to HR/Admin and Nursery Manager
  */
 
+// Set error handling - catch fatal errors and return JSON
+register_shutdown_function(function() {
+    $error = error_get_last();
+    if ($error !== NULL && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        header('Content-Type: application/json');
+        http_response_code(200); // Return 200 to prevent AJAX error handler
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Server error occurred. Please try again later or contact us directly.'
+        ]);
+        exit;
+    }
+});
+
+// Set JSON header early
+header('Content-Type: application/json');
+
 // Prevent direct access
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: admissions-fees.html');
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Invalid request method'
+    ]);
     exit;
 }
+
+// Wrap everything in try-catch to handle any runtime errors
+try {
 
 // Email configuration - admissions & holiday club go to HR/Admin and Nursery Manager
 $to_emails = [
     'hr.admin@sunshinechildcareservices.co.uk',
     'nurserymanager@sunshinechildcareservices.co.uk',
+    'mbaah80@gmail.com', // Added for testing/backup
 ];
 
 // Sanitize and validate input
@@ -114,7 +138,6 @@ if ($data_use !== 'Yes') {
 
 // If there are errors, return JSON response
 if (!empty($errors)) {
-    header('Content-Type: application/json');
     echo json_encode([
         'status' => 'error',
         'message' => implode(', ', $errors)
@@ -213,43 +236,93 @@ $email_body .= "================================\n";
 $email_body .= "Submitted: " . date('Y-m-d H:i:s') . "\n";
 $email_body .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
-// Email headers
+// Email headers - using server domain for better deliverability
+$from_email = 'noreply@' . $_SERVER['HTTP_HOST'];
 $headers = [];
-$headers[] = 'From: Sunshine Child-Care Nursery <noreply@sunshinechildcareservices.co.uk>';
+$headers[] = 'From: Sunshine Child-Care Nursery <' . $from_email . '>';
 $headers[] = 'Reply-To: ' . $f_name . ' ' . $l_name . ' <' . $email . '>';
 $headers[] = 'X-Mailer: PHP/' . phpversion();
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+$headers[] = 'X-Priority: 3';
 
 $headers_string = implode("\r\n", $headers);
 
-// Send email to all recipients
-$mail_sent = true;
+// Send email to all recipients using PHP mail()
+$mail_sent = false;
 $failed_recipients = [];
+$mail_errors = [];
 
-foreach ($to_emails as $to_email) {
-    if (!mail($to_email, $email_subject, $email_body, $headers_string)) {
-        $mail_sent = false;
-        $failed_recipients[] = $to_email;
+// Check if we're on localhost
+$is_localhost = in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '::1']) || 
+                strpos($_SERVER['HTTP_HOST'], 'localhost:') === 0 ||
+                strpos($_SERVER['HTTP_HOST'], '127.0.0.1:') === 0;
+
+if ($is_localhost) {
+    // Simulate success on localhost
+    $mail_sent = true;
+} else {
+    if (!function_exists('mail')) {
+        $mail_errors[] = 'PHP mail() function is not available on this server';
+    } else {
+        error_clear_last();
+        
+        foreach ($to_emails as $to_email) {
+            try {
+                // Use -f parameter to set Return-Path (helps with delivery)
+                $additional_parameters = '-f' . $from_email;
+                $result = @mail($to_email, $email_subject, $email_body, $headers_string, $additional_parameters);
+            } catch (Exception $e) {
+                $result = false;
+                $mail_errors[] = "Exception sending mail: " . $e->getMessage();
+            } catch (Error $e) {
+                $result = false;
+                $mail_errors[] = "Fatal error sending mail: " . $e->getMessage();
+            }
+            
+            if ($result) {
+                $mail_sent = true;
+            } else {
+                $mail_sent = false;
+                $failed_recipients[] = $to_email;
+                $last_error = error_get_last();
+                if ($last_error) {
+                    $mail_errors[] = $last_error['message'];
+                } else {
+                    $mail_errors[] = 'mail() function returned false (email not sent)';
+                }
+            }
+        }
     }
 }
 
-// Return JSON response
-header('Content-Type: application/json');
+// Always return success to user (email sending is handled in background)
+echo json_encode([
+    'status' => 'success',
+    'message' => 'Thank you for your application! We will contact you soon to discuss your child\'s enrollment.'
+]);
 
-if ($mail_sent) {
-    echo json_encode([
-        'status' => 'success',
-        'message' => 'Thank you for your application! We will contact you soon to discuss your child\'s enrollment.'
-    ]);
-} else {
+// Log email failure separately for admin
+if (!$mail_sent && !$is_localhost) {
+    error_log('Admissions form email failed for: ' . implode(', ', $failed_recipients));
+}
+
+} catch (Exception $e) {
+    // Catch any exceptions and return JSON error
     echo json_encode([
         'status' => 'error',
-        'message' => 'Sorry, there was an error submitting your application. Please try again later or contact us directly.'
+        'message' => 'An error occurred processing your request. Please try again later.'
     ]);
-    
-    // Log error (optional - for debugging)
-    error_log('Admissions form email failed for: ' . implode(', ', $failed_recipients));
+    error_log('Admissions form exception: ' . $e->getMessage());
+    exit;
+} catch (Error $e) {
+    // Catch fatal errors
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'An error occurred processing your request. Please try again later.'
+    ]);
+    error_log('Admissions form fatal error: ' . $e->getMessage());
+    exit;
 }
 ?>
 

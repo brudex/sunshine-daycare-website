@@ -1262,7 +1262,7 @@
                         <h2 class="heading text-center"
                             style="color: #000; font-size: 2.5rem; font-weight: 400; margin-bottom: 40px;">Send us a
                             message</h2>
-                        <form action="contact-form-handler.php" method="POST" class="contact-form contact-form" id="contact-form">
+                        <form action="#" method="POST" class="contact-form contact-form" id="contact-form">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -1512,7 +1512,7 @@
                                     <a href="privacy-policy.html">Privacy Policy</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> 
                     </div>
                     <div class="col-lg-4 col-md-6 footer-item">
                         <div class="f-item contact">
@@ -1740,13 +1740,23 @@
             });
 
             // Contact Form Submission Handler
-            $('#contact-form').on('submit', function(e) {
+            // Remove any existing handlers to prevent duplicates
+            $('#contact-form').off('submit').on('submit', function(e) {
                 e.preventDefault();
+                e.stopImmediatePropagation(); // Prevent other handlers
                 
                 var $form = $(this);
                 var $submitBtn = $form.find('button[type="submit"]');
                 var $messageDiv = $('#message');
                 var originalBtnText = $submitBtn.html();
+                
+                // Prevent double submission - check if already submitting
+                if ($form.data('submitting')) {
+                    return false;
+                }
+                
+                // Mark form as submitting
+                $form.data('submitting', true);
                 
                 // Disable submit button
                 $submitBtn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Sending...');
@@ -1757,85 +1767,107 @@
                 
                 // Submit via AJAX
                 $.ajax({
-                    url: 'contact-form-handler.php',
+                    url: 'send-message.php',
                     type: 'POST',
                     data: formData,
-                    dataType: 'json',
-                    success: function(response) {
-                        // Handle response - check if it's already parsed or needs parsing
-                        var parsedResponse = response;
-                        if (typeof response === 'string') {
-                            try {
-                                parsedResponse = JSON.parse(response);
-                            } catch (e) {
-                                console.error('Failed to parse JSON response:', e);
-                                $messageDiv.addClass('error').html('<div class="alert alert-danger">Invalid response from server. Please try again.</div>');
-                                $submitBtn.prop('disabled', false).html(originalBtnText);
-                                return;
-                            }
+                    dataType: 'text', // Get as text first, then parse manually
+                    success: function(responseText) {
+                        // Parse JSON response manually
+                        var parsedResponse = null;
+                        try {
+                            parsedResponse = JSON.parse(responseText);
+                        } catch (e) {
+                            console.error('Failed to parse JSON:', e);
+                            $messageDiv.removeClass('success').addClass('error').html('<div class="alert alert-danger">Invalid response from server. Please try again.</div>');
+                            $submitBtn.prop('disabled', false).html(originalBtnText);
+                            return;
                         }
                         
-                        // Helper function to safely extract message as string
-                        function getMessage(obj) {
-                            if (!obj) return '';
-                            if (typeof obj === 'string') return obj;
-                            if (typeof obj === 'object' && obj.message) {
-                                return typeof obj.message === 'string' ? obj.message : JSON.stringify(obj.message);
-                            }
-                            return JSON.stringify(obj);
+                        // Validate response structure
+                        if (!parsedResponse || typeof parsedResponse !== 'object' || !parsedResponse.status) {
+                            console.error('Invalid response structure:', parsedResponse);
+                            $messageDiv.removeClass('success').addClass('error').html('<div class="alert alert-danger">Unexpected response format. Please try again.</div>');
+                            $submitBtn.prop('disabled', false).html(originalBtnText);
+                            return;
                         }
                         
-                        // Check if response has the expected structure
-                        if (parsedResponse && parsedResponse.status) {
-                            if (parsedResponse.status === 'success') {
-                                var successMessage = getMessage(parsedResponse.message) || 'Thank you for contacting us! We will get back to you soon.';
-                                $messageDiv.addClass('success').html('<div class="alert alert-success">' + successMessage + '</div>');
-                                $form[0].reset();
-                                // Scroll to message
-                                setTimeout(function() {
-                                    $('html, body').animate({
-                                        scrollTop: $messageDiv.offset().top - 100
-                                    }, 500);
-                                }, 100);
-                            } else {
-                                var errorMessage = getMessage(parsedResponse.message) || 'An error occurred. Please try again.';
-                                $messageDiv.addClass('error').html('<div class="alert alert-danger">' + errorMessage + '</div>');
-                            }
+                        // Extract message - MUST be a string, never an object
+                        var messageText = '';
+                        if (parsedResponse.message) {
+                            // Force conversion to string
+                            messageText = String(parsedResponse.message);
+                        }
+                        
+                        // Use default message if empty
+                        if (!messageText || messageText === 'undefined' || messageText === 'null') {
+                            messageText = parsedResponse.status === 'success' 
+                                ? 'Thank you for contacting us! We will get back to you soon.' 
+                                : 'An error occurred. Please try again.';
+                        }
+                        
+                        // Display message based on status - ONLY display the string message
+                        if (parsedResponse.status === 'success') {
+                            $messageDiv.removeClass('error').addClass('success').html('<div class="alert alert-success">' + messageText + '</div>');
+                            $form[0].reset();
+                            // Scroll to message
+                            setTimeout(function() {
+                                $('html, body').animate({
+                                    scrollTop: $messageDiv.offset().top - 100
+                                }, 500);
+                            }, 100);
                         } else {
-                            // If response doesn't have expected structure, try to display it safely
-                            console.log('Unexpected response format:', parsedResponse);
-                            var fallbackMessage = getMessage(parsedResponse) || 'Unexpected response format. Please try again.';
-                            $messageDiv.addClass('error').html('<div class="alert alert-danger">' + fallbackMessage + '</div>');
+                            $messageDiv.removeClass('success').addClass('error').html('<div class="alert alert-danger">' + messageText + '</div>');
                         }
                     },
                     error: function(xhr, status, error) {
-                        // Try to parse error response if it's JSON
+                        // Handle different error scenarios
                         var errorMessage = 'Sorry, there was an error sending your message. Please try again later or contact us directly.';
                         
+                        // Check for specific HTTP status codes
+                        if (xhr.status === 503) {
+                            errorMessage = 'Service temporarily unavailable. Please try again in a few moments or contact us directly.';
+                        } else if (xhr.status === 500) {
+                            errorMessage = 'Server error occurred. Please try again later or contact us directly.';
+                        } else if (xhr.status === 404) {
+                            errorMessage = 'Form handler not found. Please contact us directly.';
+                        }
+                        
+                        // Try to parse error response if it's JSON
                         if (xhr.responseText) {
                             try {
-                                var errorResponse = JSON.parse(xhr.responseText);
-                                if (errorResponse && errorResponse.message) {
-                                    // Ensure message is a string
-                                    if (typeof errorResponse.message === 'string') {
-                                        errorMessage = errorResponse.message;
-                                    } else if (typeof errorResponse.message === 'object') {
-                                        errorMessage = JSON.stringify(errorResponse.message);
+                                // Check if response is HTML (starts with <)
+                                if (xhr.responseText.trim().startsWith('<')) {
+                                    // HTML response (like 503 error page)
+                                    console.error('Server returned HTML instead of JSON. Status:', xhr.status);
+                                    // Use the status-based message above
+                                } else {
+                                    // Try to parse as JSON
+                                    var errorResponse = JSON.parse(xhr.responseText);
+                                    if (errorResponse && errorResponse.message) {
+                                        // Ensure message is a string
+                                        if (typeof errorResponse.message === 'string') {
+                                            errorMessage = errorResponse.message;
+                                        } else if (typeof errorResponse.message === 'object') {
+                                            errorMessage = JSON.stringify(errorResponse.message);
+                                        }
                                     }
                                 }
                             } catch (e) {
-                                // Not JSON, use default message
-                                console.error('Error parsing response:', e);
+                                // Not JSON, use status-based message
+                                console.error('Error parsing response:', e, 'Status:', xhr.status);
                             }
                         }
                         
                         $messageDiv.addClass('error').html('<div class="alert alert-danger">' + errorMessage + '</div>');
                     },
                     complete: function() {
-                        // Re-enable submit button
+                        // Re-enable submit button and allow form submission again
                         $submitBtn.prop('disabled', false).html(originalBtnText);
+                        $form.data('submitting', false);
                     }
                 });
+                
+                return false; // Prevent form from submitting normally
             });
         });
     </script>
