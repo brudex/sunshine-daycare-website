@@ -36,8 +36,7 @@ try {
 // Email configuration - admissions & holiday club go to HR/Admin and Nursery Manager
 $to_emails = [
     'hr.admin@sunshinechildcareservices.co.uk',
-    'nurserymanager@sunshinechildcareservices.co.uk',
-    'mbaah80@gmail.com', // Added for testing/backup
+    'nurserymanager@sunshinechildcareservices.co.uk'
 ];
 
 // Sanitize and validate input

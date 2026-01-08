@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Email configuration - all contact go to the main info inbox
 $to_emails = [
-    'mbaah80@gmail.com',
+    'info@sunshinechildcareservices.co.uk',
 ];
 
 // Sanitize and validate input
