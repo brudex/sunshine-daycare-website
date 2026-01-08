@@ -98,10 +98,10 @@ $email_body .= "================================\n";
 $email_body .= "Submitted: " . date('Y-m-d H:i:s') . "\n";
 $email_body .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
-// Email headers - using server domain for better deliverability
-$from_email = 'noreply@' . $_SERVER['HTTP_HOST'];
+// Email headers - using official domain
+$from_email = 'noreply@sunshinechildcareservices.co.uk';
 $headers = [];
-$headers[] = 'From: Sunshine Child-Care Nursery <' . $from_email . '>';
+$headers[] = 'From: Sunshine Child Care Services <' . $from_email . '>';
 $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
 $headers[] = 'X-Mailer: PHP/' . phpversion();
 $headers[] = 'MIME-Version: 1.0';
