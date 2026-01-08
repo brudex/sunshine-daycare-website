@@ -1775,10 +1775,21 @@
                             }
                         }
                         
+                        // Helper function to safely extract message as string
+                        function getMessage(obj) {
+                            if (!obj) return '';
+                            if (typeof obj === 'string') return obj;
+                            if (typeof obj === 'object' && obj.message) {
+                                return typeof obj.message === 'string' ? obj.message : JSON.stringify(obj.message);
+                            }
+                            return JSON.stringify(obj);
+                        }
+                        
                         // Check if response has the expected structure
                         if (parsedResponse && parsedResponse.status) {
                             if (parsedResponse.status === 'success') {
-                                $messageDiv.addClass('success').html('<div class="alert alert-success">' + (parsedResponse.message || 'Thank you for contacting us! We will get back to you soon.') + '</div>');
+                                var successMessage = getMessage(parsedResponse.message) || 'Thank you for contacting us! We will get back to you soon.';
+                                $messageDiv.addClass('success').html('<div class="alert alert-success">' + successMessage + '</div>');
                                 $form[0].reset();
                                 // Scroll to message
                                 setTimeout(function() {
@@ -1787,10 +1798,14 @@
                                     }, 500);
                                 }, 100);
                             } else {
-                                $messageDiv.addClass('error').html('<div class="alert alert-danger">' + (parsedResponse.message || 'An error occurred. Please try again.') + '</div>');
+                                var errorMessage = getMessage(parsedResponse.message) || 'An error occurred. Please try again.';
+                                $messageDiv.addClass('error').html('<div class="alert alert-danger">' + errorMessage + '</div>');
                             }
                         } else {
-                            $messageDiv.addClass('error').html('<div class="alert alert-danger">Unexpected response format. Please try again.</div>');
+                            // If response doesn't have expected structure, try to display it safely
+                            console.log('Unexpected response format:', parsedResponse);
+                            var fallbackMessage = getMessage(parsedResponse) || 'Unexpected response format. Please try again.';
+                            $messageDiv.addClass('error').html('<div class="alert alert-danger">' + fallbackMessage + '</div>');
                         }
                     },
                     error: function(xhr, status, error) {
@@ -1800,11 +1815,17 @@
                         if (xhr.responseText) {
                             try {
                                 var errorResponse = JSON.parse(xhr.responseText);
-                                if (errorResponse.message) {
-                                    errorMessage = errorResponse.message;
+                                if (errorResponse && errorResponse.message) {
+                                    // Ensure message is a string
+                                    if (typeof errorResponse.message === 'string') {
+                                        errorMessage = errorResponse.message;
+                                    } else if (typeof errorResponse.message === 'object') {
+                                        errorMessage = JSON.stringify(errorResponse.message);
+                                    }
                                 }
                             } catch (e) {
                                 // Not JSON, use default message
+                                console.error('Error parsing response:', e);
                             }
                         }
                         
